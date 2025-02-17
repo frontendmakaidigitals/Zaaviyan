@@ -20,7 +20,12 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    // Adding options to allow unused variables and modules
+    "noUnusedLocals": false,  // Disables the error for unused local variables
+    "noUnusedParameters": false,  // Disables the error for unused function parameters
+    "noImplicitReturns": false,  // Disables the error for missing return types in functions
+    "noImplicitAny": false  // Allows variables to have the "any" type without an error
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

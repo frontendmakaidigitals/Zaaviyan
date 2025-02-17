@@ -65,9 +65,7 @@ const HeroSection = () => {
         x = 0;
       }
 
-      // Get progress and direction of the animation
       const progress = slide.progress;
-      const direction = getDirection(progress);
 
       const scale = 1 - 0.05 * progress;
       const opacity = Math.max(1 - Math.abs(progress), 0);
