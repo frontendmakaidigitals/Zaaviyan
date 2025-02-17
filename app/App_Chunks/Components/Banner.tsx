@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="container relative my-8 rounded-2xl overflow-hidden aspect-[5/1] bg-purple-600 ">
         <div className="w-full h-full top-0 left-0 absolute ">
-            <img src={'media/bannerBg.png'} className="w-full h-full object-cover" />
+            <img src={'Media/bannerBg.png'} className="w-full h-full object-cover" />
         </div>
       <div className="w-full relative z-[3] h-full flex justify-between items-center ">
         <p className="text-4xl text-slate-50 font-[500]">
