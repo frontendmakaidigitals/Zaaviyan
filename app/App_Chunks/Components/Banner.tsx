@@ -2,7 +2,8 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="container relative my-8 rounded-2xl overflow-hidden aspect-[5/1] bg-purple-600 ">
+    <div className="container">
+      <div className="p-7 relative mt-16 mb-8 rounded-2xl overflow-hidden aspect-[5/1] bg-purple-600 ">
         <div className="w-full h-full top-0 left-0 absolute ">
             <img src={'Media/bannerBg.png'} className="w-full h-full object-cover" />
         </div>
@@ -14,6 +15,7 @@ const Banner = () => {
           Get Expert Consultation
         </button>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,5 +1,7 @@
+"use client";
 import { cn } from "@/app/lib/utils";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const CoreValue = () => {
   const coreValues = [
@@ -25,19 +27,37 @@ const CoreValue = () => {
     },
     { name: "Innovation", icon: "", griding: "", bgColor: "bg-yellow-400" },
   ];
+  const viewContainer = useRef(null);
+  const isInView = useInView(viewContainer, { margin: "-30% 0px -30% 0px" });
   return (
-    <div className="my-14">
+    <motion.div
+      animate={{
+        backgroundColor: isInView ? "hsl(0, 100, 100)" : "hsl(0, 100, 0)",
+      }}
+      transition={{ duration: 0.2, delay: 0.2, ease: [0, 0, 0.2, 1] }}
+      ref={viewContainer}
+      className="py-14"
+    >
       <div className="container">
-        <h1 className="text-5xl font-[500] font-Primary text-center">
-          Our <span className="text-slate-500">Core Values</span>
+        <h1 className="text-6xl font-[500] font-Primary text-center">
+          Our{" "}
+          <motion.span
+            animate={{
+              color: isInView ? "hsl(0, 1, 60)" : "hsl(0, 1, 0)",
+            }}
+            transition={{ duration: 0.2, delay: 0.2, ease: [0, 0, 0.2, 1] }}
+            className="text-slate-500"
+          >
+            Core Values
+          </motion.span>
         </h1>
-        <div className="grid grid-cols-4 mt-6 gap-3">
+        <div className="grid grid-cols-4 mt-14 gap-3">
           {coreValues.map((elem, idx) => (
             <CoreValueContainer key={idx} elem={elem} />
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -55,8 +75,9 @@ const CoreValueContainer = ({
         elem.griding
       )}
     >
-        
-      <p className="text-slate-700 text-sm px-2 py-1 bg-slate-50/70 backdrop-filter backdrop-blur-lg rounded-lg">{elem.name}</p>
+      <p className="text-slate-700 text-sm px-2 py-1 bg-slate-50/70 backdrop-filter backdrop-blur-lg rounded-lg">
+        {elem.name}
+      </p>
     </div>
   );
 };

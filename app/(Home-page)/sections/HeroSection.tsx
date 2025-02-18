@@ -81,7 +81,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="h-screen relative w-full overflow-hidden bg-gray-100">
+    <div className="h-[99vh] relative w-full overflow-hidden bg-gray-100">
       {/* Left Arrow Button */}
 
       {/* Custom Pagination Dots */}
@@ -139,18 +139,24 @@ const HeroSection = () => {
           setTranslate(swiper, progress);
         }}
         onSlideChange={({ activeIndex }) => setActiveIndex(activeIndex)} // Update the active index on slide change
-        className="mySwiper"
+        className="mySwiper h-full"
         simulateTouch={false} // Disable touch swipe
       >
         {slider.map((elem, idx) => (
-          <SwiperSlide key={idx} className="w-full h-full ">
-            <div className="w-full h-full overflow-hidden">
+          <SwiperSlide key={idx} className="w-full h-full">
+            <div className="w-full h-full">
               <div className="w-full h-full bg-slate-900/40 absolute top-0 left-0" />
               <img className="w-full h-full object-cover" src={elem.img} />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className="absolute z-[9] flex justify-end xl:justify-center items-center  bottom-0 left-0 w-full h-[30px]" >
+      <div className="w-0 h-0 border-l-transparent border-l-[30px] border-b-[30px] border-b-white"></div>
+        <div className="w-[40vw] bg-white h-full"></div>
+      <div className="w-0 h-0 border-r-[30px] hidden xl:block border-l-transparent  border-r-transparent border-b-[30px] border-b-white"></div>
+      </div>
     </div>
   );
 };
