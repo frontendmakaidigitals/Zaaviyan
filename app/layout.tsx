@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import ReactLenis from "lenis/react";
 import "./globals.css";
 import Nav from "./Navbar/Nav";
 import Footer from "./Footer/footer";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
- 
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,12 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` relative antialiased`}
-      >
-        <Nav />
-        {children}
-        <Footer />
+      <body className={` relative antialiased`}>
+        <ReactLenis root options={{ duration: 0.7, lerp:1 }}>
+          <Nav />
+          {children}
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );
