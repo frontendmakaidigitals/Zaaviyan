@@ -11,6 +11,7 @@ const Nav = () => {
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -67,36 +68,40 @@ const Nav = () => {
   };
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-        if (
-            menuRef.current && 
-            !menuRef.current.contains(event.target as Node) &&
-            buttonRef.current &&
-            !buttonRef.current.contains(event.target as Node) // Prevents button from closing itself
-        ) {
-            setIsActive(false);
-        }
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node) // Prevents button from closing itself
+      ) {
+        setIsActive(false);
+      }
     };
 
     const handleScroll = () => {
-        setIsActive(false);
+      setIsActive(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-        window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
-}, []);
+  }, []);
   return (
     <motion.div
       className={cn(
-        "w-full bg-white/50 backdrop-filter py-3 z-[99] backdrop-blur-xl fixed left-0",
+        "w-full  py-3 z-[99]   fixed left-0",
         !isNavShowing && "-top-full"
       )}
       initial={{ top: 0 }}
-      animate={{ top: isNavShowing ? 0 : -70 }} // Adjust -70 to your navbar height
+      animate={{
+        top: isNavShowing ? 0 : -70,
+        backdropFilter: lastScrollY == 0 ? "blur(0rem)" : "blur(1.3rem)",
+        backgroundColor: lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
+      }} // Adjust -70 to your navbar height
       transition={{
         type: "spring",
         stiffness: 100,
@@ -105,7 +110,7 @@ const Nav = () => {
       }} // Smooth animation
     >
       <div className="container relative flex justify-between items-center">
-        <Logo />
+        <Logo className={cn( lastScrollY == 0 ? 'text-slate-50' : 'text-slate-950', `transition-colors duration-200`)} />
         <div className={`absolute right-8 top-0`} ref={menuRef}>
           <motion.div
             className={`w-[480px] bg-[#c9fd74] rounded-[25px] relative`}

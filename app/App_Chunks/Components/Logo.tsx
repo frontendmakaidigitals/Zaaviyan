@@ -13,7 +13,7 @@ const Logo = ({ src, className }: Props) => {
           <img src={src} className="w-full h-full object-contain" />
         </div>
       ) : (
-        <h3 className="text-4xl font-sans font-[600]">Logo</h3>
+        <h3 className={cn(`text-4xl font-sans font-[600]`, className)}>Logo</h3>
       )}
     </Link>
   );
