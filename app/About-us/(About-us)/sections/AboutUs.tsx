@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="container w-full  grid grid-cols-1 lg:grid-cols-2 py-20 gap-6 place-items-center">
         <div className="w-full h-[480px]">
           <img
-            src={`https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+            src={`https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
             className="border-4 border-white w-full h-full object-cover"
           />
         </div>
