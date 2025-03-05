@@ -5,6 +5,7 @@ import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
 import Button from "./MenuButton";
 import { AnimatePresence } from "framer-motion";
+import { ArrowLeft } from "@phosphor-icons/react";
 import NavCard from "./NavCard";
 const Nav = () => {
   const [isNavShowing, setIsNavShowing] = useState<boolean>(true);
@@ -90,6 +91,7 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [serviceClicked, setServiceClicked] = useState(false);
   return (
     <motion.div
       className={cn(
@@ -100,7 +102,8 @@ const Nav = () => {
       animate={{
         top: isNavShowing ? 0 : -70,
         backdropFilter: lastScrollY == 0 ? "blur(0rem)" : "blur(1.3rem)",
-        backgroundColor: lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
+        backgroundColor:
+          lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
       }} // Adjust -70 to your navbar height
       transition={{
         type: "spring",
@@ -110,15 +113,35 @@ const Nav = () => {
       }} // Smooth animation
     >
       <div className="container relative flex justify-between items-center">
-        <Logo className={cn( lastScrollY == 0 ? 'text-slate-50' : 'text-slate-950', `transition-colors duration-200`)} />
+        <Logo
+          className={cn(
+            lastScrollY == 0 ? "text-slate-50" : "text-slate-950",
+            `transition-colors duration-200`
+          )}
+        />
         <div className={`absolute right-8 top-0`} ref={menuRef}>
           <motion.div
-            className={`w-[480px] bg-[#c9fd74] rounded-[25px] relative`}
+            className={`w-[480px] bg-[#FFB38E] rounded-[25px] relative`}
             variants={menu}
             animate={isActive ? "open" : "closed"}
             initial="closed"
           >
-            <AnimatePresence>{isActive && <NavCard />}</AnimatePresence>
+            {serviceClicked && (
+              <button
+                onClick={() => setServiceClicked(false)}
+                className="absolute w-fit top-4 left-9"
+              >
+                <ArrowLeft className="text-4xl" />
+              </button>
+            )}
+            <AnimatePresence>
+              {isActive && (
+                <NavCard
+                  setServiceClicked={setServiceClicked}
+                  serviceClicked={serviceClicked}
+                />
+              )}
+            </AnimatePresence>
           </motion.div>
           <div ref={buttonRef}>
             <Button
@@ -128,7 +151,6 @@ const Nav = () => {
               }}
             />
           </div>
-           
         </div>
       </div>
     </motion.div>

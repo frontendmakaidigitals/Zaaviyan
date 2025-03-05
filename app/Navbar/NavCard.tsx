@@ -1,64 +1,107 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { links, footerLinks } from "./data";
 import { perspective, slideIn } from "./anime";
-import { ArrowRight } from "@phosphor-icons/react";
+import { useLenis } from "lenis/react";
 import "./menuCard.css";
 import Link from "next/link";
-export default function NavCard() {
+import { ArrowLeft } from "@phosphor-icons/react";
+export default function NavCard({ setServiceClicked, serviceClicked }) {
   const [isHoverd, setIsHoverd] = useState<number | null>(null);
+
+  const services = [
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+    { title: "Joinery", href: "/" },
+  ];
+  const lenis = useLenis();
+  useEffect(() => {
+    if (serviceClicked) {
+      lenis?.stop(); // Stop Lenis smooth scrolling
+      document.body.style.overflow = "auto"; // Enable native scrolling
+    } else {
+      lenis?.start(); // Resume Lenis smooth scrolling
+    }
+  }, [serviceClicked]);
   return (
     <>
       <div className={`nav z-[99999]`}>
-        <div className={`body`}>
-          {links.map((link, i) => {
-            const { title, href } = link;
-            return (
-              <div key={`b_${i}`} className={`.linkContainer`}>
-                <motion.div
-                  onMouseEnter={() => setIsHoverd(i)}
-                  onMouseLeave={() => setIsHoverd(null)}
-                  custom={i}
-                  variants={perspective}
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
+        {serviceClicked ? (
+          <div className={`body overflow-y-auto`}>
+            {services.map((link, i) => {
+              const { title, href } = link;
+              return (
+                <div
+                  key={`b_${i}`}
+                  data-lenis-prevent="true"
+                  className={`linkContainer `}
                 >
-                
-                  <AnimatePresence mode="wait">
-                    <Link
-                      href={href}
-                      className="flex items-center gap-2 overflow-hidden"
-                    >
-                      {isHoverd === i ? (
-                        <motion.span
-                          initial={{ x: -10, opacity: 0 }}
-                          animate={
-                            isHoverd === i
-                              ? { x: 0, opacity: 1 }
-                              : { x: -10, opacity: 0 }
-                          }
-                          transition={{ duration: 0.3, ease: [0.175, 0.885, 0.32, 1.1] }}
-                        >
-                          <ArrowRight />
-                        </motion.span>
-                      ) : null}
-
-                      <motion.p
-                        initial={{ x: 0 }}
-                        animate={isHoverd === i ? { x: 5 } : { x: 0 }}
-                        transition={{ duration: .8, ease: [0.175, 0.885, 0.32, 1.1] }}
+                  <motion.div
+                    onMouseEnter={() => setIsHoverd(i)}
+                    onMouseLeave={() => setIsHoverd(null)}
+                    custom={i}
+                    
+                  >
+                    <AnimatePresence mode="wait">
+                      <Link
+                        href={href}
+                        className="flex items-center gap-2 overflow-hidden"
                       >
                         {title}
-                      </motion.p>
-                    </Link>
-                  </AnimatePresence>
-                </motion.div>
-              </div>
-            );
-          })}
-        </div>
+                      </Link>
+                    </AnimatePresence>
+                  </motion.div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className={`body overflow-hidden`}>
+            {links.map((link, i) => {
+              const { title, href } = link;
+              return (
+                <div key={`b_${i}`} className={`linkContainer `}>
+                  <motion.div
+                    onMouseEnter={() => setIsHoverd(i)}
+                    onMouseLeave={() => setIsHoverd(null)}
+                    custom={i}
+                    variants={perspective}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                  >
+                    <AnimatePresence mode="wait">
+                      {title.toLowerCase() === "services" ? (
+                        <a
+                          className="flex  justify-between cursor-pointer items-center gap-2 overflow-hidden"
+                          onClick={() => setServiceClicked(true)}
+                        >
+                          {title}
+                          <ArrowLeft size={'32'} className="rotate-[180deg]" />
+                           
+                        </a>
+                      ) : (
+                        <Link
+                          href={href}
+                          className="flex items-center gap-2 overflow-hidden"
+                        >
+                          {title}
+                        </Link>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </div>
+              );
+            })}
+          </div>
+        )}
         <motion.div className={`footer`}>
           {footerLinks.map((link, i) => {
             const { title, href } = link;

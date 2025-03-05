@@ -3,8 +3,6 @@ import './menuButton.css'
 export default function Button({ isActive, toggleMenu }) {
   return (
     <>
-     
-
       <div className="button">
         <motion.div
           className="slider"

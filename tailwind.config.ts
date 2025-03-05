@@ -16,17 +16,32 @@ export default {
       },
       container: {
         center: true,  // Centers the container by default
-        padding: '2rem', // Add padding to the container
+        padding: '1.5rem', // Add padding to the container
         screens: {
           sm: "100%",  // Full width on small screens
           md: "768px",  // Custom width on medium screens
           lg: "1024px", // Custom width on large screens
-          xl: "1280px", // Custom width on extra-large screens
+          xl: "1380px", // Custom width on extra-large screens
         },
       },
       fontFamily : {
         "Primary" : ['Didact Gothic', 'serif']
-      }
+      },
+      animation: {
+        marquee: 'marquee var(--duration) linear infinite',
+        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+        'marquee-vertical': {
+          from: { transform: 'translateY(0)' },
+          to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
+      },
+
     },
   },
   plugins: [],

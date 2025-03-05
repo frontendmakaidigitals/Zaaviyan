@@ -8,10 +8,31 @@ import {
   BuildingOffice,
 } from "@phosphor-icons/react";
 
-const Icon_color = "#00E676";
 const Icon_size = "44";
 const Icon_type = "fill";
 const _Industries = [
+  {
+    name: "F&B",
+    desc: "Lorem ipsum dolor sit amet, consec adipiscing elit,",
+    icon: <BowlFood   weight={Icon_type} size={Icon_size} />,
+  },
+  {
+    name: "Retail",
+    desc: "Lorem ipsum dolor sit amet, consec adipiscing elit,",
+    icon: <Storefront  weight={Icon_type} size={Icon_size} />,
+  },
+  {
+    name: "Hospitality",
+    desc: "Lorem ipsum dolor sit amet, consec adipiscing elit,",
+    icon: <HandHeart   weight={Icon_type} size={Icon_size} />,
+  },
+  {
+    name: "Office",
+    desc: "Lorem ipsum dolor sit amet, consec adipiscing elit,",
+    icon: (
+      <BuildingOffice   weight={Icon_type} size={Icon_size} />
+    ),
+  },
   {
     name: "F&B",
     desc: "Lorem ipsum dolor sit amet, consec adipiscing elit,",
@@ -85,13 +106,14 @@ const IndustryCard: React.FC<IndustryProps> = ({
       onMouseEnter={() => setHoverIdx(index)}
       onMouseLeave={() => setHoverIdx(null)}
       className={cn(
-        `w-full p-5 bg-white border-r border-slate-200`,
+        `w-full px-7 py-10 transition-colors duration-300 bg-white border-r border-slate-200`,
         index === 0 && ``,
         index === _Industries.length - 1 && `border-0`,
-        hoverIdx == index && `bg-[#00E676]`
+        hoverIdx == index && `bg-[#FFB38E]`,
+        index > Industries.length -1 / 2 && 'border-t border-slate-200'
       )}
     >
-      <div className={cn(hoverIdx === index && '!text-white', `text-[#00E676]`)}>{icon}</div>
+      <div className={cn(hoverIdx === index && '!text-white', `text-[#FFB38E]`)}>{icon}</div>
       <h2 className="text-2xl mt-4">{name}</h2>
       <p className="text-md mt-1">{desc}</p>
     </div>
