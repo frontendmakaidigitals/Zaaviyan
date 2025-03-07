@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React  from "react";
 import Marquee from "@/app/App_Chunks/Components/Marquee";
-import { cn } from "@/app/lib/utils";
+
 import { ArrowRight, StarFour } from "@phosphor-icons/react";
 const HeroSection = () => {
   const slider = [
