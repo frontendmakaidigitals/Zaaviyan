@@ -20,16 +20,16 @@ const HeroSection = () => {
   const secondRow = slider.slice(slider.length / 2);
 
   return (
-    <div className="h-[99vh] relative w-full overflow-hidden bg-black">
+    <div className="h-[99vh] relative w-full overflow-hidden bg-[#FEF3E2]">
       {/* Left Arrow Button */}
 
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-5 place-items-center">
         <div className="flex justify-center">
           <div>
-            <h1 className="text-7xl capitalize text-slate-50 text-left">
+            <h1 className="text-7xl capitalize text-slate-950 text-left">
               Bringing Your Dream <br /> Spaces to Life
             </h1>
-            <p className="text-slate-100 mt-3 text-lg">
+            <p className=" text-slate-950  mt-3 text-lg">
               At Zaaviyan Contracting, we craft bespoke interiors that blend
               aesthetics with functionality. As a leading fit-out company, we
               transform residential, commercial, and hospitality spaces into
@@ -62,9 +62,9 @@ const HeroSection = () => {
       </div>
 
       <div className="absolute z-[9] flex justify-end xl:justify-center items-center  bottom-0 left-0 w-full h-[30px]">
-        <div className="w-0 h-0 border-l-transparent border-l-[30px] border-b-[30px] border-b-white"></div>
-        <div className="w-[40vw] bg-white h-full"></div>
-        <div className="w-0 h-0 border-r-[30px] hidden xl:block border-l-transparent  border-r-transparent border-b-[30px] border-b-white"></div>
+        <div className="w-0 h-0 border-l-transparent border-l-[30px] border-b-[30px] border-b-[#F7F7F7]"></div>
+        <div className="w-[40vw] bg-[#F7F7F7] h-full"></div>
+        <div className="w-0 h-0 border-r-[30px] hidden xl:block border-l-transparent  border-r-transparent border-b-[30px] border-b-[#F7F7F7]"></div>
       </div>
     </div>
   );

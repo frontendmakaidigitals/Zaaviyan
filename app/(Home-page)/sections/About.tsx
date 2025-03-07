@@ -8,17 +8,17 @@ const About = () => {
 
   return (
     <div className="w-full my-20">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 place-items-center gap-10">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 place-items-center gap-10">
         {/* Text Section */}
-        <div className="w-full">
+        <div className="w-full container pr-14 order-1">
           <h2 className="text-6xl font-Primary font-[700]">
             Some Short but{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#FF4545] via-[#FA812F] to-[#FFB26F] bg-clip-text text-transparent">
               meaningful
             </span>{" "}
             heading
           </h2>
-          <p className="mt-7 text-xl leading-relaxed">
+          <p className="mt-7  text-xl leading-relaxed">
             At Zaaviyan Contracting, we are more than just a fit-out company, we
             are creators of exceptional spaces. With a passion for design and
             craftsmanship, we specialize in transforming interiors into
