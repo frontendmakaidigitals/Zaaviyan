@@ -76,7 +76,7 @@ const CoreValue = () => {
             Core Values
           </motion.span>
         </h1>
-        <div className="grid grid-cols-6 mt-14 gap-1 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-14 gap-1 place-items-center">
           {coreValues.map((elem, idx) => (
             <div
               key={idx}

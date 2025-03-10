@@ -15,13 +15,14 @@ export default {
         secondary: "var(--secondary)", // Custom secondary color
       },
       container: {
-        center: true,  // Centers the container by default
-        padding: '1.5rem', // Add padding to the container
+        center: true,
+        padding: "2rem",
         screens: {
-          sm: "100%",  // Full width on small screens
-          md: "768px",  // Custom width on medium screens
-          lg: "1024px", // Custom width on large screens
-          xl: "1380px", // Custom width on extra-large screens
+          sm: "100%", // Makes the container full-width on small screens
+          md: "768px",
+          lg: "1024px",
+          xl: "1260px",
+          "2xl": "1400px", // Allows for more width on larger screens
         },
       },
       fontFamily : {

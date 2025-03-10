@@ -60,7 +60,7 @@ const _Industries = [
 const Industries = () => {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   return (
-    <div className="my-14 bg-slate-100 h-[600px] grid grid-cols-1 items-center">
+    <div className=" bg-[#EFEBE9] py-20  grid grid-cols-1 items-center">
       <div className="container ">
         <h1 className="text-6xl font-[500] font-Primary text-center">
           Industries <span className="text-slate-500">we serve</span>

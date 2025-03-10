@@ -3,20 +3,12 @@ import React, { useRef } from "react";
 import {
   AnimatePresence,
   motion,
-  useScroll,
-  useTransform,
   useInView,
 } from "framer-motion";
 import { cn } from "@/app/lib/utils";
 
 const Services = () => {
-  const { scrollYProgress } = useScroll(); // Get scroll progress
-  const backgroundColor = useTransform(
-    scrollYProgress,
-    [0.1, 0.2],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 1)"]
-  );
-  const viewContainer = useRef(null);
+ const viewContainer = useRef(null);
   const isInView = useInView(viewContainer, {once:true});
   const services = [
     {
@@ -60,12 +52,12 @@ const Services = () => {
   const [index, setIndex] = React.useState<number | null>(null);
   return (
     <motion.div
-      className="w-full mt-20 "
-      style={{ backgroundColor }} // Bind animated background color
+      className="w-full mt-20 bg-[#EFEBE9]"
+
     >
       <div className="container py-20">
-        <h1 className="text-6xl font-[500] text-white font-Primary text-center">
-          Services <span className="text-slate-400">we provide</span>
+        <h1 className="text-6xl font-[500] text-black font-Primary text-center">
+          Services <span className="text-slate-600">we provide</span>
         </h1>
 
         <div ref={viewContainer}  className="grid grid-cols-1 w-full mt-20">
@@ -74,7 +66,7 @@ const Services = () => {
               onMouseEnter={() => setIndex(idx)}
               onMouseLeave={() => setIndex(null)}
               key={idx}
-              transition={{ duration: 0.2, ease: [0, 0, 0.2, 1], delay:.1*idx }}
+              transition={{ duration: 0.5, ease: [0, 0, 0.2, 1] }}
               animate={{
                 paddingLeft: idx === index ? "1.2rem" : 0,
                 paddingRight: idx === index ? "1.2rem" : 0,
@@ -88,8 +80,8 @@ const Services = () => {
                 className=" relative z-10 "
                 transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: 0.5 }}
               >
-                <p className="text-slate-50 text-2xl font-[600]">
-                  <span className="text-slate-400 align-top font-[600] text-lg">
+                <p className="text-slate-950 text-2xl font-[600]">
+                  <span className="text-slate-600 align-top font-[600] text-lg">
                     {" "}
                     {idx + 1 > 9 ? null : 0}
                     {idx + 1}
@@ -100,7 +92,7 @@ const Services = () => {
 
               <motion.p
                 animate={{ y: isInView ? "0%" : "230%" }}
-                className="text-slate-50 text-center flex-1"
+                className="text-slate-950 text-center flex-1"
                 transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: 0.5 }}
               >
                 Lorem ipsum odor amet, consectetuer adipiscing elit.

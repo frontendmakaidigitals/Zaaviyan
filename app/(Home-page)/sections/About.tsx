@@ -44,8 +44,8 @@ const About = () => {
         <div className="aspect-square w-full overflow-hidden">
           <motion.img
             className="w-full h-full object-cover"
-            src="https://a.storyblok.com/f/257499/934x525/0fe90ca6f1/03-sauro-4026180.jpg/m/1440x0"
-            style={{ y, scale: 1.3 }}
+            src="https://images.unsplash.com/photo-1551215110-b4e2522d9b74?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            style={{ y, scale: 1.4 }}
           />
         </div>
       </div>
