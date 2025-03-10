@@ -78,12 +78,16 @@ const CoreValue = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-14 gap-1 place-items-center">
           {coreValues.map((elem, idx) => (
-            <div
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: idx * 0.1, duration: 1.5, type: "spring" }}
+              viewport={{ once: true }}
               key={idx}
               className="size-36 p-4 flex justify-center items-center rounded-full bg-white/40 border border-gray-400/40 backdrop-filter backdrop-blur-lg"
             >
               <p className="text-center font-Primary font-[700]">{elem.name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
