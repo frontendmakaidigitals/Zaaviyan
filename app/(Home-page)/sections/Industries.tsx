@@ -60,7 +60,7 @@ const Industries = () => {
         </h1>
 
         <motion.div
-          className="grid mt-16 grid-cols-4 overflow-hidden rounded-xl border border-slate-200"
+          className="grid mt-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-xl border border-slate-200"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

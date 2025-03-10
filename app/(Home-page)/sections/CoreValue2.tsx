@@ -76,7 +76,7 @@ const CoreValue = () => {
             Core Values
           </motion.span>
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-14 gap-1 place-items-center">
+        <div className="grid grid-cols-3 lg:grid-cols-6 mt-14 gap-3 place-items-center">
           {coreValues.map((elem, idx) => (
             <motion.div
               initial={{ scale: 0 }}
@@ -84,15 +84,15 @@ const CoreValue = () => {
               transition={{ delay: idx * 0.1, duration: 1.5, type: "spring" }}
               viewport={{ once: true }}
               key={idx}
-              className="size-36 p-4 flex justify-center items-center rounded-full bg-white/40 border border-gray-400/40 backdrop-filter backdrop-blur-lg"
+              className="size-28 md:size-36 p-4 flex justify-center items-center rounded-full bg-white/40 border border-gray-400/40 backdrop-filter backdrop-blur-lg"
             >
-              <p className="text-center font-Primary font-[700]">{elem.name}</p>
+              <p className="text-center font-Primary font-[700] text-sm">{elem.name}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      <p className="container text-sm mt-10 relative z-10 text-slate-50">
+      <p className="container text-xs md:text-sm mt-10 relative z-10 text-slate-50">
         *Tailored to each client`s unique vision. Committed to quality and
         precision, we handle every detail from planning to execution, ensuring
         seamless project delivery. At Zaaviyan, excellence isn’t just a goal -

@@ -1,66 +1,72 @@
 "use client";
 import React, { useRef } from "react";
-import {
-  AnimatePresence,
-  motion,
-  useInView,
-} from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { cn } from "@/app/lib/utils";
 
 const Services = () => {
- const viewContainer = useRef(null);
-  const isInView = useInView(viewContainer, {once:true});
+  const viewContainer = useRef(null);
+  const isInView = useInView(viewContainer, { once: true });
   const services = [
     {
       name: "Interior Design",
       gradient: "from-[#fef08a] via-[#84cc16] to-[#16a34a]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
-    { name: "Joinery", gradient: "from-[#756ab6] via-[#ac87c5] to-[#e0aed0]" },
+    {
+      name: "Joinery",
+      gradient: "from-[#756ab6] via-[#ac87c5] to-[#e0aed0]",
+      desc: "We create functional and stylish interiors customized to your needs.",
+    },
     {
       name: "Carpentry",
       gradient: "from-[#b91c1c] via-[#ef4444] to-[#fca5a5]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Furniture Crafting",
       gradient: "from-[#c2410c] via-[#f97316] to-[#fdba74]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Fit-out & Refurbishments",
       gradient: "from-[#6366f1] via-[#a5b4fc] to-[#e0e7ff]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Visual Merchandising & Shop Display",
       gradient: " from-[#f59e0b] via-[#f59e0b] to-[#ea580c]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Architecture Design",
       gradient: "from-[#818cf8] via-[#6366f1] to-[#2563eb]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Retail Turnkey Solutions",
       gradient: "from-[#4ade80] via-[#14b8a6] to-[#0891b2]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Home Maintenance",
       gradient: "from-[#f6f6d9] via-[#47e4e0] to-[#5f81e4]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
     {
       name: "Space Renovation",
       gradient: "from-[#ff4d4d] via-[#ff8364] to-[#fdb87d]",
+      desc: "We create functional and stylish interiors customized to your needs.",
     },
   ];
   const [index, setIndex] = React.useState<number | null>(null);
   return (
-    <motion.div
-      className="w-full mt-20 bg-[#EFEBE9]"
-
-    >
+    <motion.div className="w-full mt-20 bg-[#EFEBE9]">
       <div className="container py-20">
         <h1 className="text-6xl font-[500] text-black font-Primary text-center">
           Services <span className="text-slate-600">we provide</span>
         </h1>
 
-        <div ref={viewContainer}  className="grid grid-cols-1 w-full mt-20">
+        <div ref={viewContainer} className="grid grid-cols-1 w-full mt-20">
           {services.map((elem, idx) => (
             <motion.div
               onMouseEnter={() => setIndex(idx)}
@@ -72,7 +78,7 @@ const Services = () => {
                 paddingRight: idx === index ? "1.2rem" : 0,
               }}
               className={cn(
-                `w-full grid grid-cols-[.8fr_1.1fr_.1fr] items-center px-1 py-5 border-b relative overflow-hidden border-gray-700`
+                `w-full grid grid-cols-1 lg:grid-cols-[.8fr_1.1fr_.1fr] items-center px-1 py-5 border-b relative overflow-hidden border-gray-700`
               )}
             >
               <motion.div
@@ -80,7 +86,7 @@ const Services = () => {
                 className=" relative z-10 "
                 transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: 0.5 }}
               >
-                <p className="text-slate-950 text-2xl font-[600]">
+                <p className="text-slate-950 text-3xl md:text-2xl font-[600]">
                   <span className="text-slate-600 align-top font-[600] text-lg">
                     {" "}
                     {idx + 1 > 9 ? null : 0}
@@ -92,17 +98,17 @@ const Services = () => {
 
               <motion.p
                 animate={{ y: isInView ? "0%" : "230%" }}
-                className="text-slate-950 text-center flex-1"
+                className="text-slate-950 text-start lg:text-center flex-1"
                 transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: 0.5 }}
               >
-                Lorem ipsum odor amet, consectetuer adipiscing elit.
+                {elem.desc}
               </motion.p>
 
               {/* Right side: Green circle */}
               <motion.div
                 animate={{ y: isInView ? "0%" : "200%" }}
                 transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: 0.5 }}
-                className="rounded-full relative overflow-hidden z-10 w-[120px] h-14 bg-green-200 flex items-center justify-center"
+                className="rounded-xl mt-5 lg:mt-0 lg:rounded-full relative overflow-hidden z-10 h-[300px] lg:w-[120px] lg:h-14 bg-green-200 flex items-center justify-center"
               >
                 <img
                   className="w-full h-full object-cover"

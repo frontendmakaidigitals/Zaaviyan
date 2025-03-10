@@ -19,10 +19,8 @@ export default {
         padding: "2rem",
         screens: {
           sm: "100%", // Makes the container full-width on small screens
-          md: "768px",
-          lg: "1024px",
           xl: "1260px",
-          "2xl": "1400px", // Allows for more width on larger screens
+
         },
       },
       fontFamily : {
