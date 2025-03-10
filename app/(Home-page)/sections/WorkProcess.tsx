@@ -8,7 +8,7 @@ const WorkProcess = () => {
       img: "https://images.pexels.com/photos/8297652/pexels-photo-8297652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       description:
         "Lorem Ipsum generator sadf dsafnaso;n asdfnasd aosdn d fdfs ;sdf",
-      grid: "grid-cols-[1.3fr_0.7fr]",
+      grid: "grid-cols-[1.5fr_0.5fr]",
       order: "order-first",
     },
     {
@@ -16,7 +16,7 @@ const WorkProcess = () => {
       img: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       description:
         "Lorem Ipsum generator sadf dsafnaso;n asdfnasd aosdn d fdfs ;sdf",
-      grid: "grid-cols-[0.7fr_1.3fr] ",
+      grid: "grid-cols-[0.5fr_1.5fr] ",
       order: "order-last",
     },
     {
@@ -24,7 +24,7 @@ const WorkProcess = () => {
       img: "https://images.pexels.com/photos/1870438/pexels-photo-1870438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       description:
         "Lorem Ipsum generator sadf dsafnaso;n asdfnasd aosdn d fdfs ;sdf",
-      grid: "grid-cols-[1.3fr_0.7fr]",
+      grid: "grid-cols-[1.5fr_0.5fr]",
       order: "order-first",
     },
     {
@@ -32,7 +32,7 @@ const WorkProcess = () => {
       img: "https://images.unsplash.com/photo-1545296664-39db56ad95bd?q=80&w=1101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Lorem Ipsum generator sadf dsafnaso;n asdfnasd aosdn d fdfs ;sdf",
-      grid: "grid-cols-[0.7fr_1.3fr] ",
+      grid: "grid-cols-[0.5fr_1.5fr] ",
       order: "order-last",
     },
     {
@@ -40,7 +40,7 @@ const WorkProcess = () => {
       img: "https://media.licdn.com/dms/image/C4D12AQEkXdFE-RfY0g/article-cover_image-shrink_720_1280/0/1589820515311?e=2147483647&v=beta&t=1VeIZQ_33HOjCFtd_xU7WzTTGu9_XDfhfrdEmgEzZF0",
       description:
         "Lorem Ipsum generator sadf dsafnaso;n asdfnasd aosdn d fdfs ;sdf",
-      grid: "grid-cols-[1.3fr_0.7fr]",
+      grid: "grid-cols-[1.5fr_0.5fr]",
       order: "order-first",
     },
   ];
@@ -85,7 +85,7 @@ const Process = ({ elem, index }: { elem: ProcessProps; index: number }) => {
           <p className="mt-1 text-sm">{elem.description}</p>
         </div>
       </div>
-      <div className="relative bg-slate-300 overflow-hidden rounded-[2rem] aspect-square w-full">
+      <div className="relative bg-slate-200 overflow-hidden rounded-[2rem] aspect-square w-full">
         <div className="absolute overflow-hidden inset-0 bg-black mask-square rotate-45 rounded-[2rem] scale-[.725] w-full h-full">
           <img
             src={elem.img}
