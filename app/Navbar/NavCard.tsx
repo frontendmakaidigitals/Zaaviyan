@@ -80,7 +80,7 @@ export default function NavCard({ setServiceClicked, serviceClicked }) {
                     <AnimatePresence mode="wait">
                       {title.toLowerCase() === "services" ? (
                         <a
-                          className="flex  justify-between cursor-pointer items-center gap-2 overflow-hidden"
+                          className="flex justify-between cursor-pointer items-center gap-2 overflow-hidden"
                           onClick={() => setServiceClicked(true)}
                         >
                           {title}

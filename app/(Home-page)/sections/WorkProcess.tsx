@@ -9,40 +9,40 @@ const WorkProcess = () => {
       img: "https://images.pexels.com/photos/8297652/pexels-photo-8297652.jpeg",
       description:
         "We begin by discussing your vision and requirements to understand the scope of the project and your specific needs. ",
-      grid: "grid-cols-[1.5fr_0.5fr]",
-      order: "order-first",
+      grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
+      order: "order-1 lg:order-first",
     },
     {
-      processName: "2. Design and Planning",
+      processName: "Design and Planning",
       img: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg",
       description:
         "Our team creates detailed designs and layouts that optimize space, functionality, and aesthetics, tailored to your business or personal requirements.",
-      grid: "grid-cols-[0.5fr_1.5fr] ",
-      order: "order-last",
+      grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
+      order: "order-2 lg:order-last",
     },
     {
       processName: "Project Management",
       img: "https://images.pexels.com/photos/1870438/pexels-photo-1870438.jpeg",
       description:
         "We assign a dedicated project manager to oversee timelines, budget, and coordinate with contractors and suppliers for smooth execution.",
-      grid: "grid-cols-[1.5fr_0.5fr]",
-      order: "order-first",
+      grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
+      order: "order-1 lg:order-first",
     },
     {
       processName: "Construction and Fit-Out",
       img: "https://images.unsplash.com/photo-1545296664-39db56ad95bd?q=80",
       description:
         "Our skilled workforce carry out all construction work, from partitioning to flooring and furniture installation, ensuring the highest quality.",
-      grid: "grid-cols-[0.5fr_1.5fr] ",
-      order: "order-last",
+      grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
+      order: "order-2 lg:order-last",
     },
     {
       processName: "Final Inspection and Handover",
       img: "https://media.licdn.com/dms/image/C4D12AQEkXdFE-RfY0g/article-cover_image-shrink_720_1280/0/1589820515311",
       description:
         "After completing the fit-out, a final inspection is conducted to ensure everything meets your expectations before handing over.",
-      grid: "grid-cols-[1.5fr_0.5fr]",
-      order: "order-first",
+      grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
+      order: "order-1 lg:order-first",
     },
   ];
 

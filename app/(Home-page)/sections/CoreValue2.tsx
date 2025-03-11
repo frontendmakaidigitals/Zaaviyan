@@ -86,7 +86,7 @@ const CoreValue = () => {
               key={idx}
               className="size-28 md:size-36 p-4 flex justify-center items-center rounded-full bg-white/40 border border-gray-400/40 backdrop-filter backdrop-blur-lg"
             >
-              <p className="text-center font-Primary font-[700] text-sm">{elem.name}</p>
+              <p className="text-center font-Primary  font-[700] text-sm">{elem.name}</p>
             </motion.div>
           ))}
         </div>

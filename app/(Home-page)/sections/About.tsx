@@ -12,11 +12,11 @@ const About = () => {
         {/* Text Section */}
         <div className="w-full container pr-14 order-1">
           <h2 className="text-6xl font-Primary font-[700]">
-            Some Short but{" "}
+            Zaaviyan: The{" "}
             <span className="bg-gradient-to-r from-[#FF4545] via-[#FA812F] to-[#FFB26F] bg-clip-text text-transparent">
-              meaningful
+              Zenith
             </span>{" "}
-            heading
+            of Excellence
           </h2>
           <p className="mt-7  text-xl leading-relaxed">
             At Zaaviyan Contracting, we are more than just a fit-out company, we

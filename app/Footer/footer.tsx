@@ -18,9 +18,9 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-gray-50 text-gray-600 pt-10">
-      <div className="container grid grid-cols-[.6fr_.1fr_1.3fr] items-top gap-20">
+      <div className="container grid grid-cols-1 lg:grid-cols-[.6fr_.1fr_1.3fr] items-top gap-5 lg:gap-20">
         <div>
-          <Logo />
+          <Logo className="text-5xl" />
           <p className="mt-3">
             Lorem ipsum odor amet, consectetuer adipiscing elit. Sagittis
             egestas velit vivamus lorem himenaeos class nibh magnis. Litora
@@ -28,7 +28,7 @@ const Footer = () => {
           </p>
         </div>
         <div></div>
-        <div className="w-full grid grid-cols-3 gap-1">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-[auto_auto_auto] gap-10 lg:gap-1">
           {menus.map((elem, idx) => (
             <div key={idx} className="">
               <div>
@@ -48,7 +48,7 @@ const Footer = () => {
 
           <div>
             <div>
-              <h3 className="text-xl font-[600]">Address</h3>
+              <h3 className="text-xl text-slate-950 font-[600]">Address</h3>
               <ul className="mt-3">
                 <li>Office- Address of the Office</li>
                 <li>Phone- +01 23456 78900</li>
@@ -58,10 +58,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container mt-8 flex w-full justify-between">
+      <div className="container text-center lg:text-start mt-10 lg:mt-8 flex lg:justify-start justify-center">
         <p>&#169; {year} Zaaviyan Copyright Protected</p>
       </div>
-      <div className="container flex justify-center mt-10">
+      <div className="container flex justify-center lg:mt-10">
         <svg
           width="1320"
           height="195"

@@ -20,6 +20,15 @@
     color: black;
     font-size: 46px;
 }
+
+@media (max-width: 480px) {
+    .nav .body a {
+      text-decoration: none;
+      color: black;
+      font-size: 40px;
+    }
+  }
+  
 .nav .footer {
     display: flex;
     flex-wrap: wrap;

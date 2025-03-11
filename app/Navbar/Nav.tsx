@@ -46,10 +46,18 @@ const Nav = () => {
     };
   }, [lastScrollY]);
   const [isActive, setIsActive] = useState(false);
+  const [isOnMobile, setIsOnMobile] = useState(false);
+  useEffect(() => {
+    if (window) {
+      if (window.innerWidth < 480) {
+        setIsOnMobile(true);
+      }
+    }
+  });
   const menu = {
     open: {
-      width: "480px",
-      height: "650px",
+      width: isOnMobile ? "380px" : "480px",
+      height: isOnMobile ? "600px" : "650px",
       top: "-10px",
       right: "-10px",
       transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
@@ -121,7 +129,7 @@ const Nav = () => {
         />
         <div className={`absolute right-8 top-0`} ref={menuRef}>
           <motion.div
-            className={`w-[480px] bg-[#FFB38E] rounded-[25px] relative`}
+            className={` bg-[#FFB38E] rounded-[25px] relative`}
             variants={menu}
             animate={isActive ? "open" : "closed"}
             initial="closed"
