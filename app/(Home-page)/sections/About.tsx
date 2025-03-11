@@ -41,7 +41,7 @@ const About = () => {
         </div>
 
         {/* Image with Parallax Effect */}
-        <div className="h-[450px] lg:aspect-square w-full overflow-hidden">
+        <div className="h-[450px] lg:h-auto lg:aspect-square w-full overflow-hidden">
           <motion.img
             className="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1551215110-b4e2522d9b74?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
