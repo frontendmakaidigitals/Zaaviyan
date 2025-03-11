@@ -4,7 +4,7 @@ import Industries from "./(Home-page)/sections/Industries";
 import CoreValue from "./(Home-page)/sections/CoreValue2";
 import WorkProcess from "./(Home-page)/sections/WorkProcess";
 import About from "./(Home-page)/sections/About";
-import Services from "./(Home-page)/sections/Services";
+import Services from "./(Home-page)/sections/Services2";
 import Form from "./(Home-page)/sections/Form";
 export default function Home() {
   return (
