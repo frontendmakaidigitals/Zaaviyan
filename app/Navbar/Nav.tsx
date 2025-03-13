@@ -3,16 +3,40 @@ import React, { useEffect, useState, useRef } from "react";
 import Logo from "../App_Chunks/Components/Logo";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Button from "./MenuButton";
 import { AnimatePresence } from "framer-motion";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowUpRight, CaretDown } from "@phosphor-icons/react";
 import NavCard from "./NavCard";
 const Nav = () => {
   const [isNavShowing, setIsNavShowing] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
-
+  const path = usePathname();
+  const menus = [
+    { name: "Home", route: "/" },
+    { name: "About us", route: "/About-us" },
+    {
+      name: "Services",
+      serviceList: [
+        { name: "Joinery" },
+        { name: "Interior Design" },
+        { name: "Carpentry" },
+        { name: "Furniture Crafting" },
+        { name: "Fit-out & Refurbishments" },
+        { name: "Visual Merchandising & Shop Display" },
+        { name: "Architecture Design" },
+        { name: "Retail Turnkey Solutions" },
+        { name: "Home Maintenance" },
+        { name: "Space Renovation" },
+      ],
+      route: "",
+    },
+    { name: "Careers", route: "/Careers" },
+    { name: "Contact", route: "/Contact" },
+  ];
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -100,6 +124,8 @@ const Nav = () => {
     };
   }, []);
   const [serviceClicked, setServiceClicked] = useState(false);
+
+  const [isMenuShowing, setIsMenuShowing] = useState(false);
   return (
     <motion.div
       className={cn(
@@ -127,7 +153,7 @@ const Nav = () => {
             `transition-colors duration-200`
           )}
         />
-        <div className={`absolute right-8 top-0`} ref={menuRef}>
+        {/*<div className={`absolute right-8 top-0`} ref={menuRef}>
           <motion.div
             className={` bg-[#FFB38E] rounded-[25px] relative`}
             variants={menu}
@@ -159,6 +185,80 @@ const Nav = () => {
               }}
             />
           </div>
+        </div> */}
+
+        <div className="flex items-center bg-gradient-to-b  border from-white to-slate-100 p-[.4rem] rounded-full">
+          {menus.map((menu, idx) =>
+            menu.serviceList ? (
+              <div
+                key={idx}
+                className="relative"
+                onMouseLeave={() => setIsMenuShowing(false)} // Only close when leaving the entire div
+              >
+                <button
+                  onClick={() => setIsMenuShowing(!isMenuShowing)}
+                  onMouseEnter={() => setIsMenuShowing(true)}
+                  className={cn(
+                    `px-4 py-[.5rem] rounded-full `,
+                    path === menu.route && `bg-orange-200`
+                  )}
+                >
+                  <span className="flex items-center gap-2">
+                    {menu.name}{" "}
+                    <CaretDown
+                      className={`${isMenuShowing ? "rotate-180" : "rotate-0"}`}
+                    />
+                  </span>
+                </button>
+
+                <AnimatePresence mode="wait">
+                  {isMenuShowing && (
+                    <div className="absolute -translate-x-1/2   top-[100%] left-1/2 bg-transparent min-w-[400px]">
+                      <motion.div
+                        initial={{ y: -100 }}
+                        animate={{ y: 0 }}
+                        transition={{ ease: [0, 0, 0.2, 1] }}
+                        className="mt-[.48rem] overflow-hidden  bg-slate-50" // Close when leaving dropdown
+                      >
+                        {menu.serviceList.map((service, index) => (
+                          <motion.div
+                            initial={{ y: 100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                              duration: 0.7,
+                              delay: index * 0.1,
+                              ease: [0, 0, 0.2, 1],
+                            }}
+                            key={index}
+                            className="hover:bg-slate-200 px-5 py-3"
+                          >
+                            <Link
+                              href={""}
+                              className="text-xl  flex justify-between items-center gap-2"
+                            >
+                              {service.name}
+                              <ArrowUpRight />
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link
+                key={idx}
+                href={menu.route}
+                className={cn(
+                  `px-4 py-[.5rem] rounded-full`,
+                  path === menu.route && `bg-orange-200`
+                )}
+              >
+                <div>{menu.name}</div>
+              </Link>
+            )
+          )}
         </div>
       </div>
     </motion.div>

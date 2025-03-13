@@ -82,7 +82,7 @@ const Services = () => {
               <div
                 key={idx}
                 className={cn(
-                  `grid place-items-center gap-4`,
+                  `grid place-items-center gap-2`,
                   idx % 2 === 0
                     ? "grid-cols-1 lg:grid-cols-[0.7fr_1.3fr]"
                     : "grid-cols-1 lg:grid-cols-[1.3fr_.7fr]"
@@ -90,7 +90,7 @@ const Services = () => {
               >
                 <div
                   className={cn(
-                    `w-full bg-[#fffafa] rounded-xl p-5 flex flex-col justify-center h-full`,
+                    `w-full bg-[#fffafa]  p-5 flex flex-col justify-center h-full`,
                     idx % 2 !== 0 ? "order-2 lg:order-2" : "order-2 lg:order-1"
                   )}
                 >
@@ -99,7 +99,7 @@ const Services = () => {
                 </div>
                 <motion.div
                   className={cn(
-                    `w-full h-[450px] rounded-xl lg:h-[500px] relative  overflow-hidden flex items-center justify-center`,
+                    `w-full h-[450px]  lg:h-[470px] relative  overflow-hidden flex items-center justify-center`,
                     idx % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
                   )}
                 >
