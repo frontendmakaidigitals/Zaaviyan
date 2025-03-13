@@ -7,16 +7,16 @@ import { GridPattern } from "@/app/App_Chunks/Components/GridPattern";
 const HeroSection = () => {
   const slider = [
     {
-      img: "heroSection/heroSection1.jpg",
+      img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection1.jpg",
     },
     {
-      img: "heroSection/heroSection2.jpg",
+      img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection2.jpg",
     },
     {
-      img: "heroSection/heroSection3.jpg",
+      img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection3.jpg",
     },
     {
-      img: "heroSection/heroSection4.jpg",
+      img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection4.jpg",
     },
   ];
 
