@@ -8,7 +8,7 @@ const WorkProcess = () => {
       processName: "Initial Consultation",
       img: "https://images.pexels.com/photos/8297652/pexels-photo-8297652.jpeg",
       description:
-        "We begin by discussing your vision and requirements to understand the scope of the project and your specific needs. ",
+        "We begin by sitting down with you to gain a deep understanding of your goals, preferences, and any specific requirements for the project. This phase involves discussing your vision, whether it’s for a commercial or residential space, and utilizing practical solutions that best suit your needs. Our goal is to ensure we capture every detail of your expectations to provide a clear direction moving forward.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
       order: "order-1 lg:order-first",
     },
@@ -16,7 +16,7 @@ const WorkProcess = () => {
       processName: "Design and Planning",
       img: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg",
       description:
-        "Our team creates detailed designs and layouts that optimize space, functionality, and aesthetics, tailored to your business or personal requirements.",
+        "Our design team works closely with you to craft detailed blueprints and layouts that focus on optimizing space usage, functionality, and visual appeal. We take into consideration both your aesthetic preferences and the practical demands of the space, ensuring that the design is both beautiful and functional. Every decision, from material selection to arrangement, is made to create an environment that enhances the user experience and supports your business or personal goals.",
       grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
       order: "order-2 lg:order-last",
     },
@@ -24,7 +24,7 @@ const WorkProcess = () => {
       processName: "Project Management",
       img: "https://images.pexels.com/photos/1870438/pexels-photo-1870438.jpeg",
       description:
-        "We assign a dedicated project manager to oversee timelines, budget, and coordinate with contractors and suppliers for smooth execution.",
+        "A dedicated project manager is assigned to your project to ensure everything runs smoothly from start to finish. They’ll oversee the timeline, manage the budget, and coordinate with contractors, suppliers, and other stakeholders to ensure deadlines are met and any challenges are swiftly addressed. Our project manager acts as your main point of contact, keeping you informed and ensuring the entire process stays on track.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
       order: "order-1 lg:order-first",
     },
@@ -32,7 +32,7 @@ const WorkProcess = () => {
       processName: "Construction and Fit-Out",
       img: "https://images.unsplash.com/photo-1545296664-39db56ad95bd?q=80",
       description:
-        "Our skilled workforce carry out all construction work, from partitioning to flooring and furniture installation, ensuring the highest quality.",
+        "Our expert team of craftsmen will execute all construction tasks, from partitioning and structural modifications to flooring installation and custom furniture assembly. We prioritize quality at every step, using the best materials and techniques to ensure durability and an impeccable finish. The attention to detail ensures that the space is not only functional but also designed to the highest standards.",
       grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
       order: "order-2 lg:order-last",
     },
@@ -40,7 +40,7 @@ const WorkProcess = () => {
       processName: "Final Inspection and Handover",
       img: "https://media.licdn.com/dms/image/C4D12AQEkXdFE-RfY0g/article-cover_image-shrink_720_1280/0/1589820515311",
       description:
-        "After completing the fit-out, a final inspection is conducted to ensure everything meets your expectations before handing over.",
+        "Once the fit-out is complete, a thorough final inspection is conducted to ensure every detail aligns with your specifications and expectations. Any final adjustments or touch-ups are made at this stage to perfect the space. After this inspection, we hand over the space to you, confident that it’s fully functional, aesthetically pleasing, and ready for immediate use.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
       order: "order-1 lg:order-first",
     },
@@ -100,7 +100,7 @@ const Process = ({ elem, index }: { elem: ProcessProps; index: number }) => {
           <h2 className="text-xl xl:text-3xl font-Primary font-[600]">
             {elem.processName}
           </h2>
-          <p className="mt-1 text-sm">{elem.description}</p>
+          <p className="mt-1 text-md">{elem.description}</p>
         </div>
       </motion.div>
 

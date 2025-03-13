@@ -29,6 +29,7 @@ export default {
       animation: {
         marquee: 'marquee var(--duration) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+        gradientShift: "gradientShift 2s infinite alternate ease-in-out",
       },
       keyframes: {
         marquee: {
@@ -38,6 +39,10 @@ export default {
         'marquee-vertical': {
           from: { transform: 'translateY(0)' },
           to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
+        gradientShift: {
+          "0%": { background: "radial-gradient(ellipse at top left, #fde68a, #fab236)" },
+          "100%": { background: "radial-gradient(ellipse at top right, #fab236, #fde68a)" }
         },
       },
 

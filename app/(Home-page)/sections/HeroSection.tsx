@@ -7,13 +7,16 @@ import { GridPattern } from "@/app/App_Chunks/Components/GridPattern";
 const HeroSection = () => {
   const slider = [
     {
-      img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/heroSection/heroSection1.jpg",
     },
     {
-      img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/heroSection/heroSection2.jpg",
     },
     {
-      img: "https://images.unsplash.com/photo-1532562145520-b8cce2486cd2?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "/heroSection/heroSection3.jpg",
+    },
+    {
+      img: "/heroSection/heroSection4.jpg",
     },
   ];
 
@@ -60,12 +63,16 @@ const HeroSection = () => {
         <div className="grid lg:order-1 grid-cols-2 shadow-[0_0_60px_#D7CCC8] bg-[#9b9287] overflow-hidden h-[450px] md:h-[700px] lg:h-[99vh]">
           <Marquee vertical className="[--duration:20s]">
             {firstRow.map((img, idx) => (
-              <img key={idx} src={img.img} />
+              <div key={idx} className="h-[350px]">
+                <img  className="w-full h-full object-cover " src={img.img} />
+              </div>
             ))}
           </Marquee>
           <Marquee reverse vertical className="[--duration:20s]">
             {secondRow.map((img, idx) => (
-              <img key={idx} src={img.img} />
+              <div key={idx} className="h-[350px]">
+                <img  className="w-full h-full object-cover " src={img.img} />
+              </div>
             ))}
           </Marquee>
         </div>

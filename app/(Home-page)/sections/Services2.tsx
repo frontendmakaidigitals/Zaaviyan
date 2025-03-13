@@ -11,7 +11,7 @@ const Services = () => {
   });
 
   // Subtle parallax effect
-  const y = useTransform(scrollYProgress, [0, 0.8], [-150, 150]); // Less movement
+  const y = useTransform(scrollYProgress, [0, 0.8], [-200, 200]); // Less movement
 
   const services = [
     {
