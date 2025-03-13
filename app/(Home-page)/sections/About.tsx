@@ -30,13 +30,21 @@ const About = () => {
             project delivery. At Zaaviyan, excellence isn’t just a goal - it’s
             our standard.
           </p>
-          <button className=" flex items-center mt-5 relative rounded-full">
-            <span className="bg-[#FFB38E] py-3 pl-5 pr-3 rounded-full">
-              Learn more
-            </span>{" "}
-            <span className="bg-[#FFB38E] absolute left-[95%] top-1/2 -translate-y-1/2 p-3 rounded-full">
-              <ArrowRight className="text-2xl" />
-            </span>
+          <button className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+            <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
+              <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
+            </div>
+            <div className="absolute inset-[2px] bg-[#7C2D12] rounded-lg opacity-95" />
+            <div className="absolute inset-[2px] bg-gradient-to-r from-[#7C2D12] via-[#B45309] to-[#7C2D12] rounded-lg opacity-90" />
+            <div className="absolute inset-[2px] bg-gradient-to-b from-[#F59E0B]/40 via-[#B45309] to-[#92400E]/30 rounded-lg opacity-80" />
+            <div className="absolute inset-[2px] bg-gradient-to-br from-[#FBBF24]/10 via-[#B45309] to-[#7C2D12]/50 rounded-lg" />
+            <div className="absolute inset-[2px] shadow-[inset_0_0_15px_rgba(251,191,36,0.15)] rounded-lg" />
+            <div className="relative flex items-center justify-center gap-2">
+              <span className="text-lg font-normal bg-gradient-to-b from-[#FFEDD5] to-[#FDE68A] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(251,191,36,0.4)] tracking-tighter">
+                Contact us
+              </span>
+            </div>
+            <div className="absolute inset-[2px] opacity-0 transition-opacity duration-300 bg-gradient-to-r from-[#7C2D12]/20 via-[#FBBF24]/10 to-[#7C2D12]/20 group-hover:opacity-100 rounded-lg" />
           </button>
         </div>
 
