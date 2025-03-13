@@ -68,7 +68,7 @@ const CoreValue = () => {
     <motion.div ref={viewContainer} className="py-32 relative overflow-hidden">
       <img
         className="w-full h-full object-cover absolute top-1/2 -translate-y-1/2 left-0"
-        src={`https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+        src={`Media/our values.jpg`}
       />
       <div className="w-full h-full absolute top-0 left-0 bg-slate-900/40" />
       <div className="container relative z-10">

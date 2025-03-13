@@ -8,7 +8,7 @@ const Form = () => {
         <div className="w-full hidden lg:block bg-slate-50 h-[660px] overflow-hidden rounded-l-xl">
           <img
             src={
-              "/Media/Magic-Pattern.jpg"
+              "/Media/contact form.jpg"
             }
             className="w-full object-cover h-full"
           />

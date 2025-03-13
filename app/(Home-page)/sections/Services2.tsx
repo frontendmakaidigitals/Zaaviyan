@@ -22,17 +22,17 @@ const Services = () => {
     {
       name: "Joinery",
       desc: " We offer bespoke joinery solutions, crafting custom woodwork that enhances the functionality and aesthetics of any space. Our team uses the finest materials to create beautiful and durable pieces for your home or business.",
-      img: "https://images.unsplash.com/photo-1652272161002-9c7247227270?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/joinery.jpg",
     },
     {
       name: "Carpentry",
       desc: "Our expert carpentry services specialize in the creation and installation of high-quality wood structures, ensuring precision and craftsmanship in every project. Whether it's custom cabinetry or structural work, we bring your vision to life with care and attention to detail.",
-      img: "https://images.unsplash.com/photo-1597476885328-ce9c89859503?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/carpentry.jpg",
     },
     {
       name: "Furniture Crafting",
       desc: "We design and build custom furniture that perfectly complements your space, combining artistry with functionality. From concept to creation, each piece is uniquely crafted to suit your style and requirements.",
-      img: "https://images.unsplash.com/photo-1565996953942-943cebc0fa7d?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/furniture crafting.jpg",
     },
     {
       name: "Fit-out & Refurbishments",
@@ -42,7 +42,7 @@ const Services = () => {
     {
       name: "Visual Merchandising & Shop Display",
       desc: " Our visual merchandising and shop display services help create an inviting, engaging retail environment that attracts customers and enhances product visibility. We use innovative design techniques to showcase your products in the most compelling way.",
-      img: "https://images.unsplash.com/photo-1601600576337-c1d8a0d1373c?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/visual merchandising.jpg",
     },
     {
       name: "Architecture Design",
@@ -52,7 +52,7 @@ const Services = () => {
     {
       name: "Retail Turnkey Solutions",
       desc: "We provide end-to-end retail turnkey solutions that cover everything from design and construction to installation and finishing touches. Our approach ensures your retail space is ready for business, on time and within budget.",
-      img: "https://images.unsplash.com/photo-1556742208-999815fca738?q=80&w=1349&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/turnkey solutions.jpg",
     },
     {
       name: "Home Maintenance",
