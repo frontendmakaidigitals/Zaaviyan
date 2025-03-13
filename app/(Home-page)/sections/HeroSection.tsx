@@ -7,16 +7,16 @@ import { GridPattern } from "@/app/App_Chunks/Components/GridPattern";
 const HeroSection = () => {
   const slider = [
     {
-      img: "/heroSection/heroSection1.jpg",
+      img: "heroSection/heroSection1.jpg",
     },
     {
-      img: "/heroSection/heroSection2.jpg",
+      img: "heroSection/heroSection2.jpg",
     },
     {
-      img: "/heroSection/heroSection3.jpg",
+      img: "heroSection/heroSection3.jpg",
     },
     {
-      img: "/heroSection/heroSection4.jpg",
+      img: "heroSection/heroSection4.jpg",
     },
   ];
 
