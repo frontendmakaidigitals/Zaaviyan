@@ -16,7 +16,7 @@ const HeroSection = () => {
       img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection3.jpg",
     },
     {
-      img: "https://raw.githubusercontent.com/frontendmakaidigitals/Zaaviyan/refs/heads/main/public/heroSection/herosection4.jpg",
+      img: "heroSection/heroSection4.jpg",
     },
   ];
 
