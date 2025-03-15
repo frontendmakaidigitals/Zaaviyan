@@ -123,7 +123,6 @@ const Nav = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const [serviceClicked, setServiceClicked] = useState(false);
 
   const [isMenuShowing, setIsMenuShowing] = useState(false);
   return (
@@ -187,7 +186,7 @@ const Nav = () => {
           </div>
         </div> */}
 
-        <div className="flex items-center bg-gradient-to-b  border from-white to-slate-100 p-[.4rem] rounded-full">
+        <div className="flex items-center bg-gradient-to-b gap-2 border from-white to-slate-100 p-[.4rem] rounded-xl">
           {menus.map((menu, idx) =>
             menu.serviceList ? (
               <div
@@ -199,7 +198,7 @@ const Nav = () => {
                   onClick={() => setIsMenuShowing(!isMenuShowing)}
                   onMouseEnter={() => setIsMenuShowing(true)}
                   className={cn(
-                    `px-4 py-[.5rem] rounded-full `,
+                    `px-4 py-[.5rem] rounded-xl hover:bg-orange-100`,
                     path === menu.route && `bg-orange-200`
                   )}
                 >
@@ -215,8 +214,9 @@ const Nav = () => {
                   {isMenuShowing && (
                     <div className="absolute -translate-x-1/2   top-[100%] left-1/2 bg-transparent min-w-[400px]">
                       <motion.div
-                        initial={{ y: -100 }}
-                        animate={{ y: 0 }}
+                        initial={{ height: '1px' }}
+                        animate={{ height: '100%' }}
+                        exit={{ height: '1px' }}
                         transition={{ ease: [0, 0, 0.2, 1] }}
                         className="mt-[.48rem] overflow-hidden  bg-slate-50" // Close when leaving dropdown
                       >
@@ -225,12 +225,12 @@ const Nav = () => {
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{
-                              duration: 0.7,
-                              delay: index * 0.1,
+                              duration: 0.5,
+                              delay: index * 0.05,
                               ease: [0, 0, 0.2, 1],
                             }}
                             key={index}
-                            className="hover:bg-slate-200 px-5 py-3"
+                            className={cn(`hover:bg-orange-100 px-5 py-3` , idx !== menu.serviceList.length -1 && ('border-b border-slate-400') )}
                           >
                             <Link
                               href={""}
@@ -251,8 +251,8 @@ const Nav = () => {
                 key={idx}
                 href={menu.route}
                 className={cn(
-                  `px-4 py-[.5rem] rounded-full`,
-                  path === menu.route && `bg-orange-200`
+                  `px-4 py-[.5rem] rounded-xl hover:bg-orange-100 hover:text-orange-900`,
+                  path === menu.route && `bg-orange-200 text-orange-900 hover:bg-orange-200`,
                 )}
               >
                 <div>{menu.name}</div>
