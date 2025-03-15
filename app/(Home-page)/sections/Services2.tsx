@@ -69,7 +69,7 @@ const Services = () => {
   return (
     <motion.div className="w-full mt-20 bg-[#EFEBE9]">
       <div className="container py-20">
-        <h1 className="text-6xl font-[500] text-black font-Primary text-center">
+        <h1 className="text-6xl font-meidum text-black font-heroFont text-center">
           Services <span className="text-slate-600">we provide</span>
         </h1>
 
@@ -94,8 +94,8 @@ const Services = () => {
                     idx % 2 !== 0 ? "order-2 lg:order-2" : "order-2 lg:order-1"
                   )}
                 >
-                  <h3 className="text-4xl text-center">{elem.name}</h3>
-                  <p className="text-center">{elem.desc}</p>
+                  <h3 className="text-4xl font-heroFont  text-center">{elem.name}</h3>
+                  <p className="text-center mt-3 text-slate-800">{elem.desc}</p>
                 </div>
                 <motion.div
                   className={cn(

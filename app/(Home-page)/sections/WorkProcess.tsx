@@ -49,7 +49,7 @@ const WorkProcess = () => {
   return (
     <div className="my-12">
       <div className="container">
-        <h1 className="text-6xl font-[500] font-Primary text-center">
+        <h1 className="text-6xl font-meidum text-black font-heroFont text-center">
           Our <span className="text-slate-500">Work Process</span>
         </h1>
         <div className="grid grid-cols-1 gap-y-20 mt-20">

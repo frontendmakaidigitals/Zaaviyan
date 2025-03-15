@@ -149,7 +149,7 @@ const Nav = () => {
         <Logo
           className={cn(
             lastScrollY == 0 ? "text-slate-50" : "text-slate-950",
-            `transition-colors duration-200`
+            `transition-colors duration-200 min-w-28 `
           )}
         />
         {/*<div className={`absolute right-8 top-0`} ref={menuRef}>
@@ -260,7 +260,7 @@ const Nav = () => {
             )
           )}
         </div>
-        <div />
+        <div className="min-w-28" />
       </div>
       
     </motion.div>

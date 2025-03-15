@@ -72,7 +72,7 @@ const CoreValue = () => {
       />
       <div className="w-full h-full absolute top-0 left-0 bg-slate-900/40" />
       <div className="container relative z-10">
-        <h1 className="text-6xl text-slate-50 font-[500] font-Primary text-center">
+        <h1 className="text-6xl text-slate-50 font-meidum font-heroFont text-center">
           Our{" "}
           <motion.span
             animate={{
