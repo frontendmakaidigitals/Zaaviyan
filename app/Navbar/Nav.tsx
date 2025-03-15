@@ -148,7 +148,7 @@ const Nav = () => {
       <div className="container relative flex justify-between items-center">
         <Logo
           className={cn(
-            lastScrollY == 0 ? "text-slate-950" : "text-slate-950",
+            lastScrollY == 0 ? "text-slate-50" : "text-slate-950",
             `transition-colors duration-200`
           )}
         />
@@ -212,13 +212,13 @@ const Nav = () => {
 
                 <AnimatePresence mode="wait">
                   {isMenuShowing && (
-                    <div className="absolute -translate-x-1/2   top-[100%] left-1/2 bg-transparent min-w-[400px]">
+                    <div className="absolute -translate-x-1/2   top-[100%] left-1/2 bg-transparent min-w-[430px]">
                       <motion.div
                         initial={{ height: '1px' }}
                         animate={{ height: '100%' }}
                         exit={{ height: '1px' }}
                         transition={{ ease: [0, 0, 0.2, 1] }}
-                        className="mt-[.48rem] overflow-hidden  bg-slate-50" // Close when leaving dropdown
+                        className="mt-[.48rem] overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_10px_10px_-15px] bg-slate-50" // Close when leaving dropdown
                       >
                         {menu.serviceList.map((service, index) => (
                           <motion.div
@@ -230,7 +230,7 @@ const Nav = () => {
                               ease: [0, 0, 0.2, 1],
                             }}
                             key={index}
-                            className={cn(`hover:bg-orange-100 px-5 py-3` , idx !== menu.serviceList.length -1 && ('border-b border-slate-400') )}
+                            className={cn(`hover:bg-orange-100 px-5 py-3` , index !== menu.serviceList.length -1 && ('border-b border-slate-400') )}
                           >
                             <Link
                               href={""}
@@ -260,7 +260,9 @@ const Nav = () => {
             )
           )}
         </div>
+        <div />
       </div>
+      
     </motion.div>
   );
 };

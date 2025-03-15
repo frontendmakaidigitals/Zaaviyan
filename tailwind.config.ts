@@ -24,7 +24,9 @@ export default {
         },
       },
       fontFamily : {
-        "Primary" : ['Didact Gothic', 'serif']
+        "Primary" : ['Didact Gothic', 'serif'],
+        "heroFont": ['Caudex', 'sans-serif'],
+        "secondaryFont" : ["Poiret One", "sans-serif"]
       },
       animation: {
         marquee: 'marquee var(--duration) linear infinite',

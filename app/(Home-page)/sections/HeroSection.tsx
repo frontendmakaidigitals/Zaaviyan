@@ -39,8 +39,8 @@ const HeroSection = () => {
       <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center">
         <div className="flex justify-center order-1 ">
           <div>
-            <h1 className="text-5xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl capitalize text-slate-50 text-left">
-              Bringing Your Dream <br /> Spaces to Life
+            <h1 className="text-5xl font-heroFont font-[600] md:text-7xl lg:text-5xl xl:text-6xl capitalize text-slate-50 text-left">
+              Bringing Your <span className="font-secondaryFont font-[500]">Dream</span> <br /> <span className="font-secondaryFont font-[500]">Spaces</span> to Life
             </h1>
             <p className=" text-slate-100  mt-3 text-md md:text-lg">
               At Zaaviyan Contracting, we craft bespoke interiors that blend

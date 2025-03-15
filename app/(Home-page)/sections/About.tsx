@@ -11,9 +11,9 @@ const About = () => {
       <div className=" grid grid-cols-1 lg:grid-cols-2 place-items-center gap-10">
         {/* Text Section */}
         <div className="w-full container pr-14 order-1">
-          <h2 className="text-6xl font-Primary font-[700]">
+          <h2 className="text-6xl font-heroFont font-[700]">
             Zaaviyan: The{" "}
-            <span className="bg-gradient-to-r from-[#FF4545] via-[#FA812F] to-[#FFB26F] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r font-secondaryFont from-[#FF4545] via-[#FA812F] to-[#FFB26F] bg-clip-text text-transparent">
               Zenith
             </span>{" "}
             of Excellence
