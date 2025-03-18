@@ -107,7 +107,13 @@ const GridSection = () => {
       </span>
     );
   };
+  const imgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"], // Smooth transition
+  });
 
+  const y = useTransform(scrollYProgress, [0, 1], [-50, 50]); // Subtle parallax effect
   return (
     <div className="mt-32">
       <h2 className="text-center text-6xl font-heroFont font-[500]">
@@ -116,14 +122,6 @@ const GridSection = () => {
 
       <div className="grid grid-cols-1 w-full mt-12">
         {interiorDesignServices.map((e, idx) => {
-          const imgRef = useRef(null);
-          const { scrollYProgress } = useScroll({
-            target: imgRef,
-            offset: ["start end", "end start"], // Smooth transition
-          });
-
-          const y = useTransform(scrollYProgress, [0, 1], [-50, 50]); // Subtle parallax effect
-
           return (
             <div className="grid grid-cols-2 items-center" key={idx}>
               <div
@@ -149,19 +147,7 @@ const GridSection = () => {
                   </p>
                 ))}
               </div>
-              <div
-                ref={imgRef}
-                className={cn(
-                  "relative overflow-hidden w-full h-full", // Fixed height to keep things aligned
-                  idx % 2 === 0 ? "order-2" : "order-1"
-                )}
-              >
-                <motion.img
-                  style={{ y, scale: 1.1 }} // Smooth effect without image spilling out
-                  className="w-full h-full object-cover"
-                  src={e.img}
-                />
-              </div>
+              <ParallaxImage src={e.img} idx={idx} />
             </div>
           );
         })}
@@ -171,3 +157,29 @@ const GridSection = () => {
 };
 
 export default GridSection;
+
+const ParallaxImage = ({ src, idx }: { src: string; idx: number }) => {
+  const imgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-20, 20]); // Subtle parallax effect
+
+  return (
+    <div
+      ref={imgRef}
+      className={cn(
+        "relative overflow-hidden w-full h-full", // Fixed height to keep things aligned
+        idx % 2 === 0 ? "order-2" : "order-1"
+      )}
+    >
+      <motion.img
+        style={{ y, scale: 1.05 }}
+        className="w-full h-full object-cover transition-transform duration-300 ease-out"
+        src={src}
+      />
+    </div>
+  );
+};

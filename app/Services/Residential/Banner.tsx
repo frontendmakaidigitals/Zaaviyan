@@ -5,10 +5,10 @@ const Banner = () => {
     <div className="w-full my-32">
       <div className="w-full container p-10 bg-[url('https://img.freepik.com/free-photo/empty-save-texture-room-light_1258-175.jpg')] bg-center bg-no-repeat bg-cover">
         <h2 className="text-3xl font-[600] font-Primary text-slate-950">
-          Let's Design Your Dream Space!
+          Let&apos;s Design Your Dream Space!
         </h2>
         <p className="text-slate-950 mt-2">
-          Whether you're looking to revamp your home, transform your office, or
+          Whether you&apos;re looking to revamp your home, transform your office, or
           create an exceptional commercial space, Zaaviyan is here to bring your
           vision to reality.
         </p>
