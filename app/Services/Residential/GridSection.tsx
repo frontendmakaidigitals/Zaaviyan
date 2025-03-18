@@ -115,7 +115,7 @@ const GridSection = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [-50, 50]); // Subtle parallax effect
   return (
-    <div className="mt-32">
+    <div className="mt-10">
       <h2 className="text-center text-6xl font-heroFont font-[500]">
         Our Speciality
       </h2>
