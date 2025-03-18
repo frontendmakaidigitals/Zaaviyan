@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Marquee from "@/app/App_Chunks/Components/Marquee";
-import { ArrowRight } from "@phosphor-icons/react";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 import { cn } from "@/app/lib/utils";
 import { GridPattern } from "@/app/App_Chunks/Components/GridPattern";
+
 const HeroSection = () => {
   const slider = [
     {
@@ -22,11 +23,16 @@ const HeroSection = () => {
 
   const firstRow = slider.slice(0, slider.length / 2);
   const secondRow = slider.slice(slider.length / 2);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="h-auto pb-16 lg:pb-0 lg:h-[99vh] relative w-full overflow-hidden bg-[#645f59]">
       {/* Left Arrow Button */}
-
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <GridPattern
         width={35}
         height={35}
@@ -50,7 +56,7 @@ const HeroSection = () => {
               vision to life with precision, creativity, and a commitment to
               excellence.
             </p>
-            <button className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+            <button onClick={()=>setIsOpen(true)} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
               <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
                 <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
               </div>
