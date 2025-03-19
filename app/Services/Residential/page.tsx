@@ -20,7 +20,7 @@ const Page = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="h-full w-full max-w-3xl -z-20 bg-gradient-to-b from-orange-100 absolute right-0 tpo-0 " />
+        <div className="h-full w-full max-w-3xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%]  absolute right-0 tpo-0 " />
         <div className="grid h-[730px] relative container place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="h-full left-0 absolute max-w-xl flex flex-col items-start justify-center">
             <h2 className="text-6xl bg-[#F7F7F7] p-2 font-heroFont">

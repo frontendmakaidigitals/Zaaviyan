@@ -148,8 +148,7 @@ const Nav = () => {
       <div className="container relative flex justify-between items-center">
         <Logo
           className={cn(
-            lastScrollY == 0 ? "text-slate-950" : "text-slate-950",
-            `transition-colors duration-200 min-w-28 `
+            `transition-colors duration-200 min-w-28 text-slate-950`
           )}
         />
         {/*<div className={`absolute right-8 top-0`} ref={menuRef}>

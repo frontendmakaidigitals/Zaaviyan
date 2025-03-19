@@ -28,7 +28,7 @@ const GridSection = () => {
         "Restaurant & Hospitality Interiors – We craft warm, inviting, and stylish interiors for restaurants, cafés, and hotels, ensuring an unforgettable customer experience.",
         "Co-Working Spaces & Startups – Developing flexible, modern, and collaborative work environments that inspire creativity and efficiency.",
       ],
-      class: "bg-slate-950 text-slate-50",
+      class: "bg-[rgb(100,95,89)] text-slate-50",
       img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
@@ -54,7 +54,7 @@ const GridSection = () => {
         "Material & Finish Selection – Carefully choosing elements that enhance beauty, durability, and practicality.",
         "Lighting & Color Consultation – Expert guidance on selecting the right tones, lighting styles, and placements for a harmonious environment.",
       ],
-      class: "bg-slate-950 text-slate-50",
+      class: "bg-[rgb(100,95,89)] text-slate-50",
       img: "https://images.unsplash.com/photo-1635054961796-be9cd02f8797?q=80&w=3067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
@@ -80,7 +80,7 @@ const GridSection = () => {
         "Smart Lighting Integration – Automated solutions for dynamic lighting control and energy efficiency.",
         "Natural & Artificial Light Optimization – Using windows, mirrors, and artificial lighting to enhance brightness and create a welcoming atmosphere.",
       ],
-      class: "bg-slate-950 text-slate-50",
+      class: "bg-[rgb(100,95,89)] text-slate-50",
       img: "https://images.unsplash.com/photo-1527853300662-dfbc10ae8e1e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
