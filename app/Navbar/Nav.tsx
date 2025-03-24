@@ -185,7 +185,7 @@ const Nav = () => {
           </div>
         </div> */}
 
-        <div className="flex items-center bg-gradient-to-b gap-2 border from-white to-slate-100 p-[.4rem] rounded-xl">
+        <div className="hidden lg:flex items-center bg-gradient-to-b gap-2 border from-white to-slate-100 p-[.4rem] rounded-xl">
           {menus.map((menu, idx) =>
             menu.serviceList ? (
               <div
@@ -216,7 +216,7 @@ const Nav = () => {
                         initial={{ height: '1px' }}
                         animate={{ height: '100%' }}
                         exit={{ height: '1px' }}
-                        transition={{ ease: [0, 0, 0.2, 1] }}
+                        transition={{ ease: [0.25, 0.46, 0.45, 0.94] }}
                         className="mt-[.48rem] overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_10px_10px_-15px] bg-slate-50" // Close when leaving dropdown
                       >
                         {menu.serviceList.map((service, index) => (

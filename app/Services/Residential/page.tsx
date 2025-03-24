@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { VelocityScroll } from "@/app/App_Chunks/Components/InfiniteScroll";
-import { Circle } from "@phosphor-icons/react";
+import "@/app/globals.css";
 import GridSection from "./GridSection";
 import Choose from "./Choose";
 import Banner from "./Banner";
@@ -11,25 +10,31 @@ const Page = () => {
 
   return (
     <main className="">
-      <div className="relative ">
-        <div className="w-[500px] absolute right-0 -z-10 bottom-0  h-[400px] bg-slate-100">
-          <img
+      <div className="relative overflow-hidden">
+        <div className="w-[240px] hidden lg:block h-[160px] lg:w-[500px] lg:h-[400px] absolute right-0 -z-10 bottom-0 bg-slate-100">
+          <motion.img
+            animate={{ scale: [1.25, 1], opacity: [0, 1] }}
+            transition={{
+              duration: 0.7,
+              ease: [0.25, 0.46, 0.45, 0.94],
+              delay: 0.2,
+            }}
             src={
-              "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="h-full w-full max-w-3xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%]  absolute right-0 tpo-0 " />
-        <div className="grid h-[730px] relative container place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="h-full left-0 absolute max-w-xl flex flex-col items-start justify-center">
-            <h2 className="text-6xl bg-[#F7F7F7] p-2 font-heroFont">
+        <div className="h-full w-full max-w-4xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%]  absolute right-0 top-0 " />
+        <div className="grid h-[600px] mt-32 lg:mt-0 lg:h-[730px]  relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="h-full left-0 absolute w-full lg:max-w-2xl container flex flex-col items-start justify-center">
+            <h2 className="text-4xl lg:text-6xl py-2 bg-[#F7F7F7]  font-heroFont">
               Interior{" "}
               <span className="font-secondaryFont">Design & Development</span>{" "}
               Services
             </h2>
             <div>
-              <p className="text-lg mt-4 max-w-lg pr-10">
+              <p className="text-lg mt-4 w-full lg:max-w-md pr-10">
                 At Zaaviyan, we create timeless, functional, and luxurious
                 interiors that reflect individuality and elegance. Our expertise
                 in interior design spans residential, commercial, and
@@ -58,17 +63,17 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-full h-full flex items-center absolute max-w-3xl right-8 -z-10">
+          <div className="w-full h-full flex items-center absolute max-w-xs lg:max-w-3xl bottom-[211px] lg:top-0 right-0 lg:right-8 -z-10">
             <motion.img
               src={
                 "https://images.unsplash.com/photo-1537726235470-8504e3beef77?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               }
-              className={``}
+              animate={{ scale: [1.25, 1], opacity: [0, 1] }}
+              transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             />
           </div>
         </div>
       </div>
-
       <GridSection />
       <Choose />
       <Banner />

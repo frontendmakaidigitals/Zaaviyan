@@ -123,10 +123,10 @@ const GridSection = () => {
       <div className="grid grid-cols-1 w-full mt-12">
         {interiorDesignServices.map((e, idx) => {
           return (
-            <div className="grid grid-cols-2 items-center" key={idx}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center" key={idx}>
               <div
                 className={cn(
-                  `p-20`,
+                  `p-10 lg:p-20`,
                   idx % 2 === 0 ? "order-1" : "order-2",
                   e.class
                 )}

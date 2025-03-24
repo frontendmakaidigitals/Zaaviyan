@@ -4,14 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/app/lib/utils";
 
 const Services = () => {
-  const viewContainer = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: viewContainer,
-    offset: ["start end", "end start"],
-  });
-
-  // Subtle parallax effect
-  const y = useTransform(scrollYProgress, [0, 0.8], [-200, 200]); // Less movement
 
   const services = [
     {
@@ -74,7 +66,6 @@ const Services = () => {
         </h1>
 
         <div
-          ref={viewContainer}
           className="grid gap-y-5 grid-cols-1 w-full mt-20"
         >
           {services.map((elem, idx) => {
@@ -94,7 +85,9 @@ const Services = () => {
                     idx % 2 !== 0 ? "order-2 lg:order-2" : "order-2 lg:order-1"
                   )}
                 >
-                  <h3 className="text-4xl font-heroFont  text-center">{elem.name}</h3>
+                  <h3 className="text-4xl font-heroFont  text-center">
+                    {elem.name}
+                  </h3>
                   <p className="text-center mt-3 text-slate-800">{elem.desc}</p>
                 </div>
                 <motion.div
@@ -103,12 +96,7 @@ const Services = () => {
                     idx % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
                   )}
                 >
-                  <motion.div style={{ y }} className="w-full h-full">
-                    <img
-                      className="w-full scale-[2.5] h-full object-contain"
-                      src={elem.img}
-                    />
-                  </motion.div>
+                  <ParallaxImage src={elem.img} idx={idx} />
                 </motion.div>
               </div>
             );
@@ -120,3 +108,29 @@ const Services = () => {
 };
 
 export default Services;
+
+const ParallaxImage = ({ src, idx }: { src: string; idx: number }) => {
+  const imgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-20, 20]); // Subtle parallax effect
+
+  return (
+    <div
+      ref={imgRef}
+      className={cn(
+        "relative overflow-hidden w-full h-full", // Fixed height to keep things aligned
+        idx % 2 === 0 ? "order-2" : "order-1"
+      )}
+    >
+      <motion.img
+        style={{ y, scale: 1.05 }}
+        className="w-full h-full object-cover transition-transform duration-300 ease-out"
+        src={src}
+      />
+    </div>
+  );
+};
