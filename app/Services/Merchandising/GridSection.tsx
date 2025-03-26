@@ -15,7 +15,7 @@ const GridSection = () => {
         "Brand-Focused Display Designs – Tailored displays to showcase your products while reinforcing your brand’s message."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1600249527929-01e849c997e8?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1589561253898-768105ca91a8?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Window Displays & Store Layouts",
@@ -28,7 +28,7 @@ const GridSection = () => {
         "Thematic & Seasonal Display Setups – Designing displays that reflect trends, seasons, and special promotions."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1562813733-b31f71025d51?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Custom Fixtures & Fittings",
@@ -41,7 +41,7 @@ const GridSection = () => {
         "Luxury Finishes & Materials – High-quality materials and finishes that elevate the overall store aesthetics."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1595502124338-24f22d5415be?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1619439677623-6f881c7be58f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Seasonal & Promotional Displays",
@@ -54,7 +54,7 @@ const GridSection = () => {
         "Interactive Display Solutions – Engaging setups that encourage customer interaction and product exploration."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1585066521786-d87e53f3b31b?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1580828343064-fde4fc206bc6?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Digital Integration & Interactive Displays",
@@ -67,7 +67,7 @@ const GridSection = () => {
         "Augmented Reality (AR) Displays – Cutting-edge AR technology that provides an immersive shopping experience."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1534539466112-5a4cc1a36944?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1599762427626-e11d2df73ed6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Installation & Execution",
@@ -80,7 +80,7 @@ const GridSection = () => {
         "Post-Installation Support – Ongoing assistance to maintain the visual integrity of your store."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1549388604-817d15aa0110?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1610128833542-9e1d6c6133cb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 

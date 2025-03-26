@@ -27,21 +27,18 @@ const Page = () => {
         </div>
         <div className="h-full w-full max-w-4xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%] to-[#F7F7F7] to-[70%] absolute right-0 top-0 " />
         <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-2xl container flex flex-col items-start justify-center">
-            <h2 className="text-3xl md:text-2xl lg:text-5xl xl:text-6xl py-2 bg-[#F7F7F7]  font-heroFont">
-              Joinery <span className="font-secondaryFont">and</span> Woodcraft
+          <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-auto container flex flex-col items-start justify-center">
+            <h2 className="text-3xl md:text-2xl lg:text-5xl py-2 pr-5 bg-[#F7F7F7]  font-heroFont">
+              Expert Carpentry,{" "}
+              <span className="font-secondaryFont">Crafted to</span> Perfection
             </h2>
             <div>
               <p className="md:text-[.8rem] xl:text-lg mt-4 w-full md:max-w-xs lg:max-w-sm xl:max-w-md md:pr-8 lg:pr-10">
-                We specialize in creating bespoke wooden solutions, blending
-                functionality with aesthetics to transform spaces. Our team of
-                highly skilled carpenters and designers is dedicated to crafting
-                unique woodwork that reflects elegance, durability, and
-                precision. Whether you are looking for custom-built furniture,
-                intricate joinery, or high-quality interior wood solutions,
-                Zaaviyan Carpentry is your trusted partner in bringing your
-                vision to life. Explore our services and experience the art of
-                fine carpentry with a touch of excellence and creativity.
+                Zaaviyan Carpentry specializes in bespoke wooden solutions,
+                seamlessly blending functionality with elegance. From custom
+                furniture to intricate joinery, our skilled craftsmen ensure
+                precision, durability, and timeless design to bring your vision
+                to life.
               </p>
               <button
                 onClick={() => setIsOpen(true)}

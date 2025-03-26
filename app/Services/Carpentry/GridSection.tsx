@@ -15,7 +15,7 @@ const GridSection = () => {
         "Design Options – Contemporary, rustic, and traditional designs available.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Joinery & Woodwork",
@@ -28,7 +28,7 @@ const GridSection = () => {
         "Architectural Woodwork – Expert craftsmanship for unique designs.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1586509569974-3af5bbdc4e53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Interior Wood Solutions",
@@ -41,7 +41,7 @@ const GridSection = () => {
         "Customization – Woodwork tailored to your specific interior design.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1524190952534-79b1f7d6ad5c?q=80&w=2880&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1613685303213-1f646ca61306?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Cabinetry & Storage Solutions",
@@ -54,7 +54,7 @@ const GridSection = () => {
         "Finishing Options – A variety of materials and styles to match your interiors.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1635054961796-be9cd02f8797?q=80&w=3067&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1628843201283-2ca32147ad3e?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Outdoor Woodwork",
@@ -67,7 +67,7 @@ const GridSection = () => {
         "Custom Designs – Outdoor woodwork built to match your landscaping.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1582345486418-0eeaeecb5dda?q=80&w=2940&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1738293728561-d7057a3ad74f?q=80&w=2992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Wood Restoration & Repair",
@@ -80,7 +80,7 @@ const GridSection = () => {
         "Authenticity Preservation – Restoring woodwork while maintaining its original charm.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2940&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1580403444499-062473f715d5?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Commercial Woodwork Solutions",
@@ -93,7 +93,7 @@ const GridSection = () => {
         "Brand-Aligned Designs – Unique wood installations that enhance business identity.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1560846389-956694677531?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

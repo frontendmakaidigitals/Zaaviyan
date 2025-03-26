@@ -16,7 +16,7 @@ const GridSection = () => {
         "Smart Home Integration – Upgrading your home with automation solutions like smart lighting and remote-controlled devices.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1565060054075-27933121c75e?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1576446468729-7674e99608f5?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Plumbing Solutions",
@@ -30,7 +30,7 @@ const GridSection = () => {
         "Pipe Replacement & Maintenance – Upgrading old or damaged pipes to improve water pressure and efficiency.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1591085686350-7986a4aa8c18?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1521207418485-99c705420785?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "AC & HVAC Services",
@@ -44,7 +44,7 @@ const GridSection = () => {
         "Emergency AC Repairs – Quick response to breakdowns and malfunctions to restore cooling comfort.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1596558450265-e05d3c8df4b0?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1724958337802-2ac3cd31baa6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Carpentry & Joinery",
@@ -58,7 +58,7 @@ const GridSection = () => {
         "Shelving & Storage Solutions – Installing custom-built shelves and storage units for efficient space management.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Painting & Wall Repairs",
@@ -72,7 +72,7 @@ const GridSection = () => {
         "Ceiling & Moulding Touch-Ups – Restoring and repainting ceilings, cornices, and skirting boards.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1614631271744-6922f60b7d88?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=3231&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Masonry & Tiling",
@@ -86,7 +86,7 @@ const GridSection = () => {
         "Driveway & Patio Restoration – Repairing cracks and resurfacing outdoor areas for a polished look.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1615873968403-cd45b5ae7914?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1529267372240-e9a679a81f43?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "General Handyman Services",
@@ -100,7 +100,7 @@ const GridSection = () => {
         "Emergency Repairs & Quick Fixes – Providing immediate solutions for unexpected household issues.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1527549993586-dff825b37782?q=80&w=3000&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1641233456202-53937b71aa91?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

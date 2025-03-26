@@ -16,7 +16,7 @@ const GridSection = () => {
         "M&E (Mechanical & Electrical) Systems – Upgrading electrical systems, data cabling, air conditioning, and lighting to meet your operational needs."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1589656966893-3a1df3f52e3d?q=80&w=2880&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Retail Fit-outs",
@@ -30,7 +30,7 @@ const GridSection = () => {
         "Compliance & Safety – Ensuring all retail fit-outs comply with local regulations and safety standards."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1600349782489-45ac141f4e35?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1584472376859-889e77a8ccac?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Residential Fit-outs",
@@ -44,7 +44,7 @@ const GridSection = () => {
         "Renovations & Extensions – Expanding or renovating existing spaces to increase functionality and improve aesthetics."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1615873968405-9f78294a08ce?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/flagged/photo-1556438758-872c68902f60?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Hospitality Fit-outs",
@@ -58,7 +58,7 @@ const GridSection = () => {
         "Sustainability – Incorporating sustainable materials and energy-efficient solutions to reduce environmental impact."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1533307101234-91c6c2ae3f71?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Property Renovations & Refurbishments",
@@ -72,7 +72,7 @@ const GridSection = () => {
         "Sustainable Solutions – Using eco-friendly materials and practices to minimize environmental impact and increase energy efficiency."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2880&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1599619585752-c3edb42a414c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Space Planning & Design",
@@ -85,7 +85,7 @@ const GridSection = () => {
         "Accessibility & Ergonomics – Ensuring the design accommodates all users, promoting comfort and accessibility for every individual."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1625585598750-3535fe40efb3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Mechanical & Electrical Systems (M&E)",
@@ -98,7 +98,7 @@ const GridSection = () => {
         "Energy Efficiency – Implementing energy-saving solutions such as LED lighting, energy-efficient HVAC systems, and smart building technology."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1594542971113-b51c39a84a2b?q=80&w=2880&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1608574839637-2f7d0290d01d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 

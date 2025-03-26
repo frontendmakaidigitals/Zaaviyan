@@ -16,7 +16,7 @@ const GridSection = () => {
         "Timely Project Delivery – On-time completion with minimal disruption to your business."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1604328698692-5431775170b1?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Residential Design & Fitouts",
@@ -30,7 +30,7 @@ const GridSection = () => {
         "Energy Efficiency – Sustainable solutions to save energy and reduce costs."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1560448070-0723cba5e400?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1494380982332-dfc36fbfece6?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Renovations & Refurbishments",
@@ -44,7 +44,7 @@ const GridSection = () => {
         "Seamless Integration – Combining new elements harmoniously with the existing architecture."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36a?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "New Builds & Developments",
@@ -58,7 +58,7 @@ const GridSection = () => {
         "Durability & Quality – Long-term durability and attention to detail in every build."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1522057306606-695dd92f1e72?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1551295022-de5522c94e08?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 

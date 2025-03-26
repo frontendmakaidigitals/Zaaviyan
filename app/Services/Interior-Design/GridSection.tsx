@@ -28,7 +28,7 @@ const GridSection = () => {
         "Acoustic Wood Paneling – Sound-insulating wood panels perfect for offices, studios, and home theaters."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1563212107-c0cd3b51dc0e?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Wooden Doors & Partitioning Solutions",
@@ -41,7 +41,7 @@ const GridSection = () => {
         "Decorative Carved Doors – Handcrafted doors with intricate detailing inspired by Arabic, Moroccan, and contemporary designs."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1524190952534-79b1f7d6ad5c?q=80&w=2880&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1516551633610-2e498bfc3ee8?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Reception Counters & Commercial Joinery",
@@ -54,7 +54,7 @@ const GridSection = () => {
         "Restaurant & Bar Joinery – Custom bar counters, seating booths, wall paneling, and storage units."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1635054961796-be9cd02f8797?q=80&w=3067&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1608979827489-2b855e79debe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Staircases & Railings",
@@ -66,7 +66,7 @@ const GridSection = () => {
         "Under-Stair Storage Solutions – Smartly designed drawers, cabinets, or shelving for maximizing space."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2940&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1610694858449-0079cf6a5b96?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Outdoor & Garden Joinery",
@@ -79,7 +79,7 @@ const GridSection = () => {
         "Fencing & Privacy Screens – Decorative wooden fences that offer both security and aesthetic appeal."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1582345486418-0eeaeecb5dda?q=80&w=2940&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1550948390-6eb7fa773072?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 

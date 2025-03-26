@@ -17,7 +17,7 @@ const GridSection = () => {
         "Eco-Friendly Options – Sustainable and responsibly sourced materials.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1497219055242-93359eeed651?q=80&w=2949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Turnkey Fit-Out Solutions",
@@ -47,7 +47,7 @@ const GridSection = () => {
         "Seamless Installation – Expert handling for a perfect, flawless fit.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1524190952534-79b1f7d6ad5c?q=80&w=2880&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1426927308491-6380b6a9936f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Luxury Interior Enhancements",
@@ -62,7 +62,7 @@ const GridSection = () => {
         "Luxury Material Combinations – Blending wood, glass, marble, and metal for a premium touch.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1635054961796-be9cd02f8797?q=80&w=3067&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Renovation & Refurbishment",
@@ -77,7 +77,7 @@ const GridSection = () => {
         "Efficient Project Management – Timely completion with minimal disruption.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1582345486418-0eeaeecb5dda?q=80&w=2940&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1444419988131-046ed4e5ffd6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1586335925834-44121c1679c6?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

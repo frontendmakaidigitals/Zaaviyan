@@ -34,7 +34,7 @@ const Nav = () => {
         { name: "Visual Merchandising & Shop Display", route:"/Services/Merchandising" },
         { name: "Architecture Design", route:"/Services/Architecture" },
         { name: "Retail Turnkey Solutions", route:"/Services/Retail-Turnkey" },
-        { name: "Home Maintenance", route:"/Services/Home Maintenance" },
+        { name: "Home Maintenance", route:"/Services/Home-Maintenance" },
         { name: "Space Renovation", route:"/Services/" },
       ],
       route: "",

@@ -14,7 +14,7 @@ const GridSection = () => {
         "Customer Experience Focus – Crafting immersive environments that captivate visitors and enhance brand loyalty."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1521747116042-5a810fda9664?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Space Planning & Layout Optimization",
@@ -26,7 +26,7 @@ const GridSection = () => {
         "Efficiency & Accessibility – Ensuring ergonomic designs that cater to diverse customer needs and provide ease of navigation."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1596081441728-c638f5a9369b?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1630699144339-420f59b4747b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Interior Design & Custom Fit-outs",
@@ -38,7 +38,7 @@ const GridSection = () => {
         "Theme-Based Interiors – Developing aesthetic designs that align with your brand’s personality, whether minimalistic, luxurious, or avant-garde."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1604014237744-8ab7ee34cf26?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Procurement & Material Selection",
@@ -50,7 +50,7 @@ const GridSection = () => {
         "Vendor Coordination – Managing procurement logistics and coordinating with reliable suppliers to guarantee timely delivery."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1571508606961-815ad7d19eb3?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1580060372014-711bda378d20?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Project Management & Execution",
@@ -62,7 +62,7 @@ const GridSection = () => {
         "Quality Assurance – Conducting strict inspections at every stage to maintain high standards of craftsmanship."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1565182999561-3ef81b2dbba6?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "MEP & Technical Installations",
@@ -74,7 +74,7 @@ const GridSection = () => {
         "Safety & Compliance – Adhering to industry regulations and implementing fire safety, security, and electrical safety measures."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Branding & Visual Merchandising",
@@ -86,7 +86,7 @@ const GridSection = () => {
         "Digital Integration – Integrating digital signage, interactive displays, and technology-driven elements for an engaging shopping environment."
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1609058263114-1a96a45888d6?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       title: "Handover & Post-Completion Support",
@@ -98,7 +98,7 @@ const GridSection = () => {
         "Ongoing Support – Offering after-sales service, maintenance, and updates to keep your store in prime condition."
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1591899916139-e96af46c0505?q=80&w=3000&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ];
 
