@@ -2,12 +2,90 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@/app/globals.css";
-import GridSection from "./GridSection";
+import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
 import Banner from "./Banner";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const joineryServices = [
+    {
+      title: "Bespoke Furniture & Cabinetry",
+      description:
+        "Custom-crafted furniture is the key to achieving a cohesive and well-structured interior. Our bespoke furniture and cabinetry solutions are designed to meet both aesthetic and practical needs.",
+      solutions: [
+        "Luxury Wardrobes & Closets – Fitted and walk-in wardrobes with smart storage, custom shelving, built-in lighting, and soft-close mechanisms.",
+        "Custom Kitchen Cabinets – Precision-crafted cabinetry with finishes ranging from high-gloss modern to classic wooden textures.",
+        "Bathroom Vanities & Storage Units – Moisture-resistant vanity units with integrated storage, sleek countertops, and high-end hardware.",
+        "Media & Entertainment Units – Custom-designed TV units, bookshelves, and storage cabinets that blend seamlessly into your home's design."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop"
+    },
+    {
+      title: "Custom Wood Paneling & Wall Treatments",
+      description:
+        "Wood paneling adds warmth, character, and sophistication to any interior space. Our tailor-made paneling solutions elevate both traditional and contemporary interiors.",
+      solutions: [
+        "Decorative Wall Panels – Premium wood panels with intricate carvings, geometric designs, and 3D effects.",
+        "Ceiling Paneling & Beams – Rustic wooden beams or sleek modern panels that add depth and texture.",
+        "Wainscoting & Molding – Classic and modern wainscoting options for sophistication and wall protection.",
+        "Acoustic Wood Paneling – Sound-insulating wood panels perfect for offices, studios, and home theaters."
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1563212107-c0cd3b51dc0e?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Wooden Doors & Partitioning Solutions",
+      description:
+        "Doors and partitions define spaces, improve privacy, and enhance interior style. We craft high-quality, custom wooden doors and partitions to suit any design scheme.",
+      solutions: [
+        "Interior & Exterior Doors – Solid wood and glass-paneled doors with unique patterns and engravings.",
+        "Sliding & Folding Doors – Space-saving solutions with smooth mechanisms for modern interiors.",
+        "Wooden Room Dividers & Partitions – Custom dividers for privacy while maintaining an airy feel.",
+        "Decorative Carved Doors – Handcrafted doors with intricate detailing inspired by Arabic, Moroccan, and contemporary designs."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1516551633610-2e498bfc3ee8?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Reception Counters & Commercial Joinery",
+      description:
+        "A well-designed commercial space creates a lasting impression. Our custom joinery solutions enhance brand identity while ensuring practicality.",
+      solutions: [
+        "Reception & Lobby Counters – Elegant and functional reception desks tailored to brand aesthetics.",
+        "Retail Display Units & Shelving – Custom wooden shelving, racks, and display stands for organized product showcasing.",
+        "Office Desks & Workstations – Ergonomic and stylish office furniture designed for productivity.",
+        "Restaurant & Bar Joinery – Custom bar counters, seating booths, wall paneling, and storage units."
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1608979827489-2b855e79debe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Staircases & Railings",
+      description:
+        "A beautifully crafted staircase can be a statement piece. Our custom staircases combine structural integrity, functionality, and elegance.",
+      solutions: [
+        "Traditional & Modern Staircases – Grand staircases, floating designs, and contemporary geometric styles.",
+        "Handrails & Balustrades – Premium wood, metal, or glass handrails ensuring safety and aesthetics.",
+        "Under-Stair Storage Solutions – Smartly designed drawers, cabinets, or shelving for maximizing space."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1610694858449-0079cf6a5b96?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Outdoor & Garden Joinery",
+      description:
+        "Outdoor wooden structures add warmth, charm, and functionality. Our custom solutions withstand weather conditions while maintaining beauty.",
+      solutions: [
+        "Pergolas & Gazebos – Custom wooden structures for gardens, poolside areas, and patios.",
+        "Decking & Flooring – Durable wooden decking solutions resistant to weathering.",
+        "Outdoor Seating & Benches – Stylish, comfortable wooden furniture for gardens and public areas.",
+        "Fencing & Privacy Screens – Decorative wooden fences that offer both security and aesthetic appeal."
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1550948390-6eb7fa773072?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ];
   return (
     <main className="">
       <div className="relative overflow-hidden">
@@ -74,7 +152,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection />
+      <GridSection data={joineryServices} />
       <Choose />
       <Banner />
     </main>

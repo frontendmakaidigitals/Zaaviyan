@@ -2,12 +2,111 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@/app/globals.css";
-import GridSection from "./GridSection";
+import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
 import Banner from "./Banner";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const merchandiseService = [
+    {
+      title: "Electrical Maintenance",
+      description:
+        "We provide reliable electrical maintenance services to ensure the safety, efficiency, and longevity of your electrical systems.",
+      solutions: [
+        "Repairs & Troubleshooting – Diagnosing and fixing electrical faults, power failures, and circuit issues to restore functionality.",
+        "New Installations & Upgrades – Installing modern electrical fixtures, outlets, and energy-efficient lighting solutions.",
+        "Wiring & Rewiring – Ensuring safe and efficient electrical connections throughout your home.",
+        "Safety Inspections & Compliance – Conducting professional assessments to identify hazards and ensure adherence to safety standards.",
+        "Smart Home Integration – Upgrading your home with automation solutions like smart lighting and remote-controlled devices.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1576446468729-7674e99608f5?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Plumbing Solutions",
+      description:
+        "We offer comprehensive plumbing services to keep your water systems in top condition, preventing leaks and ensuring smooth operation.",
+      solutions: [
+        "Leak Detection & Repairs – Identifying and fixing leaks in pipes, faucets, and water lines to prevent water damage.",
+        "Water Heater Services – Installation, repair, and maintenance of water heating systems for optimal performance.",
+        "Drain Cleaning & Unblocking – Clearing clogged drains, sinks, and sewer lines for uninterrupted water flow.",
+        "Bathroom & Kitchen Plumbing – Repairing and installing sinks, toilets, showers, and faucets.",
+        "Pipe Replacement & Maintenance – Upgrading old or damaged pipes to improve water pressure and efficiency.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1521207418485-99c705420785?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "AC & HVAC Services",
+      description:
+        "Stay comfortable all year round with our air conditioning and HVAC maintenance services.",
+      solutions: [
+        "AC Servicing & Repairs – Cleaning filters, gas refilling, and fixing AC units to maintain cooling efficiency.",
+        "HVAC System Installation – Setting up and maintaining heating, ventilation, and cooling systems.",
+        "Duct Cleaning & Air Quality Control – Removing dust, allergens, and pollutants for a healthier indoor environment.",
+        "Thermostat Installation & Calibration – Ensuring accurate temperature control and energy efficiency.",
+        "Emergency AC Repairs – Quick response to breakdowns and malfunctions to restore cooling comfort.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1724958337802-2ac3cd31baa6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Carpentry & Joinery",
+      description:
+        "Our skilled carpenters provide custom solutions to enhance your home's aesthetics and functionality.",
+      solutions: [
+        "Furniture Repairs & Assembly – Fixing broken furniture, assembling new pieces, and restoring wooden fittings.",
+        "Doors & Windows Maintenance – Repairing, adjusting, and installing doors, windows, and locks for security and durability.",
+        "Custom Woodwork & Joinery – Creating bespoke cabinets, wardrobes, and decorative wood panels.",
+        "Flooring Repairs & Refinishing – Restoring wooden flooring, parquet, and laminate surfaces.",
+        "Shelving & Storage Solutions – Installing custom-built shelves and storage units for efficient space management.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Painting & Wall Repairs",
+      description:
+        "Give your home a fresh new look with our professional painting and wall restoration services.",
+      solutions: [
+        "Interior & Exterior Painting – Using high-quality paints for a smooth, durable, and elegant finish.",
+        "Wall Crack & Damp Proofing – Repairing structural cracks, sealing leaks, and applying moisture-resistant coatings.",
+        "Wallpaper Installation & Removal – Installing stylish wallpapers and safely removing outdated designs.",
+        "Texture & Decorative Finishes – Adding accent walls, textured coatings, and decorative paint techniques.",
+        "Ceiling & Moulding Touch-Ups – Restoring and repainting ceilings, cornices, and skirting boards.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=3231&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Masonry & Tiling",
+      description:
+        "Enhance your home’s durability and aesthetics with expert masonry and tiling solutions.",
+      solutions: [
+        "Tile Replacement & New Installations – Fixing broken tiles or installing new flooring and wall tiles.",
+        "Grouting & Sealing Services – Restoring grout lines and sealing surfaces to prevent water damage and mold growth.",
+        "Brick & Stonework Maintenance – Repairing outdoor walls, pathways, and decorative stone features.",
+        "Bathroom & Kitchen Tiling – Enhancing surfaces with high-quality tiles for durability and easy maintenance.",
+        "Driveway & Patio Restoration – Repairing cracks and resurfacing outdoor areas for a polished look.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1529267372240-e9a679a81f43?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "General Handyman Services",
+      description:
+        "From minor fixes to complete home improvements, our handyman services cover all your maintenance needs.",
+      solutions: [
+        "Fixture Installations – Mounting shelves, TVs, curtain rods, mirrors, and light fixtures securely.",
+        "Minor Home Repairs – Fixing small damages, including loose hinges, doorknobs, and squeaky doors.",
+        "Furniture Assembly & Adjustments – Setting up new furniture and making adjustments for perfect alignment.",
+        "General Home Improvements – Assisting with DIY projects and enhancing living spaces with small upgrades.",
+        "Emergency Repairs & Quick Fixes – Providing immediate solutions for unexpected household issues.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1641233456202-53937b71aa91?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
   return (
     <main className="">
       <div className="relative overflow-hidden">
@@ -76,7 +175,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection />
+      <GridSection  data={merchandiseService}/>
       <Choose />
       <Banner />
     </main>

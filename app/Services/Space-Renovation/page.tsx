@@ -2,12 +2,83 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@/app/globals.css";
-import GridSection from "./GridSection";
+import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
 import Banner from "./Banner";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const renovationServices = [
+    {
+      title: "Complete Renovations",
+      description:
+        "We reimagine every aspect of your space, ensuring it aligns with both aesthetic desires and functional requirements for a complete transformation.",
+      solutions: [
+        "Full-Scope Redesign – Comprehensive structural updates and finishing touches.",
+        "Custom Solutions – Tailored renovation plans to match your needs and budget.",
+        "Quality Assurance – High standards in materials, workmanship, and finishes.",
+        "Timely Execution – Adherence to project timelines for efficient completion.",
+        "Space Optimization – Intelligent layouts that enhance functionality and flow."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Office Fit-Outs",
+      description:
+        "Enhance productivity and reflect your company’s identity with expertly designed office spaces that foster creativity and efficiency.",
+      solutions: [
+        "Customized Layouts – Workspaces designed for optimal workflow and comfort.",
+        "Employee Well-Being – Ergonomic and inspiring environments for teams.",
+        "Brand Integration – Aligning design elements with your corporate identity.",
+        "Tech Integration – Seamless incorporation of technology for efficiency.",
+        "Efficient Delivery – Timely completion with minimal disruption."
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=1027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Retail & Commercial Spaces",
+      description:
+        "Create memorable customer experiences with interior designs that highlight your brand while ensuring functionality and comfort.",
+      solutions: [
+        "Brand-Centric Design – Interiors that reinforce your brand identity.",
+        "Customer-Centric Layouts – Optimized spaces for customer interaction.",
+        "Premium Finishes – High-quality materials for durability and aesthetics.",
+        "Flexible Designs – Adaptable layouts to meet evolving business needs.",
+        "Sustainable Solutions – Eco-friendly materials with modern aesthetics."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1584214344297-5f7648d939df?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Luxury Residences",
+      description:
+        "Transform your home into a luxurious and comfortable space that perfectly aligns with your personal style and functional needs.",
+      solutions: [
+        "Bespoke Interior Design – Personalized aesthetics and high-end decor.",
+        "High-End Finishes – Premium materials that enhance elegance and durability.",
+        "Space Maximization – Smart layouts for a sense of openness and flow.",
+        "Attention to Detail – Meticulous craftsmanship in every aspect.",
+        "Luxury Integration – Smart home features, ambient lighting, and more."
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      title: "Project Management",
+      description:
+        "Ensure seamless renovation execution with expert oversight, transparent communication, and efficient coordination.",
+      solutions: [
+        "Comprehensive Planning – Phased project execution for smooth progress.",
+        "Clear Communication – Regular updates and feedback loops.",
+        "Budget Management – Cost-effective solutions without quality compromise.",
+        "Vendor Coordination – Efficient scheduling and collaboration with contractors.",
+        "Quality Control – Strict checks to maintain high standards."
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ];
   return (
     <main className="">
       <div className="relative overflow-hidden">
@@ -78,7 +149,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection />
+      <GridSection data={renovationServices} />
       <Choose />
       <Banner />
     </main>

@@ -2,12 +2,104 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@/app/globals.css";
-import GridSection from "./GridSection";
+import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
 import Banner from "./Banner";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const carpentry = [
+    {
+      title: "Custom Furniture",
+      description:
+        "Our custom furniture solutions bring style, comfort, and functionality to your home or office. Each piece is carefully crafted to match your preferences, ensuring a unique touch to your interiors.",
+      solutions: [
+        "Personalized Designs – Bespoke furniture tailored to your style and space.",
+        "Furniture Variety – Handcrafted dining tables, coffee tables, bed frames, office desks, and more.",
+        "Quality Materials – Premium quality wood with superior finishes.",
+        "Design Options – Contemporary, rustic, and traditional designs available.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Joinery & Woodwork",
+      description:
+        "We offer expert joinery services that enhance the aesthetics and structural integrity of your space. Our precision woodwork ensures durability and timeless beauty.",
+      solutions: [
+        "Doors & Windows – Custom-built wooden doors and window frames.",
+        "Staircases & Partitions – Elegant staircases and wooden partitioning solutions.",
+        "Decorative Moldings – Intricate wood paneling and decorative moldings.",
+        "Architectural Woodwork – Expert craftsmanship for unique designs.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1586509569974-3af5bbdc4e53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Interior Wood Solutions",
+      description:
+        "Transform your interiors with exquisite wooden elements that add warmth and sophistication to any space. From flooring to wall paneling, we provide elegant solutions to elevate your ambiance.",
+      solutions: [
+        "Flooring Solutions – Wooden flooring options, including solid and engineered wood.",
+        "Ceilings & Walls – Elegant wood paneling and ceiling designs.",
+        "Accent Features – Stylish wooden accents to enhance aesthetics.",
+        "Customization – Woodwork tailored to your specific interior design.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1613685303213-1f646ca61306?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Cabinetry & Storage Solutions",
+      description:
+        "We design and build custom storage solutions that maximize space while complementing the aesthetics of your interiors. Our cabinetry is functional, stylish, and built to last.",
+      solutions: [
+        "Wardrobes & Closets – Custom-built wardrobes for organized storage.",
+        "Kitchen & Vanity Units – High-quality kitchen cabinets and bathroom vanities.",
+        "Smart Storage Designs – Space-saving and multi-functional storage solutions.",
+        "Finishing Options – A variety of materials and styles to match your interiors.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1628843201283-2ca32147ad3e?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Outdoor Woodwork",
+      description:
+        "Enhance your outdoor spaces with our expertly crafted wooden structures. Our durable outdoor woodwork is designed to withstand the elements while adding a touch of elegance.",
+      solutions: [
+        "Pergolas & Decks – Beautifully crafted pergolas and decking solutions.",
+        "Gazebos & Fencing – Custom-designed gazebos and wooden fences.",
+        "Outdoor Furniture – Weather-resistant garden furniture and seating solutions.",
+        "Custom Designs – Outdoor woodwork built to match your landscaping.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1738293728561-d7057a3ad74f?q=80&w=2992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Wood Restoration & Repair",
+      description:
+        "Give your old or damaged woodwork a new lease on life with our professional restoration services. We ensure that every piece retains its beauty and integrity.",
+      solutions: [
+        "Furniture Restoration – Repair and refurbishing of antique and wooden furniture.",
+        "Door & Fixture Repair – Fixing and restoring wooden doors and interior fixtures.",
+        "Polishing & Staining – Expert refinishing techniques for a fresh look.",
+        "Authenticity Preservation – Restoring woodwork while maintaining its original charm.",
+      ],
+      class: "bg-[rgb(100,95,89)] text-slate-50",
+      img: "https://images.unsplash.com/photo-1580403444499-062473f715d5?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      title: "Commercial Woodwork Solutions",
+      description:
+        "Our commercial woodwork services are designed to create functional and visually appealing spaces that reflect your brand identity. From offices to retail spaces, we deliver outstanding results.",
+      solutions: [
+        "Office Interiors – Custom-built furniture and workstations for professional spaces.",
+        "Retail Fixtures – Stylish and functional shelving, counters, and display units.",
+        "Hospitality Woodwork – Bespoke solutions for hotels, restaurants, and lounges.",
+        "Brand-Aligned Designs – Unique wood installations that enhance business identity.",
+      ],
+      class: "bg-slate-50",
+      img: "https://images.unsplash.com/photo-1560846389-956694677531?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
   return (
     <main className="">
       <div className="relative overflow-hidden">
@@ -73,7 +165,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection />
+      <GridSection data={carpentry} />
       <Choose />
       <Banner />
     </main>
