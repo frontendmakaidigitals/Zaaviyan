@@ -84,27 +84,6 @@ const Nav = () => {
       }
     }
   });
-  const menu = {
-    open: {
-      width: isOnMobile ? "380px" : "480px",
-      height: isOnMobile ? "600px" : "650px",
-      top: "-10px",
-      right: "-10px",
-      transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
-    },
-    closed: {
-      width: "100px",
-      height: "40px",
-      top: "0px",
-      right: "0px",
-      transition: {
-        duration: 0.75,
-        delay: 0.35,
-        type: "tween",
-        ease: [0.76, 0, 0.24, 1],
-      },
-    },
-  };
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -134,12 +113,11 @@ const Nav = () => {
   return (
     <motion.div
       className={cn(
-        "w-full  py-3 z-[99]   fixed left-0",
-        !isNavShowing && "-top-full"
+        "w-full z-[99] fixed left-0",
       )}
       initial={{ top: 0 }}
       animate={{
-        top: isNavShowing ? 0 : -70,
+        top: isNavShowing ? 0 : -100,
         backdropFilter: lastScrollY == 0 ? "blur(0rem)" : "blur(1.3rem)",
         backgroundColor:
           lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
@@ -154,7 +132,7 @@ const Nav = () => {
       <div className="container relative flex  justify-between items-center">
         <Logo
           className={cn(
-            `transition-colors duration-200 min-w-28 text-slate-950`
+            `transition-colors duration-200  text-slate-950`
           )}
         />
         {/*<div className={`absolute right-8 top-0`} ref={menuRef}>
@@ -274,7 +252,7 @@ const Nav = () => {
         <div className="lg:hidden block">
           <DotsThreeOutline className="text-3xl" />
         </div>
-        <div className="hidden lg:block min-w-28" />
+        <div className="hidden lg:block min-w-24" />
       </div>
     </motion.div>
   );

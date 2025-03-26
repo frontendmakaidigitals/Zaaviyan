@@ -5,11 +5,11 @@ interface Props {
   src?: string;
   className?: string;
 }
-const Logo = ({ src, className }: Props) => {
+const Logo = ({ src = '/Logo.png', className }: Props) => {
   return (
     <Link href={"/"}>
       {src ? (
-        <div className={cn(`w-40`, className)}>
+        <div className={cn(`w-24 max-w-24`, className)}>
           <img src={src} className="w-full h-full object-contain" />
         </div>
       ) : (

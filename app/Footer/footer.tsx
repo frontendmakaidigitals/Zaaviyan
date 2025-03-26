@@ -20,8 +20,8 @@ const Footer = () => {
     <footer className="bg-gray-50 text-gray-600 pt-10">
       <div className="container grid grid-cols-1 lg:grid-cols-[.6fr_.1fr_1.3fr] items-top gap-5 lg:gap-20">
         <div>
-          <Logo className="text-5xl" />
-          <p className="mt-3">
+          <Logo className="!min-w-44 " />
+          <p>
             Lorem ipsum odor amet, consectetuer adipiscing elit. Sagittis
             egestas velit vivamus lorem himenaeos class nibh magnis. Litora
             suspendisse risus cursus platea feugiat facilisis.
@@ -50,7 +50,6 @@ const Footer = () => {
             <div>
               <h3 className="text-xl text-slate-950 font-[600]">Address</h3>
               <ul className="mt-3">
-                <li>Office- Address of the Office</li>
                 <li>Phone- +971581115376</li>
                 <li>Email- info@zaaviyancontracting.com</li>
               </ul>
