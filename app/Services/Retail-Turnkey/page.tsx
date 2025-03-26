@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <main className="">
       <div className="relative overflow-hidden">
-        <div className="w-[240px] hidden lg:block h-[160px] lg:w-[500px] lg:h-[400px] absolute right-0 -z-10 bottom-0 bg-slate-100">
+        <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img
             animate={{ scale: [1.25, 1], opacity: [0, 1] }}
             transition={{
@@ -25,21 +25,23 @@ const Page = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="h-full w-full max-w-4xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%]  absolute right-0 top-0 " />
-        <div className="grid h-[600px] mt-32 lg:mt-0 lg:h-[730px]  relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="h-full left-0 absolute w-full lg:max-w-2xl container flex flex-col items-start justify-center">
-            <h2 className="text-4xl lg:text-6xl py-2 bg-[#F7F7F7]  font-heroFont">
-              Interior{" "}
-              <span className="font-secondaryFont">Design & Development</span>{" "}
-              Services
+        <div className="h-full w-full max-w-4xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%] to-[#F7F7F7] to-[70%] absolute right-0 top-0 " />
+        <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-2xl container flex flex-col items-start justify-center">
+            <h2 className="text-3xl md:text-2xl lg:text-5xl xl:text-6xl py-2 bg-[#F7F7F7]  font-heroFont">
+              Visual Merchandising{" "}
+              <span className="font-secondaryFont">Design & Development</span> &
             </h2>
+            Shop Display
             <div>
-              <p className="text-lg mt-4 w-full lg:max-w-md pr-10">
-                At Zaaviyan, we create timeless, functional, and luxurious
-                interiors that reflect individuality and elegance. Our expertise
-                in interior design spans residential, commercial, and
-                hospitality spaces, ensuring each project is meticulously
-                planned and executed to perfection.
+              <p className="md:text-[.8rem] xl:text-lg mt-4 w-full md:max-w-xs lg:max-w-sm xl:max-w-md md:pr-8 lg:pr-10">
+                At Zaaviyan, we specialize in providing end-to-end Retail
+                Turnkey Solutions, ensuring a stress-free experience for
+                businesses looking to establish or revamp their retail spaces.
+                With our expertise in interior design and project management, we
+                transform retail environments into dynamic, customer-centric
+                spaces that enhance brand presence and elevate the shopping
+                experience.
               </p>
               <button
                 onClick={() => setIsOpen(true)}
@@ -63,7 +65,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-full h-full flex items-center absolute max-w-xs lg:max-w-3xl bottom-[211px] lg:top-0 right-0 lg:right-8 -z-10">
+          <div className="w-full h-full flex items-center absolute max-w-xs md:max-w-md lg:max-w-xl xl:max-w-3xl bottom-[211px] md:top-0 right-0 md:right-8 -z-10">
             <motion.img
               src={
                 "https://images.unsplash.com/photo-1537726235470-8504e3beef77?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

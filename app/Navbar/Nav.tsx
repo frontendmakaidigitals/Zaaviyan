@@ -7,7 +7,12 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Button from "./MenuButton";
 import { AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, CaretDown } from "@phosphor-icons/react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  CaretDown,
+  DotsThreeOutline,
+} from "@phosphor-icons/react";
 import NavCard from "./NavCard";
 const Nav = () => {
   const [isNavShowing, setIsNavShowing] = useState<boolean>(true);
@@ -21,16 +26,16 @@ const Nav = () => {
     {
       name: "Services",
       serviceList: [
-        { name: "Joinery" },
-        { name: "Interior Design" },
-        { name: "Carpentry" },
-        { name: "Furniture Crafting" },
-        { name: "Fit-out & Refurbishments" },
-        { name: "Visual Merchandising & Shop Display" },
-        { name: "Architecture Design" },
-        { name: "Retail Turnkey Solutions" },
-        { name: "Home Maintenance" },
-        { name: "Space Renovation" },
+        { name: "Joinery", route:"/Services/Joinery" },
+        { name: "Interior Design", route:"/Services/Interior-Design" },
+        { name: "Carpentry", route:"/Services/Carpentry" },
+        { name: "Furniture Crafting", route:"/Services/Furniture-Crafting" },
+        { name: "Fit-out & Refurbishments", route:"/Services/Fitout" },
+        { name: "Visual Merchandising & Shop Display", route:"/Services/Merchandising" },
+        { name: "Architecture Design", route:"/Services/Architecture" },
+        { name: "Retail Turnkey Solutions", route:"/Services/Retail-Turnkey" },
+        { name: "Home Maintenance", route:"/Services/Home Maintenance" },
+        { name: "Space Renovation", route:"/Services/" },
       ],
       route: "",
     },
@@ -145,7 +150,7 @@ const Nav = () => {
         duration: 0.1,
       }} // Smooth animation
     >
-      <div className="container relative flex justify-between items-center">
+      <div className="container relative flex  justify-between items-center">
         <Logo
           className={cn(
             `transition-colors duration-200 min-w-28 text-slate-950`
@@ -213,9 +218,9 @@ const Nav = () => {
                   {isMenuShowing && (
                     <div className="absolute -translate-x-1/2   top-[100%] left-1/2 bg-transparent min-w-[430px]">
                       <motion.div
-                        initial={{ height: '1px' }}
-                        animate={{ height: '100%' }}
-                        exit={{ height: '1px' }}
+                        initial={{ height: "1px" }}
+                        animate={{ height: "100%" }}
+                        exit={{ height: "1px" }}
                         transition={{ ease: [0.25, 0.46, 0.45, 0.94] }}
                         className="mt-[.48rem] overflow-hidden shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_10px_10px_-15px] bg-slate-50" // Close when leaving dropdown
                       >
@@ -229,10 +234,14 @@ const Nav = () => {
                               ease: [0, 0, 0.2, 1],
                             }}
                             key={index}
-                            className={cn(`hover:bg-orange-100 px-5 py-3` , index !== menu.serviceList.length -1 && ('border-b border-slate-400') )}
+                            className={cn(
+                              `hover:bg-orange-100 px-5 py-3`,
+                              index !== menu.serviceList.length - 1 &&
+                                "border-b border-slate-400"
+                            )}
                           >
                             <Link
-                              href={""}
+                              href={service.route}
                               className="text-xl  flex justify-between items-center gap-2"
                             >
                               {service.name}
@@ -251,7 +260,8 @@ const Nav = () => {
                 href={menu.route}
                 className={cn(
                   `px-4 py-[.5rem] rounded-xl hover:bg-orange-100 hover:text-orange-900`,
-                  path === menu.route && `bg-orange-200 text-orange-900 hover:bg-orange-200`,
+                  path === menu.route &&
+                    `bg-orange-200 text-orange-900 hover:bg-orange-200`
                 )}
               >
                 <div>{menu.name}</div>
@@ -259,9 +269,12 @@ const Nav = () => {
             )
           )}
         </div>
-        <div className="min-w-28" />
+
+        <div className="lg:hidden block">
+          <DotsThreeOutline className="text-3xl" />
+        </div>
+        <div className="hidden lg:block min-w-28" />
       </div>
-      
     </motion.div>
   );
 };

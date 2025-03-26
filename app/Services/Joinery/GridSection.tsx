@@ -127,8 +127,7 @@ const GridSection = () => {
               <div
                 className={cn(
                   `p-10 lg:p-20`,
-                  idx % 2 === 0 ? "order-1" : "order-2",
-                  e.class
+                  idx % 2 !== 0 ? "order-2 lg:order-2" : "order-2 lg:order-1",                  e.class
                 )}
               >
                 <h3 className="text-2xl lg:text-5xl mb-4 font-Primary font-[600]">
@@ -172,7 +171,7 @@ const ParallaxImage = ({ src, idx }: { src: string; idx: number }) => {
       ref={imgRef}
       className={cn(
         "relative overflow-hidden w-full h-full", // Fixed height to keep things aligned
-        idx % 2 === 0 ? "order-2" : "order-1"
+        idx % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
       )}
     >
       <motion.img
