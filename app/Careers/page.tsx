@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-
+import { Checkbox } from "@/components/ui/checkbox";
 const Page = () => {
   return (
     <div className="bg-gradient-to-b from-[#EDF0F5] to-[#ECF0F7] w-full h-full">
@@ -246,7 +246,11 @@ const CareerForm = () => {
           </div>
           <div>
             <label className="block">Phone Number</label>
-            <Input placeholder="Enter phone number" className="w-full mt-1" />
+            <Input
+              type="number"
+              placeholder="Enter phone number"
+              className="w-full mt-1"
+            />
           </div>
           <div>
             <label className="block">Email Address</label>
@@ -256,7 +260,7 @@ const CareerForm = () => {
             <label className="block">City</label>
             <Input placeholder="Enter city" className="w-full mt-1" />
           </div>
-         
+
           <div>
             <label className="block">Country</label>
             <div className="mt-1">
@@ -292,7 +296,15 @@ const CareerForm = () => {
             />
           </div>
         </div>
-
+        <div className="flex items-center mt-7 space-x-2">
+          <Checkbox id="terms" />
+          <label
+            htmlFor="terms"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+          I accept the terms and conditions.
+          </label>
+        </div>
         <button className="bg-transparent border text-sm font-medium hover:text-white hover:bg-black transition-colors duration-300 border-black  text-slate-950  px-5 py-2 mt-12 rounded-md">
           Get Started
         </button>
