@@ -97,7 +97,6 @@ const Industries = () => {
               name={elem.name}
               desc={elem.desc}
               index={idx}
-              icon={elem.icon}
               setHoverIdx={setHoverIdx}
               hoverIdx={hoverIdx}
               img={elem.img}
@@ -115,7 +114,6 @@ interface IndustryProps {
   name: string;
   desc: string;
   index: number;
-  icon: React.ReactNode;
   setHoverIdx: React.Dispatch<React.SetStateAction<number | null>>;
   hoverIdx: number | null;
   img: string;
@@ -125,33 +123,32 @@ const IndustryCard2: React.FC<IndustryProps> = ({
   name,
   desc,
   index,
-  icon,
   setHoverIdx,
   hoverIdx,
   img,
 }) => {
+  const isHovered = hoverIdx === index; // Avoid redundant comparisons
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }} // Reduce duration
       onMouseEnter={() => setHoverIdx(index)}
       onMouseLeave={() => setHoverIdx(null)}
       className={cn(
-        `relative w-full aspect-square overflow-hidden transition-all duration-300`,
-        hoverIdx === index ? "bg-[#FFB38E]" : "bg-transparent"
+        "relative w-full group transform-gpu aspect-square overflow-hidden transition-all duration-300",
+        isHovered ? "bg-[#FFB38E]" : "bg-transparent"
       )}
     >
       {/* Image Container */}
-      <div className="absolute inset-0 w-full h-full">
-        <motion.img
-          initial={{ scale: 1 }} // Set initial scale
-          animate={{ scale: hoverIdx === index ? 1.1 : 1 }} // Animate smoothly
-          transition={{ duration: 0.3, ease: "easeOut" }} // Smooth animation
-          className="w-full h-full object-cover will-change-transform"
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <img
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 will-change-transform"
           src={img}
           alt={name}
+          loading="lazy"
         />
       </div>
 
@@ -160,60 +157,22 @@ const IndustryCard2: React.FC<IndustryProps> = ({
 
       {/* Text Container */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{
-          opacity: hoverIdx === index ? 1 : 1,
-          y: hoverIdx === index ? 0 : 10,
-        }}
+        animate={{ y: isHovered ? 0 : 5 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 px-4"
       >
         <h2 className="text-2xl text-white font-[500]">{name}</h2>
-        {hoverIdx === index && (
+        {isHovered && (
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="text-slate-100 text-sm mt-2"
           >
             {desc}
           </motion.p>
         )}
       </motion.div>
-    </motion.div>
-  );
-};
-const IndustryCard: React.FC<IndustryProps> = ({
-  name,
-  desc,
-  index,
-  icon,
-  setHoverIdx,
-  hoverIdx,
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      onMouseEnter={() => setHoverIdx(index)}
-      onMouseLeave={() => setHoverIdx(null)}
-      className={cn(
-        `w-full px-7 py-10 transition-colors duration-300 bg-white border-r border-slate-200`,
-        index === 0 && ``,
-        index === _Industries.length - 1 && `border-0`,
-        hoverIdx === index && `bg-[#FFB38E]`,
-        index > Industries.length / 2 && "border-t border-slate-200"
-      )}
-    >
-      <div
-        className={cn(hoverIdx === index && "!text-white", `text-[#FFB38E]`)}
-      >
-        {icon}
-      </div>
-      <h2 className="text-2xl mt-4">{name}</h2>
-      <p className="text-md mt-1">{desc}</p>
     </motion.div>
   );
 };

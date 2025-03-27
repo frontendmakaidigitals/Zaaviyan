@@ -89,7 +89,7 @@ const CoreValue = () => {
             <motion.button
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ delay: idx * 0.1, duration: 1.5, type: "spring" }}
+              transition={{ delay: idx * 0.15, duration: 1, type: "spring" }}
               viewport={{ once: true }}
               key={idx}
               onClick={() => setIndex(idx)}
@@ -99,7 +99,7 @@ const CoreValue = () => {
                 `${index === idx ? "bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[#fde68a]  before:absolute before:left-1/2 before:top-full before:w-[1px] lg:before:h-14 before:bg-slate-50 to-[#fab236]" : ""}`
               )}
             >
-              <p className="text-center font-Primary  font-[700] text-sm">
+              <p className="text-center font-Primary font-[700] text-sm">
                 {elem.name}
               </p>
             </motion.button>

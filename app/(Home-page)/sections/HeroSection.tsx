@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Marquee from "@/app/App_Chunks/Components/Marquee";
 import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 import { cn } from "@/app/lib/utils";
@@ -24,9 +24,33 @@ const HeroSection = () => {
   const firstRow = slider.slice(0, slider.length / 2);
   const secondRow = slider.slice(slider.length / 2);
   const [isOpen, setIsOpen] = useState(false);
+  const [animate, setAnimate] = useState(true);
+  const heroContainer = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroContainer.current) {
+        const containerHeight = heroContainer.current.offsetHeight;
+        if (window.scrollY > containerHeight) {
+          setAnimate(false);
+        } else {
+          setAnimate(true);
+        }
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.log(animate);
   return (
-    <div className="h-auto pb-16 lg:pb-0 lg:h-[99vh] relative w-full overflow-hidden bg-[#645f59]">
+    <div
+      ref={heroContainer}
+      className="h-auto pb-16 lg:pb-0 lg:h-[99vh] relative w-full overflow-hidden bg-[#645f59]"
+    >
       {/* Left Arrow Button */}
       <PopUpForm
         isOpen={isOpen}
@@ -46,7 +70,11 @@ const HeroSection = () => {
         <div className="flex justify-center order-1 ">
           <div>
             <h1 className="text-5xl font-heroFont font-[600] md:text-7xl lg:text-5xl xl:text-6xl capitalize text-slate-50 text-left">
-              Bringing Your <span className="font-secondaryFont font-[500]">Dream</span> <br /> <span className="font-secondaryFont font-[500]">Spaces</span> to Life
+              Bringing Your{" "}
+              <span className="font-secondaryFont font-[500]">Dream</span>{" "}
+              <br />{" "}
+              <span className="font-secondaryFont font-[500]">Spaces</span> to
+              Life
             </h1>
             <p className=" text-slate-100  mt-3 text-md md:text-lg">
               At Zaaviyan Contracting, we craft bespoke interiors that blend
@@ -56,7 +84,10 @@ const HeroSection = () => {
               vision to life with precision, creativity, and a commitment to
               excellence.
             </p>
-            <button onClick={()=>setIsOpen(true)} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group"
+            >
               <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
                 <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
               </div>
@@ -75,14 +106,18 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="grid lg:order-1 grid-cols-2 shadow-[0_0_60px_#D7CCC8] bg-[#9b9287] overflow-hidden h-[450px] md:h-[700px] lg:h-[99vh]">
-          <Marquee vertical className="[--duration:20s]">
+          <Marquee vertical className={cn(animate && "[--duration:20s]")}>
             {firstRow.map((img, idx) => (
               <div key={idx} className="h-[350px]">
                 <img className="w-full h-full object-cover " src={img.img} />
               </div>
             ))}
           </Marquee>
-          <Marquee reverse vertical className="[--duration:20s]">
+          <Marquee
+            reverse
+            vertical
+            className={cn(animate && "[--duration:20s]")}
+          >
             {secondRow.map((img, idx) => (
               <div key={idx} className="h-[350px]">
                 <img className="w-full h-full object-cover " src={img.img} />

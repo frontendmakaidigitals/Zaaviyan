@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/app/lib/utils";
 
 const Services = () => {
-
   const services = [
     {
       name: "Interior Design",
@@ -56,6 +55,11 @@ const Services = () => {
       desc: " Our space renovation services transform your existing space into something fresh and functional, adapting it to your evolving needs. Whether it's a simple upgrade or a full remodel, we create spaces that are both stylish and practical.",
       img: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    {
+      name: "Building Contracting",
+      desc: "Zaaviyan offers top-tier building contracting services in the UAE, delivering high-quality construction with precision and innovation. From concept to completion, we ensure excellence in every project, tailored to client needs.",
+      img: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
 
   return (
@@ -65,9 +69,7 @@ const Services = () => {
           Services <span className="text-slate-600">we provide</span>
         </h1>
 
-        <div
-          className="grid gap-y-5 grid-cols-1 w-full mt-20"
-        >
+        <div className="grid gap-y-5 grid-cols-1 w-full mt-20">
           {services.map((elem, idx) => {
             return (
               <div
@@ -127,9 +129,10 @@ const ParallaxImage = ({ src, idx }: { src: string; idx: number }) => {
       )}
     >
       <motion.img
-        style={{ y, scale: 1.05 }}
+        style={{ y, scale: 1.05, willChange: "transform"  }}
         className="w-full h-full object-cover transition-transform duration-300 ease-out"
         src={src}
+        loading="lazy"
       />
     </div>
   );
