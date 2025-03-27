@@ -45,9 +45,9 @@ const Page = () => {
                   </div>
                 </div>
                 <p className="text-lg">
-                  Write us a few words about your project and we`ll prepare and
-                  we`ll perpare a proposal for you within{" "}
-                  <span className="font-semibold">24</span> hours{" "}
+                  Write us a few words about your project, and we’ll prepare a
+                  proposal for you within{" "}
+                  <span className="font-semibold">24</span> hours.
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Page = () => {
                     </div>
                     <div>
                       {" "}
-                      <p className="text-xl">W. Let’s Start Building! </p>
+                      <p className="text-xl"> Let’s Start Building! </p>
                       <p className="mt-1 text-sm">
                         Once everything is finalized, our expert team will begin
                         construction, ensuring high-quality execution and
