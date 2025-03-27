@@ -131,10 +131,10 @@ const IndustryCard2: React.FC<IndustryProps> = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }} // Reduce duration
+      initial={{ opacity: 0, scale:1.2 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5, ease:[0, 0, .2, 1] }} // Reduce duration
       onMouseEnter={() => setHoverIdx(index)}
       onMouseLeave={() => setHoverIdx(null)}
       className={cn(
