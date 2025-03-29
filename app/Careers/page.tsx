@@ -12,7 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 const Page = () => {
   return (
     <div className="bg-gradient-to-b from-[#EDF0F5] to-[#ECF0F7] w-full h-full">
-      <div className="container max-w-4xl pt-40 pb-20">
+      <div className="container max-w-4xl pt-32 lg:pt-40 pb-20">
         <h1 className="text-center text-4xl font-bold font-Primary">
           Careers at Zaaviyan
         </h1>
@@ -26,7 +26,7 @@ const Page = () => {
           If you want to join our team, fill out the form below
         </p>
 
-        <div className="mt-10 bg-white/40 backdrop-filter backdrop-blur-xl px-10 py-16 rounded-md">
+        <div className="mt-10 bg-white/40 backdrop-filter backdrop-blur-xl px-3 lg:px-10 py-16 rounded-md">
           <p className="mb-5 text-2xl font-medium">About You</p>
           <CareerForm />
         </div>

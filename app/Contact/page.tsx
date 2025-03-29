@@ -12,11 +12,11 @@ const Page = () => {
   return (
     <div className="">
       <div className="  ">
-        <div className="bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-[#66806a] via-[#b4c6a6] to-[#ffc286] pt-40 ">
-          <div className="container grid h-[250px] grid-cols-2 gap-10 lg:grid-cols-[.7fr_1.3fr]">
-            <div className="flex flex-col h-full justify-between pb-5">
+        <div className="bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-[#66806a] via-[#b4c6a6] to-[#ffc286] pt-24 lg:pt-40 ">
+          <div className="container grid h-[370px] lg:h-[250px] grid-cols-1 gap-10 lg:grid-cols-[.7fr_1.3fr]">
+            <div className="flex flex-col h-full justify-center lg:justify-between gap-6 pb-5">
               {" "}
-              <div>
+              <div className="">
                 <h1 className="text-5xl font-sans text-slate-50 font-[500]">
                   Contact Us
                 </h1>
@@ -33,7 +33,7 @@ const Page = () => {
               </div>
             </div>
 
-            <div className=" relative ">
+            <div className="relative ">
               <div className="w-full flex items-center gap-4 px-5 rounded-t-md py-5 bg-slate-200 absolute bottom-0 left-0">
                 <div className="w-20">
                   <div className="aspect-square overflow-hidden">
@@ -44,7 +44,7 @@ const Page = () => {
                     />
                   </div>
                 </div>
-                <p className="text-lg">
+                <p className="text-sm lg:text-lg">
                   Write us a few words about your project, and we’ll prepare a
                   proposal for you within{" "}
                   <span className="font-semibold">24</span> hours.
@@ -55,7 +55,7 @@ const Page = () => {
         </div>
         <div className="bg-slate-100 pb-32">
           <div className="container grid grid-cols-1  gap-10 lg:grid-cols-[.7fr_1.3fr]">
-            <div className="mt-12">
+            <div className="mt-12 order-1 lg:order-2">
               <h2 className="text-4xl mt-4">What will be next step?</h2>
               <p className="mt-3">You are one step perfect product</p>
 
@@ -116,7 +116,7 @@ const Page = () => {
                 </>
               </div>
             </div>
-            <div>
+            <div className=" lg:order-2">
               <ContactForm />
             </div>
           </div>
@@ -130,9 +130,9 @@ export default Page;
 
 const ContactForm = () => {
   return (
-    <div className=" w-full bg-white shadow-md rounded-b-md p-12">
+    <div className=" w-full bg-white shadow-md rounded-b-md px-3  lg:px-12 py-12">
       <form>
-        <div className="w-full grid grid-cols-2 gap-x-5 gap-y-8">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-8">
           <Input placeholder="Your name" />
           <Input placeholder="Your email" />
           <Input placeholder="Your phone" />
