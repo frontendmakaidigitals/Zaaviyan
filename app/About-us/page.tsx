@@ -1,17 +1,19 @@
 import React from "react";
 import HeroSection from "./(About-us)/sections/Hero-Section";
 import Text from "./(About-us)/sections/Text";
-import ChooseUs from "./(About-us)/sections/ChooseUs";
 import AboutUs from "./(About-us)/sections/AboutUs";
-import Aim from "./(About-us)/sections/Aim";
+import Process from "./(About-us)/sections/Process";
+import Benefits from "./(About-us)/sections/Benefits";
+import Banner from "./(About-us)/sections/Banner";
 const Page = () => {
   return (
     <>
       <HeroSection />
       <Text />
       <AboutUs />
-      <Aim />
-      <ChooseUs />
+      <Process />
+      <Benefits />
+      <Banner />
     </>
   );
 };
