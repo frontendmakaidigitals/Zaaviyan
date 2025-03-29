@@ -33,8 +33,8 @@ const Benefits = () => {
     );
   }
   return (
-    <div className="w-full h-[800px]">
-      <div className="w-full h-[550px] relative">
+    <div className="w-full h-auto lg:h-[800px]">
+      <div className="w-full h-auto py-10 lg:py-0 lg:h-[550px] relative">
         <div className="bg-slate-900/30 w-full h-full absolute top-0 left-0 z-10" />
         <div className="absolute top-0 left-0 w-full h-full">
           <img
@@ -45,14 +45,14 @@ const Benefits = () => {
           />
         </div>
         <div className="pt-36 relative z-10">
-          <h1 className="text-slate-50 text-5xl text-center">
+          <h1 className="text-slate-50 text-3xl lg:text-5xl text-center">
             Together We can change <br /> How Houses are build
           </h1>
-          <p className="text-slate-100 text-center text-md mt-2">
+          <p className="text-slate-100 text-center text-sm lg:text-md mt-2">
             We always work by the highest standard and business ethics
           </p>
         </div>
-        <div className="container z-30 absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+        <div className="container z-40 relative lg:absolute mt-10 lg:mt-0 lg:-bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-1/2">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {cards.map((card, idx) => (
               <div key={idx} className="bg-black text-slate-50 p-8">

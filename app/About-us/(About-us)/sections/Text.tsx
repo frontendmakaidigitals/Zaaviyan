@@ -10,7 +10,7 @@ const Text = () => {
   return (
     <div ref={viewContainer} className="my-20 ">
       <h2 className="text-center mb-7 text-3xl font-Primary text-slate-600">About us</h2>
-      <motion.article className="container font-[700] font-Primary text-center text-2xl flex flex-wrap justify-center">
+      <motion.article className="container font-[700] font-Primary text-center text-lg lg:text-2xl flex flex-wrap justify-center">
         {para.split(" ").map((elem, idx) => (
           <span key={idx} className="overflow-hidden inline-block">
             <motion.span

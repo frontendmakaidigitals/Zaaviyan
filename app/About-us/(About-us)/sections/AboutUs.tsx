@@ -5,16 +5,16 @@ const AboutUs = () => {
   return (
     <div className="my-20 bg-slate-400/10">
       <div className="container w-full  grid grid-cols-1 lg:grid-cols-2 py-20 gap-10 place-items-center">
-        <div className="w-full h-[530px]">
+        <div className="w-full h-[300px] md:h-[450px] lg:h-[530px]">
           <img
             src={`https://images.unsplash.com/photo-1462826303086-329426d1aef5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
             className="border-4 border-white w-full h-full object-cover"
           />
         </div>
         <div>
-          <h3 className="text-4xl font-Primary font-[600]">Who We Are</h3>
+          <h3 className="text-4xl font-Primary font-[600] text-center lg:text-start">Who We Are</h3>
 
-          <p className="mt-6 text-lg">
+          <p className="mt-6 text-md lg:text-lg text-center lg:text-start">
             Welcome to Settle, where creativity and craftsmanship meet to
             redefine spaces and elevate experiences. We are more than just
             architects and designers; we are storytellers who breathe life into
@@ -24,7 +24,7 @@ const AboutUs = () => {
             aspirations.
           </p>
 
-          <p className="mt-5 text-lg">
+          <p className="mt-5 text-md lg:text-lg text-center lg:text-start">
             Our mission is to leave lasting impressions that mirror our client’s
             unique desires, all while improving sustainability and innovation.
             We also aim to establish fresh benchmarks in architectural and

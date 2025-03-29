@@ -21,12 +21,12 @@ const Process = () => {
           expectations at every step. From vision to reality, our design journey
           entails precision and innovation.
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-5  place-items-center mt-12 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  place-items-center mt-12 gap-4 ">
           {process.map((pro, idx) => (
             <div
               className={cn(
                 `w-full flex flex-col justify-center items-center`,
-                idx !== process.length - 1 && "border-r border-slate-300"
+                idx !== process.length - 1 && "border-0 lg:border-r border-slate-300"
               )}
               key={idx}
             >

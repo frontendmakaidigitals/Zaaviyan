@@ -5,8 +5,8 @@ const HeroSection = () => {
     <div className="h-[99vh] w-full relative">
       <div className="absolute w-full z-10 top-1/2   -translate-y-1/2">
         <div className="container">
-          <p className="text-slate-100 text-2xl">30 Years Experience</p>
-          <h2 className="text-7xl text-slate-100 font-[700] font-Primary">
+          <p className="text-slate-100 text-xl lg:text-2xl">30 Years Experience</p>
+          <h2 className="text-4xl lg:text-6xl text-slate-100 font-[700] font-Primary">
             We help build <br />
             Innovative prodcuts.
           </h2>
