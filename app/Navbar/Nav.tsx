@@ -5,15 +5,17 @@ import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Button from "./MenuButton";
+
 import { AnimatePresence } from "framer-motion";
+import { useLenis } from "lenis/react";
 import {
   ArrowLeft,
   ArrowUpRight,
   CaretDown,
   DotsThreeOutline,
+  X,
 } from "@phosphor-icons/react";
-import NavCard from "./NavCard";
+import { ChevronDown } from "lucide-react";
 const Nav = () => {
   const [isNavShowing, setIsNavShowing] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -26,23 +28,31 @@ const Nav = () => {
     {
       name: "Services",
       serviceList: [
-        { name: "Joinery", route:"/Services/Joinery" },
-        { name: "Interior Design", route:"/Services/Interior-Design" },
-        { name: "Carpentry", route:"/Services/Carpentry" },
-        { name: "Furniture Crafting", route:"/Services/Furniture-Crafting" },
-        { name: "Fit-out & Refurbishments", route:"/Services/Fitout" },
-        { name: "Visual Merchandising & Shop Display", route:"/Services/Merchandising" },
-        { name: "Architecture Design", route:"/Services/Architecture" },
-        { name: "Retail Turnkey Solutions", route:"/Services/Retail-Turnkey" },
-        { name: "Home Maintenance", route:"/Services/Home-Maintenance" },
-        { name: "Space Renovation", route:"/Services/Space-Renovation" },
-        { name: "Building Contracting", route:"/Services/Building-Contracting" },
+        { name: "Joinery", route: "/Services/Joinery" },
+        { name: "Interior Design", route: "/Services/Interior-Design" },
+        { name: "Carpentry", route: "/Services/Carpentry" },
+        { name: "Furniture Crafting", route: "/Services/Furniture-Crafting" },
+        { name: "Fit-out & Refurbishments", route: "/Services/Fitout" },
+        {
+          name: "Visual Merchandising & Shop Display",
+          route: "/Services/Merchandising",
+        },
+        { name: "Architecture Design", route: "/Services/Architecture" },
+        { name: "Retail Turnkey Solutions", route: "/Services/Retail-Turnkey" },
+        { name: "Home Maintenance", route: "/Services/Home-Maintenance" },
+        { name: "Space Renovation", route: "/Services/Space-Renovation" },
+        {
+          name: "Building Contracting",
+          route: "/Services/Building-Contracting",
+        },
       ],
       route: "",
     },
     { name: "Careers", route: "/Careers" },
     { name: "Contact", route: "/Contact" },
   ];
+  const lenis = useLenis();
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -110,18 +120,35 @@ const Nav = () => {
   }, []);
 
   const [isMenuShowing, setIsMenuShowing] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      lenis?.scrollTo(0, { immediate: true });
+    } else {
+      document.body.style.overflow = "auto";
+      lenis?.start();
+    }
+  }, [isOpen]);
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // State to track which menu is open
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index); // Toggle the menu open/close
+  };
   return (
     <motion.div
       className={cn(
-        "w-full z-[99] fixed left-0",
+        "w-full fixed left-0 z-50 bg-white/40",
+        lastScrollY !== 0 && !isOpen && "backdrop-blur-lg"
       )}
       initial={{ top: 0 }}
       animate={{
         top: isNavShowing ? 0 : -100,
-        backdropFilter: lastScrollY == 0 ? "blur(0rem)" : "blur(1.3rem)",
         backgroundColor:
           lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
-      }} // Adjust -70 to your navbar height
+      }}
       transition={{
         type: "spring",
         stiffness: 100,
@@ -129,47 +156,12 @@ const Nav = () => {
         duration: 0.1,
       }} // Smooth animation
     >
-      <div className="container relative flex  justify-between items-center">
+      <div className="container  relative flex  justify-between items-center">
         <Logo
-          className={cn(
-            `transition-colors duration-200  text-slate-950`
-          )}
+          className={cn(`transition-colors duration-200  text-slate-950`)}
         />
-        {/*<div className={`absolute right-8 top-0`} ref={menuRef}>
-          <motion.div
-            className={` bg-[#FFB38E] rounded-[25px] relative`}
-            variants={menu}
-            animate={isActive ? "open" : "closed"}
-            initial="closed"
-          >
-            {serviceClicked && (
-              <button
-                onClick={() => setServiceClicked(false)}
-                className="absolute w-fit top-4 left-9"
-              >
-                <ArrowLeft className="text-4xl" />
-              </button>
-            )}
-            <AnimatePresence>
-              {isActive && (
-                <NavCard
-                  setServiceClicked={setServiceClicked}
-                  serviceClicked={serviceClicked}
-                />
-              )}
-            </AnimatePresence>
-          </motion.div>
-          <div ref={buttonRef}>
-            <Button
-              isActive={isActive}
-              toggleMenu={() => {
-                setIsActive(!isActive);
-              }}
-            />
-          </div>
-        </div> */}
 
-        <div className="hidden lg:flex items-center bg-gradient-to-b gap-2 border from-white to-slate-100 p-[.4rem] rounded-xl">
+        <div className=" hidden lg:flex items-center bg-gradient-to-b gap-2 border from-white to-slate-100 p-[.4rem] rounded-xl">
           {menus.map((menu, idx) =>
             menu.serviceList ? (
               <div
@@ -249,9 +241,114 @@ const Nav = () => {
           )}
         </div>
 
-        <div className="lg:hidden block">
-          <DotsThreeOutline className="text-3xl" />
+        <div className="lg:hidden block ">
+          <button onClick={() => setIsOpen(true)}>
+            <DotsThreeOutline className="text-3xl" />
+          </button>
         </div>
+        <AnimatePresence mode="wait">
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ ease: [0.23, 1, 0.32, 1], duration: 0.6 }}
+              className="w-screen h-screen fixed top-0 left-0 "
+            >
+              <motion.div
+                initial={{ backdropFilter: "blur(2px)" }}
+                animate={{
+                  backdropFilter: isOpen ? "blur([5px])" : "blur(2px)",
+                }}
+                exit={{ backdropFilter: "blur(2px)" }}
+                transition={{ ease: [0.23, 1, 0.32, 1], duration: 0.6 }}
+                className="bg-black/40 overflow-auto w-full h-full"
+              >
+                <motion.div
+                  initial={{ y: "-100%" }}
+                  animate={{ y: "0%" }}
+                  exit={{ y: "-100%" }}
+                  transition={{ ease: [0.23, 1, 0.32, 1], duration: 0.6 }}
+                  className="bg-slate-200  relative z-10 container py-7"
+                >
+                  <div className=" flex justify-end items-center">
+                    <button
+                      className="text-3xl "
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <X />
+                    </button>
+                  </div>
+                  <div className="text-3xl font-Primary font-[600] mt-14 grid  grid-cols-2  gap-3">
+                    {menus.map((menu, id) =>
+                      menu.serviceList ? (
+                        <motion.div
+                          initial={{ y: 200 }}
+                          animate={{ y: 0 }}
+                          exit={{ y: 10 }}
+                          transition={{
+                            ease: [0.23, 1, 0.32, 1],
+                            duration: 0.6,
+                          }}
+                          key={id}
+                          className="mb-5 w-full  col-span-2"
+                          onClick={() => toggleAccordion(id)} // Toggle accordion on click
+                        >
+                          <div className="flex justify-between">
+                            {" "}
+                            <p className="flex-1">{menu.name}</p>
+                            <ChevronDown
+                              className={`size-6 duration-300 transition-transform transform ${
+                                openIndex === id ? "rotate-180" : ""
+                              }`}
+                            />
+                          </div>
+
+                          {openIndex === id && (
+                            <motion.div
+                              initial={{ opacity: 0, height: "1px" }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: "1px" }}
+                              transition={{ duration: 0.3 }}
+                              className="pl-4"
+                            >
+                              {menu.serviceList.map((service, index) => (
+                                <p
+                                  className="font-[500] mt-3 text-2xl"
+                                  key={index}
+                                >
+                                  <Link href={menu.route}>{service.name}</Link>
+                                </p>
+                              ))}
+                            </motion.div>
+                          )}
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          initial={{ y: 200 }}
+                          animate={{ y: 0 }}
+                          exit={{ y: 10 }}
+                          transition={{
+                            ease: [0.23, 1, 0.32, 1],
+                            duration: 0.6,
+                          }}
+                          key={id}
+                          className={`flex ${
+                            id === 1 || id === 4
+                              ? "flex justify-end"
+                              : "flex justify-start"
+                          } mb-5 w-full`}
+                        >
+                          <Link href={menu.route}>{menu.name}</Link>
+                        </motion.div>
+                      )
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className="hidden lg:block min-w-24" />
       </div>
     </motion.div>
