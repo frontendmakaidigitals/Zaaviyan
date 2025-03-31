@@ -135,7 +135,7 @@ const Nav = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null); // State to track which menu is open
 
   const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle the menu open/close
+    setOpenIndex(openIndex === index ? null : index);
   };
   return (
     <motion.div
@@ -274,7 +274,10 @@ const Nav = () => {
                   <div className=" flex justify-end items-center">
                     <button
                       className="text-3xl "
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        setOpenIndex(null);
+                      }}
                     >
                       <X />
                     </button>
