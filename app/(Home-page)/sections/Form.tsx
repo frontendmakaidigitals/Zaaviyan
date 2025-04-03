@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import SmallLoadingSpinner from "@/app/App_Chunks/Components/Loading";
+import { Checkbox } from "@/components/ui/checkbox";
 const Form = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -191,6 +192,28 @@ const Form = () => {
               {errors.message && (
                 <p className="text-red-600 text-sm">{errors.message}</p>
               )}
+            </div>
+
+            <div className="flex items-center mt-2 space-x-2">
+              <Checkbox
+                id="terms"
+                checked={checkbox}
+                onCheckedChange={() => {
+                  setErrors((prev) => ({
+                    ...prev, // Keep existing errors
+                    checked: false, // Update 'checked' error
+                  }));
+                  setCheckBox(!checkbox);
+                }}
+              />
+              <label
+                htmlFor="terms"
+                className={`${
+                  errors.checked ? "text-red-500" : ""
+                } text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
+              >
+                I accept the terms and conditions.
+              </label>
             </div>
             <button
               type="submit"

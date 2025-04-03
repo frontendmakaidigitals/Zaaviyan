@@ -4,97 +4,98 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import SmallLoadingSpinner from "./Loading";
+import { Checkbox } from "@/components/ui/checkbox";
 const PopUpForm = ({ isOpen, onClose, title }) => {
- const [formData, setFormData] = useState({
-     fullName: "",
-     companyName: "",
-     phone: "",
-     email: "",
-     message: "",
-   });
-   const [checkbox, setCheckBox] = useState(false);
- 
-   const [errors, setErrors] = useState({
-     fullName: "",
-     companyName: "",
-     phone: "",
-     email: "",
-     message: "",
-     checked: false,
-   });
-   const [status, setStatus] = useState("");
- 
-   const validate = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [checkbox, setCheckBox] = useState(false);
+
+  const [errors, setErrors] = useState({
+    fullName: "",
+    companyName: "",
+    phone: "",
+    email: "",
+    message: "",
+    checked: false,
+  });
+  const [status, setStatus] = useState("");
+
+  const validate = () => {
     const tempErrors = {
-       fullName: "",
-       companyName: "",
-       phone: "",
-       email: "",
-       message: "",
-       checked: false,
-     };
-     if (!formData.fullName.trim())
-       tempErrors.fullName = "Full Name is required";
-     if (!formData.companyName.trim())
-       tempErrors.companyName = "Company Name is required";
-     if (!formData.phone.trim()) {
-       tempErrors.phone = "Phone number is required";
-     } else if (!/^\d{10}$/.test(formData.phone)) {
-       tempErrors.phone = "Phone number must be 10 digits";
-     }
-     if (!formData.email.trim()) {
-       tempErrors.email = "Email is required";
-     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-       tempErrors.email = "Invalid email format";
-     }
-     if (!formData.message.trim()) tempErrors.message = "Message is required";
-     if (!checkbox) tempErrors.checked = true;
-     setErrors(tempErrors);
-     const hasErrors = Object.values(tempErrors).some(
-       (error) => error !== "" && error !== false
-     );
-     return !hasErrors;
-   };
- 
-   const handleChange = (
-     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-   ) => {
-     setFormData({ ...formData, [e.target.name]: e.target.value });
-     setErrors({ ...errors, [e.target.name]: "" });
-   };
- 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     setStatus("");
-     if (!validate()) {
-       console.log("return", errors);
-       return;
-     }
-     setStatus("Sending...");
-     try {
-       const response = await fetch("/api/email", {
-         method: "POST",
-         body: JSON.stringify(formData),
-         headers: { "Content-Type": "application/json" },
-       });
- 
-       if (response.ok) {
-         setStatus("ok");
-         setFormData({
-           fullName: "",
-           companyName: "",
-           phone: "",
-           email: "",
-           message: "",
-         }); // Reset form
-         setCheckBox(false);
-       } else {
-         setStatus("Failed to send email.");
-       }
-     } catch (error) {
-       setStatus("Error sending email.");
-     }
-   };
+      fullName: "",
+      companyName: "",
+      phone: "",
+      email: "",
+      message: "",
+      checked: false,
+    };
+    if (!formData.fullName.trim())
+      tempErrors.fullName = "Full Name is required";
+    if (!formData.companyName.trim())
+      tempErrors.companyName = "Company Name is required";
+    if (!formData.phone.trim()) {
+      tempErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      tempErrors.phone = "Phone number must be 10 digits";
+    }
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Invalid email format";
+    }
+    if (!formData.message.trim()) tempErrors.message = "Message is required";
+    if (!checkbox) tempErrors.checked = true;
+    setErrors(tempErrors);
+    const hasErrors = Object.values(tempErrors).some(
+      (error) => error !== "" && error !== false
+    );
+    return !hasErrors;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+    if (!validate()) {
+      console.log("return", errors);
+      return;
+    }
+    setStatus("Sending...");
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.ok) {
+        setStatus("ok");
+        setFormData({
+          fullName: "",
+          companyName: "",
+          phone: "",
+          email: "",
+          message: "",
+        }); // Reset form
+        setCheckBox(false);
+      } else {
+        setStatus("Failed to send email.");
+      }
+    } catch (error) {
+      setStatus("Error sending email.");
+    }
+  };
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -200,26 +201,47 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                   <p className="text-red-600 text-sm">{errors.message}</p>
                 )}
               </div>
-               <button
-                        type="submit"
-                        className={cn(
-                          `border border-slate-400 mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
-                          status === "ok" && "bg-[#25D366] text-green-950"
-                        )}
-                        disabled={status === "Sending..." || status === "ok"}
-                        onClick={handleSubmit}
-                      >
-                        {status === "Sending..." ? (
-                          <>
-                         <SmallLoadingSpinner />
-                            Sending...
-                          </>
-                        ) : status === "ok" ? (
-                          "Submitted Sucessfully"
-                        ) : (
-                          "Submit"
-                        )}
-                      </button>
+              <div className="flex items-center mt-2 space-x-2">
+                <Checkbox
+                  id="terms"
+                  checked={checkbox}
+                  onCheckedChange={() => {
+                    setErrors((prev) => ({
+                      ...prev, // Keep existing errors
+                      checked: false, // Update 'checked' error
+                    }));
+                    setCheckBox(!checkbox);
+                  }}
+                />
+                <label
+                  htmlFor="terms"
+                  className={`${
+                    errors.checked ? "text-red-500" : ""
+                  } text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
+                >
+                  I accept the terms and conditions.
+                </label>
+              </div>
+              <button
+                type="submit"
+                className={cn(
+                  `border border-slate-400 mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
+                  status === "ok" && "bg-[#25D366] text-green-950"
+                )}
+                disabled={status === "Sending..." || status === "ok"}
+                onClick={handleSubmit}
+              >
+                {status === "Sending..." ? (
+                  <>
+                    <SmallLoadingSpinner />
+                    Sending...
+                  </>
+                ) : status === "ok" ? (
+                  "Submitted Sucessfully"
+                ) : (
+                  "Submit"
+                )}
+              </button>
             </form>
           </motion.div>
         </motion.div>
