@@ -19,13 +19,13 @@ const Page = () => {
             <div className="flex flex-col h-full justify-center lg:justify-between gap-6 pb-5">
               {" "}
               <div className="">
-                <h1 className="text-5xl font-sans text-slate-50 font-[500]">
+                <h1 className="text-5xl font-sans text-slate-950 font-[500]">
                   Contact Us
                 </h1>
-                <p className="mt-2 text-slate-100">
+                <p className="mt-2 text-slate-900">
                   Looking for a Fitout and Construction Partner?
                 </p>
-                <p className="text-slate-100">Get in Touch With Us</p>
+                <p className="text-slate-900">Get in Touch With Us</p>
               </div>
               <div className="flex items-center gap-5 justify-start">
                 <LinkedinLogo weight="fill" className="text-3xl" />
@@ -151,7 +151,7 @@ const ContactForm = () => {
   const [status, setStatus] = useState("");
 
   const validate = () => {
-    let tempErrors = {
+    const tempErrors = {
       fullName: "",
       companyName: "",
       phone: "",

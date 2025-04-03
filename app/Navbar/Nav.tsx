@@ -137,6 +137,7 @@ const Nav = () => {
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  console.log(path);
   return (
     <motion.div
       className={cn(
@@ -174,7 +175,8 @@ const Nav = () => {
                   onMouseEnter={() => setIsMenuShowing(true)}
                   className={cn(
                     `px-4 py-[.5rem] rounded-xl hover:bg-orange-100`,
-                    path === menu.route && `bg-orange-200`
+                    path.includes("Services") &&
+                      `bg-orange-200 text-orange-900 hover:bg-orange-200`
                   )}
                 >
                   <span className="flex items-center gap-2">
@@ -206,9 +208,10 @@ const Nav = () => {
                             }}
                             key={index}
                             className={cn(
-                              `hover:bg-orange-100 px-5 py-3`,
+                              `hover:bg-orange-50 px-5 py-3`,
                               index !== menu.serviceList.length - 1 &&
-                                "border-b border-slate-400"
+                                "border-b border-slate-400",
+                              path.includes(service.name) && "bg-orange-50"
                             )}
                           >
                             <Link

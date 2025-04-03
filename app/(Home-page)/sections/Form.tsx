@@ -23,7 +23,7 @@ const Form = () => {
   const [status, setStatus] = useState("");
 
   const validate = () => {
-    let tempErrors = {
+    const tempErrors = {
       fullName: "",
       companyName: "",
       phone: "",

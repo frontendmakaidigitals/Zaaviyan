@@ -25,7 +25,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
    const [status, setStatus] = useState("");
  
    const validate = () => {
-     let tempErrors = {
+    const tempErrors = {
        fullName: "",
        companyName: "",
        phone: "",
