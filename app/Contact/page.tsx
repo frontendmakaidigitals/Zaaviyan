@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -8,6 +8,8 @@ import {
   YoutubeLogo,
   TwitterLogo,
 } from "@phosphor-icons/react";
+import { cn } from "../lib/utils";
+import SmallLoadingSpinner from "../App_Chunks/Components/Loading";
 const Page = () => {
   return (
     <div className="">
@@ -129,14 +131,146 @@ const Page = () => {
 export default Page;
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [checkbox, setCheckBox] = useState(false);
+
+  const [errors, setErrors] = useState({
+    fullName: "",
+    companyName: "",
+    phone: "",
+    email: "",
+    message: "",
+    checked: false,
+  });
+  const [status, setStatus] = useState("");
+
+  const validate = () => {
+    let tempErrors = {
+      fullName: "",
+      companyName: "",
+      phone: "",
+      email: "",
+      message: "",
+      checked: false,
+    };
+    if (!formData.fullName.trim())
+      tempErrors.fullName = "Full Name is required";
+    if (!formData.companyName.trim())
+      tempErrors.companyName = "Company Name is required";
+    if (!formData.phone.trim()) {
+      tempErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      tempErrors.phone = "Phone number must be 10 digits";
+    }
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Invalid email format";
+    }
+    if (!formData.message.trim()) tempErrors.message = "Message is required";
+    if (!checkbox) tempErrors.checked = true;
+    setErrors(tempErrors);
+    const hasErrors = Object.values(tempErrors).some(
+      (error) => error !== "" && error !== false
+    );
+    return !hasErrors;
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("");
+    if (!validate()) {
+      console.log("return", errors);
+      return;
+    }
+    setStatus("Sending...");
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.ok) {
+        setStatus("ok");
+        setFormData({
+          fullName: "",
+          companyName: "",
+          phone: "",
+          email: "",
+          message: "",
+        }); // Reset form
+        setCheckBox(false);
+      } else {
+        setStatus("Failed to send email.");
+      }
+    } catch (error) {
+      setStatus("Error sending email.");
+    }
+  };
+
+  
   return (
     <div className=" w-full bg-white shadow-md rounded-b-md px-3  lg:px-12 py-12">
       <form>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-8">
-          <Input placeholder="Your name" />
-          <Input placeholder="Your email" />
-          <Input placeholder="Your phone" />
-          <Input placeholder="Your company name" />
+          <div>
+            <Input
+              placeholder="Your name"
+              name={"fullName"}
+              value={formData.fullName}
+              onChange={handleChange}
+            />
+            {errors.fullName && (
+              <p className="text-red-600 text-sm">{errors.fullName}</p>
+            )}
+          </div>
+          <div>
+            <Input
+              placeholder="Your email"
+              name={"email"}
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && (
+              <p className="text-red-600 text-sm">{errors.email}</p>
+            )}
+          </div>
+          <div>
+            <Input
+              placeholder="Your phone"
+              name={"phone"}
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            {errors.phone && (
+              <p className="text-red-600 text-sm">{errors.phone}</p>
+            )}
+          </div>
+          <div>
+            <Input
+              placeholder="Your company name"
+              name={"companyName"}
+              value={formData.companyName}
+              onChange={handleChange}
+            />
+            {errors.companyName && (
+              <p className="text-red-600 text-sm">{errors.companyName}</p>
+            )}
+          </div>
 
           <div className="col-span-full">
             <label>Message (Optional)</label>
@@ -144,20 +278,55 @@ const ContactForm = () => {
               rows={8}
               className="resize-none mt-2 w-full rounded-md focus:outline-black bg-transparent placeholder:text-muted-foreground border text-sm border-black px-3 py-1 text-base shadow-sm transition-colors "
               placeholder="Enter your message"
+              value={formData.message}
+              name={"message"}
+              onChange={handleChange}
             />
+            {errors.message && (
+              <p className="text-red-600 text-sm">{errors.message}</p>
+            )}
           </div>
         </div>
         <div className="flex items-center mt-2 space-x-2">
-          <Checkbox id="terms" />
+          <Checkbox
+            id="terms"
+            checked={checkbox}
+            onCheckedChange={() => {
+              setErrors((prev) => ({
+                ...prev, // Keep existing errors
+                checked: false, // Update 'checked' error
+              }));
+              setCheckBox(!checkbox);
+            }}
+          />
           <label
             htmlFor="terms"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className={`${
+              errors.checked ? "text-red-500" : ""
+            } text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70`}
           >
             I accept the terms and conditions.
           </label>
         </div>
-        <button className="border border-slate-400 mt-10 px-4 py-2 rounded-md">
-          Submit
+        <button
+          type="submit"
+          className={cn(
+            `border border-slate-400 mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
+            status === "ok" && "bg-[#25D366] text-green-950"
+          )}
+          disabled={status === "Sending..." || status === "ok"}
+          onClick={handleSubmit}
+        >
+          {status === "Sending..." ? (
+            <>
+              <SmallLoadingSpinner />
+              Sending...
+            </>
+          ) : status === "ok" ? (
+            "Submitted Sucessfully"
+          ) : (
+            "Submit"
+          )}
         </button>
       </form>
     </div>
