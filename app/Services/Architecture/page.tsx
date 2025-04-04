@@ -18,10 +18,10 @@ const Page = () => {
         "Efficient Layouts – Functional layouts that maximize space efficiency and flow.",
         "Employee-Centric Spaces – Focus on employee well-being, comfort, and productivity.",
         "High-Quality Finishes – Premium materials and finishes for a professional, lasting look.",
-        "Timely Project Delivery – On-time completion with minimal disruption to your business."
+        "Timely Project Delivery – On-time completion with minimal disruption to your business.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Residential Design & Fitouts",
@@ -32,10 +32,10 @@ const Page = () => {
         "Space Optimization – Innovative storage solutions to maximize space.",
         "Diverse Style Options – Contemporary and classic designs based on your preferences.",
         "Craftsmanship & Detail – Quality craftsmanship and attention to detail in every element.",
-        "Energy Efficiency – Sustainable solutions to save energy and reduce costs."
+        "Energy Efficiency – Sustainable solutions to save energy and reduce costs.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1494380982332-dfc36fbfece6?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1494380982332-dfc36fbfece6?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Renovations & Refurbishments",
@@ -46,10 +46,10 @@ const Page = () => {
         "Optimized Layouts – Improving functionality and flow throughout the space.",
         "Modern Aesthetic – Blending contemporary design with the building’s original charm.",
         "Sustainable Solutions – Using eco-friendly materials and energy-efficient options.",
-        "Seamless Integration – Combining new elements harmoniously with the existing architecture."
+        "Seamless Integration – Combining new elements harmoniously with the existing architecture.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "New Builds & Developments",
@@ -60,11 +60,11 @@ const Page = () => {
         "Comprehensive Planning – Detailed project planning from concept to completion.",
         "Expert Consultation – Ensuring compliance with regulations and building guidelines.",
         "Sustainability Focus – Eco-friendly construction practices and materials.",
-        "Durability & Quality – Long-term durability and attention to detail in every build."
+        "Durability & Quality – Long-term durability and attention to detail in every build.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1551295022-de5522c94e08?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      img: "https://images.unsplash.com/photo-1551295022-de5522c94e08?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
   return (
     <main className="">
@@ -87,10 +87,8 @@ const Page = () => {
         <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-auto container flex flex-col items-start justify-center">
             <h2 className="text-3xl md:text-2xl py-2 lg:text-5xl  px-5 lg:pl-0 lg:pr-5 bg-[#F7F7F7]  font-heroFont">
-              Innovative{' '}
-              <span className="font-secondaryFont">
-                Architectural Designs
-              </span>{" "}
+              Innovative{" "}
+              <span className="font-secondaryFont">Architectural Designs</span>{" "}
               That Inspire
             </h2>
             <div>
@@ -136,6 +134,9 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <h2 className="container mt-20 text-5xl font-Primary text-center">
+        <span className="font-heroFont">Architecture</span> Design Service
+      </h2>
       <GridSection data={merchandiseService} />
       <Choose />
       <Banner />

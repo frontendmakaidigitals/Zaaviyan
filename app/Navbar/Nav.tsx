@@ -8,7 +8,6 @@ import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import {
-  ArrowLeft,
   ArrowUpRight,
   CaretDown,
   DotsThreeOutline,
@@ -18,8 +17,6 @@ import { ChevronDown } from "lucide-react";
 const Nav = () => {
   const [isNavShowing, setIsNavShowing] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
   const path = usePathname();
   const menus = [
     { name: "Home", route: "/" },
@@ -53,74 +50,35 @@ const Nav = () => {
   const lenis = useLenis();
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node) // Prevents button from closing itself
-      ) {
-        setIsActive(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setIsNavShowing(false); // Scroll down -> hide navbar
+      const currentScrollY = window.scrollY;
+      if (currentScrollY <= 0) {
+        setIsNavShowing(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsNavShowing(false);
       } else {
-        setIsNavShowing(true); // Scroll up -> show navbar
+        setIsNavShowing(true);
       }
-      setLastScrollY(window.scrollY);
+
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
-  const [isActive, setIsActive] = useState(false);
+
   const [isOnMobile, setIsOnMobile] = useState(false);
-  useEffect(() => {
-    if (window) {
-      if (window.innerWidth < 480) {
-        setIsOnMobile(true);
-      }
-    }
-  });
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node) // Prevents button from closing itself
-      ) {
-        setIsActive(false);
-      }
-    };
-
-    const handleScroll = () => {
-      setIsActive(false);
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const [isMenuShowing, setIsMenuShowing] = useState(false);
-
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // State to track which menu is open
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => setIsOnMobile(window.innerWidth < 480);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -131,23 +89,25 @@ const Nav = () => {
     }
   }, [isOpen]);
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null); // State to track which menu is open
-
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  console.log(path);
+  console.log(isOnMobile);
   return (
     <motion.div
       className={cn(
-        "w-full fixed left-0 z-50 bg-white/40",
+        "w-full fixed left-0 z-50",
         lastScrollY !== 0 && !isOpen && "backdrop-blur-lg"
       )}
       initial={{ top: 0 }}
       animate={{
         top: isNavShowing ? 0 : -100,
         backgroundColor:
-          lastScrollY == 0 ? "hsl(1, 5%, 85%, 0)" : "hsl(1, 5%, 85%, 0.4)",
+          lastScrollY === 0
+            ? isOnMobile
+              ? "hsl(1, 5%, 85%, 0.8)" // Mobile: Slightly opaque at the top
+              : "hsl(1, 5%, 85%, .9)" // Desktop: Fully transparent at the top
+            : "hsl(1, 5%, 85%, 0.4)",
       }}
       transition={{
         type: "spring",
