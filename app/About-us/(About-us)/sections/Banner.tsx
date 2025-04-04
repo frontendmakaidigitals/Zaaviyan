@@ -1,6 +1,9 @@
+'use client'
 import React from "react";
-
+import { useRouter } from "next/navigation";
+import { constants } from "fs";
 const Banner = () => {
+  const router = useRouter();
   return (
     <div className="w-full my-32">
       <div className="w-full container p-10 bg-[url('https://img.freepik.com/free-photo/empty-save-texture-room-light_1258-175.jpg')] bg-center bg-no-repeat bg-cover">
@@ -12,7 +15,7 @@ const Banner = () => {
           create an exceptional commercial space, Zaaviyan is here to bring your
           vision to reality.
         </p>
-        <button className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+        <button onClick={()=> {router.push('/Contact')}} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
           <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
             <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
           </div>

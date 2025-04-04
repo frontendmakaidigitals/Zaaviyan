@@ -9,7 +9,7 @@ const Text = () => {
     " Zaaviyan Contracting is a leading fit-out company that excels in delivering high-quality, custom-made interiors across residential, commercial, and hospitality sectors. With a strong foundation built on innovation, creativity, and a commitment to excellence, we have earned a reputation for transforming spaces into functional, inspiring environments.";
   return (
     <div ref={viewContainer} className="my-20 ">
-      <h2 className="text-center mb-7 text-3xl font-Primary text-slate-600">About us</h2>
+      <h2 className="text-center mb-7 text-3xl lg:text-5xl font-[600] font-Primary text-slate-600">About us</h2>
       <motion.article className="container font-[700] font-Primary text-center text-lg lg:text-2xl flex flex-wrap justify-center">
         {para.split(" ").map((elem, idx) => (
           <span key={idx} className="overflow-hidden inline-block">

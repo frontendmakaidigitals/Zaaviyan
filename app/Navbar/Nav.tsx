@@ -92,7 +92,6 @@ const Nav = () => {
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  console.log(isOnMobile);
   return (
     <motion.div
       className={cn(

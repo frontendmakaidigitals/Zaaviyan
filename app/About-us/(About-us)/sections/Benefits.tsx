@@ -1,37 +1,24 @@
 "use client";
 import React from "react";
-import { LightbulbFilament, Globe, Scales } from "@phosphor-icons/react";
 const Benefits = () => {
   const cards = [
     {
-      title: "inspiration",
-      desc: "We are passionate to work with private customers as well as developers of all sizes. Every project inspires us and builds on our experience, allowing us to manage large scale projects while being loyal to our renowned heritage in smart bespoke villas.",
-      icon: <LightbulbFilament />,
+      title: "Eco-Friendly Practices",
+      desc: "At Zaaviyan, sustainability is not just a trend — it’s a commitment. We integrate eco-conscious practices into every phase of our projects, from material selection to energy-efficient systems. Our goal is to minimize environmental impact while delivering modern, functional spaces that align with global green building standards. By prioritizing sustainable solutions, we not only protect the planet but also create healthier, more efficient environments for our clients.",
+      icon: "Media/benefits/leaves.png",
     },
     {
-      title: "Better World",
-      desc: "Our mission at Settle is to continuously improve the quality of human experience in life with our responsible projects and approach to make those happen. Settle turns sustainable dreams into reality with a focus on world-class design, attention to detail and professional execution.",
-      icon: <Globe />,
+      title: "Bespoke Design",
+      desc: "Zaaviyan offers fully customized fit-out services tailored to the unique needs of each client. Our turnkey solutions cover everything from concept design to final execution, ensuring a seamless and hassle-free experience. With a focus on precision, quality craftsmanship, and design excellence, we bring your vision to life while maintaining the highest standards of functionality and aesthetics.",
+      icon: "Media/benefits/sewing.png",
     },
     {
-      title: "Business Ethics",
-      desc: "Business ethics stand amidst the core of our values. We want to leave our mark on the work that helps the society and our planet prosper. We work through partnership and collaboration to build the trust for better tomorrow. Join us for the exiting journey for towards The Design of Good Living ™.",
-      icon: <Scales />,
+      title: "Innovation and Smart Technology",
+      desc: "Embracing the future of design and construction, Zaaviyan integrates cutting-edge technologies into our projects to enhance performance, comfort, and convenience. From smart lighting and automation systems to innovative construction techniques, we leverage technology to deliver intelligent, future-ready spaces that align with modern lifestyles and business needs.",
+      icon: "Media/benefits/cpu.png",
     },
   ];
 
-  if (false) {
-    return (
-      <div>
-        <h1 className="text-slate-50 text-5xl text-center">
-          Together We can change <br /> How Houses are build
-        </h1>
-        <p className="text-slate-100 text-center text-md">
-          We always work by the highest standard and business ethics
-        </p>
-      </div>
-    );
-  }
   return (
     <div className="w-full h-auto lg:h-[800px]">
       <div className="w-full h-auto py-10 lg:py-0 lg:h-[550px] relative">
@@ -56,7 +43,15 @@ const Benefits = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {cards.map((card, idx) => (
               <div key={idx} className="bg-black text-slate-50 p-8">
-                <div className="text-9xl flex justify-center">{card.icon}</div>
+                <div className=" flex justify-center">
+                  <div className="size-28">
+                    <img
+                      src={card.icon}
+                      alt={card.title}
+                      className="invert brightness-0"
+                    />
+                  </div>
+                </div>
                 <h2 className="text-3xl font-[600] mt-4 capitalize font-Primary ">
                   {card.title}
                 </h2>

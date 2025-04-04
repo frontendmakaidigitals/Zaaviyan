@@ -1,20 +1,19 @@
+'use client'
 import React from "react";
-
+import { useRouter } from "next/navigation";
 const HeroSection = () => {
+  const router = useRouter();
   return (
     <div className="h-[99vh] w-full relative">
-      
       <div className="absolute w-full z-10 top-1/2   -translate-y-1/2">
         <div className="container">
-          <p className="text-slate-100 text-xl lg:text-2xl">30 Years Experience</p>
           <h2 className="text-4xl lg:text-6xl text-slate-100 font-[700] font-Primary">
-            We help build <br />
-            Innovative prodcuts.
+            Crafting Spaces with <br /> Purpose and Precision
           </h2>
           <p className="text-md text-slate-100 mt-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Expertly designing and building spaces that blend functionality with precision.
           </p>
-          <button className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+          <button onClick={()=> router.push('/Contact')} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
             <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
               <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
             </div>

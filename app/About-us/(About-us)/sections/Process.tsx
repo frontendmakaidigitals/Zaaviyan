@@ -3,17 +3,26 @@ import React from "react";
 
 const Process = () => {
   const process = [
-    { name: "Pre-Design", icons: "media/About-us/prototype.png" },
-    { name: "Concept", icons: "media/About-us/concept.png" },
-    { name: "Detailed Design", icons: "media/About-us/magnifying-glass.png" },
-    { name: "Build Planning", icons: "media/About-us/urban-planning.png" },
-    { name: "Construction", icons: "media/About-us/work-in-progress.png" },
+    { name: "Extensive Expertise", icons: "media/About-us/customer-satisfaction.png" },
+    { name: "In-House Facilities ", icons: "media/About-us/house-plan.png" },
+    {
+      name: "End-to-End Services",
+      icons: "media/About-us/strategy.png",
+    },
+    {
+      name: "Attention to Detail",
+      icons: "media/About-us/3d-model.png",
+    },
+    {
+      name: "Commitment to Quality",
+      icons: "media/About-us/checked.png",
+    },
   ];
   return (
     <div className=" pb-24">
       <div className="container">
         <h2 className="text-3xl text-center  font-Primary font-[600]">
-          Everthing Under One Process
+          From Concept to Completion, We Deliver Excellence.
         </h2>
         <p className="text-center mt-2">
           We set the stage, craft ambition, visualize perfection, plan
@@ -26,7 +35,8 @@ const Process = () => {
             <div
               className={cn(
                 `w-full flex flex-col justify-center items-center`,
-                idx !== process.length - 1 && "border-0 lg:border-r border-slate-300"
+                idx !== process.length - 1 &&
+                  "border-0 lg:border-r border-slate-300"
               )}
               key={idx}
             >
