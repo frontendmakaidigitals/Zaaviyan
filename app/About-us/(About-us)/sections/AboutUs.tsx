@@ -32,7 +32,7 @@ const AboutUs = () => {
           <p className="mt-3 text-md lg:text-lg text-center lg:text-start">
             Our team of experienced architects, designers, engineers, and
             project managers work collaboratively to bring each project to life
-            — from concept to completion. Whether it's residential, commercial,
+            — from concept to completion. Whether it`s residential, commercial,
             hospitality, or retail, we ensure every detail is executed to
             perfection, on time and within budget.
           </p>

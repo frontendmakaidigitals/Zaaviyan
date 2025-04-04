@@ -1,18 +1,28 @@
 import React from "react";
 import Logo from "../App_Chunks/Components/Logo";
+import Link from "next/link";
 const Footer = () => {
   const menus = [
     {
       heading: "Menu",
       links: [
-        { name: "Product" },
-        { name: "For Agencies" },
-        { name: "Pricing" },
+        { name: "About Us", route: "/About-us" },
+        { name: "Careers", route: "/Careers" },
+        { name: "Contact Us", route: "/Contact" },
       ],
     },
     {
-      heading: "More",
-      links: [{ name: "Updates" }, { name: "Careers" }, { name: "Meida Kit" }],
+      heading: "Popular Links",
+      links: [
+        {
+          name: "Building Contracting",
+          route: "/Services/Building-Contracting",
+        },
+        { name: "Space Renovation", route: "/Services/Space-Renovation" },
+        { name: "Fit-out & Refurbishments", route: "/Services/Fitout" },
+        { name: "Architecture Design", route: "/Services/Architecture" },
+        { name: "Carpentry", route: "/Services/Carpentry" },
+      ],
     },
   ];
   const year = new Date().getFullYear();
@@ -22,9 +32,8 @@ const Footer = () => {
         <div>
           <Logo className="!min-w-44 " />
           <p>
-            Lorem ipsum odor amet, consectetuer adipiscing elit. Sagittis
-            egestas velit vivamus lorem himenaeos class nibh magnis. Litora
-            suspendisse risus cursus platea feugiat facilisis.
+            Zaaviyan is a premier UAE contracting and fit-out company,
+            redefining excellence in construction.
           </p>
         </div>
         <div></div>
@@ -38,7 +47,7 @@ const Footer = () => {
                 <ul className="mt-3">
                   {elem.links.map((link, index) => (
                     <li key={index} className="mt-1">
-                      {link.name}
+                      <Link href={link.route}>{link.name}</Link>
                     </li>
                   ))}
                 </ul>
