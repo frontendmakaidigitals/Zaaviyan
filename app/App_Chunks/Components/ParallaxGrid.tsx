@@ -1,5 +1,5 @@
-'use client'
-import { useRef, useEffect ,useState } from "react";
+"use client";
+import { useRef, useEffect, useState } from "react";
 import { CheckFat } from "@phosphor-icons/react";
 import { cn } from "@/app/lib/utils";
 import { useScroll, useTransform, motion } from "framer-motion";
@@ -9,7 +9,21 @@ const ParallaxGrid = ({ idx, e }: { idx: number; e: any }) => {
     target: imgRef,
     offset: ["start end", "end start"],
   });
-
+  const [viewPortWidth, setViewPortWidth] = useState(0);
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      setViewPortWidth(window.innerWidth);
+    }
+    const handleResize = () => {
+      if (typeof window !== undefined) {
+        setViewPortWidth(window.innerWidth);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const y = useTransform(scrollYProgress, [0, 1], [-20, 20]); // Subtle parallax effect
   const textRef = useRef<HTMLDivElement>(null);
   const [textHeight, setTextHeight] = useState(0);
@@ -54,7 +68,7 @@ const ParallaxGrid = ({ idx, e }: { idx: number; e: any }) => {
         <h4 className="mt-4 text-xl font-Primary font-[600] mb-4">
           Our {e.title} Solutions
         </h4>
-        {e.solutions.map((sol : string, index: number) => (
+        {e.solutions.map((sol: string, index: number) => (
           <p key={index} className="mb-2 flex items-start gap-3">
             <span className="mt-1">
               <CheckFat className="" />
@@ -65,7 +79,10 @@ const ParallaxGrid = ({ idx, e }: { idx: number; e: any }) => {
       </div>
       <div
         ref={imgRef}
-        style={{height:`${textHeight ? textHeight : 0}px`}}
+        style={{
+          height:
+          viewPortWidth > 768 ? `${textHeight ? textHeight : 0}px` : "auto",
+        }}
         className={cn(
           "relative overflow-hidden w-full", // Fixed height to keep things aligned
           idx % 2 !== 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
@@ -80,4 +97,4 @@ const ParallaxGrid = ({ idx, e }: { idx: number; e: any }) => {
     </div>
   );
 };
-export default ParallaxGrid
+export default ParallaxGrid;

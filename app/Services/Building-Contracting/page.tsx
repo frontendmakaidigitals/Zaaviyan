@@ -105,20 +105,19 @@ const Page = () => {
         <div className="h-full w-full max-w-4xl -z-20 bg-gradient-to-b from-[rgba(100,95,89,.4)] from-[30%] to-[#F7F7F7] to-[70%] absolute right-0 top-0 " />
         <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-auto container flex flex-col items-start justify-center">
-            <h2 className="text-3xl md:text-2xl lg:text-5xl py-2 pr-5 bg-[#F7F7F7]  font-heroFont">
-              Premium
-              <span className="font-secondaryFont">Space Renovations</span>{" "}
-              Services
+            <h2 className="text-3xl md:text-2xl lg:text-5xl py-2 px-3 lg:pl-0 lg:pr-5 bg-[#F7F7F7]  font-heroFont">
+              Your Reliable{" "}
+              <span className="font-secondaryFont">Construction</span> Partner
             </h2>
             <div>
               <p className="md:text-[.8rem] xl:text-lg mt-4 w-full md:max-w-xs lg:max-w-sm xl:max-w-md md:pr-8 lg:pr-10">
-                At Zaaviyan, we craft architecture that reflects your vision,
-                blending functionality with aesthetics. Specializing in
-                contracting and fit-outs, we create inspiring, productive
-                spaces. Our collaborative approach ensures every design is
-                visually striking, practical, and built to last. With a focus on
-                innovation and sustainability, we transform ideas into timeless
-                architectural masterpieces.
+                At Zaaviyan, we bring expertise, precision, and innovation to
+                every construction project. As a trusted building contracting
+                company, we specialize in delivering high-quality construction
+                solutions, ensuring structural excellence and long-term
+                durability. From commercial developments to luxury residences,
+                we handle projects of all sizes with professionalism and
+                attention to detail.
               </p>
               <button
                 onClick={() => setIsOpen(true)}

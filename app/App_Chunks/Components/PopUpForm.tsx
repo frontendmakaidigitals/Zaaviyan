@@ -23,7 +23,12 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
     message: "",
     checked: false,
   });
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<
+    | { success: boolean; status: number }
+    | { error: string; status: number }
+    | null
+  >(null);
 
   const validate = () => {
     const tempErrors = {
@@ -66,12 +71,12 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("");
+  
     if (!validate()) {
       console.log("return", errors);
       return;
     }
-    setStatus("Sending...");
+    setLoading(true);
     try {
       const response = await fetch("/api/email", {
         method: "POST",
@@ -80,7 +85,8 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
       });
 
       if (response.ok) {
-        setStatus("ok");
+        const responseData = await response.json();
+        setStatus(responseData.success);
         setFormData({
           fullName: "",
           companyName: "",
@@ -89,13 +95,21 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
           message: "",
         }); // Reset form
         setCheckBox(false);
+        onClose();
       } else {
-        setStatus("Failed to send email.");
+        const errorData = await response.json();
+        setStatus(errorData.error);
       }
     } catch (error) {
-      setStatus("Error sending email.");
+      setStatus({
+        error: (error as Error).message || "Network error occurred",
+        status: 500,
+      });
+    } finally {
+      setLoading(false);
     }
   };
+  console.log(loading)
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -226,18 +240,22 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                 type="submit"
                 className={cn(
                   `border border-slate-400 mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
-                  status === "ok" && "bg-[#25D366] text-green-950"
+                  status && "bg-gray-200", // Default background when status is set
+                  status && "success" in status && status.success && "bg-[#25D366] text-green-950", // Success styling
+                  status && "error" in status && status.error && "bg-red-500 text-white" // Error styling
                 )}
-                disabled={status === "Sending..." || status === "ok"}
+                disabled={loading || (status !== null && "success" in status && status.success)} // Disable if loading or submission was successful
                 onClick={handleSubmit}
               >
-                {status === "Sending..." ? (
+                {loading ? (
                   <>
                     <SmallLoadingSpinner />
                     Sending...
                   </>
-                ) : status === "ok" ? (
-                  "Submitted Sucessfully"
+                ) : status && "success" in status && status.success ? (
+                  "Submitted Successfully"
+                ) : "error" in (status || {}) ? (
+                  "Submission Failed"
                 ) : (
                   "Submit"
                 )}

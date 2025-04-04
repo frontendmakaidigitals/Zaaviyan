@@ -5,7 +5,6 @@ import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
 import { AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import {
@@ -216,7 +215,7 @@ const Nav = () => {
                           >
                             <Link
                               href={service.route}
-                              className="text-xl  flex justify-between items-center gap-2"
+                              className="text-xl flex justify-between items-center gap-2"
                             >
                               {service.name}
                               <ArrowUpRight />
@@ -323,7 +322,12 @@ const Nav = () => {
                                   className="font-[500] mt-3 text-2xl"
                                   key={index}
                                 >
-                                  <Link href={menu.route}>{service.name}</Link>
+                                  <Link
+                                    onClick={() => setIsOpen(false)}
+                                    href={service.route}
+                                  >
+                                    {service.name}
+                                  </Link>
                                 </p>
                               ))}
                             </motion.div>
