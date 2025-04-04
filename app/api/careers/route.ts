@@ -2,13 +2,6 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
-    interface FormData {
-      firstName: string;
-      lastName: string;
-      email: string;
-      message: string;
-      cv: File;
-    }
     const formData = await req.formData(); // Use formData() if sending FormData
     const file = formData.get("cv") as File;
 

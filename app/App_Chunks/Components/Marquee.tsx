@@ -8,6 +8,7 @@ interface MarqueeProps {
   vertical?: boolean;
   repeat?: number;
   [key: string]: any;
+  isAnimating?:boolean
 }
 
 export default function Marquee({
@@ -17,18 +18,20 @@ export default function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  isAnimating = true,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2  [--gap:1rem] [gap:var(--gap)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
         },
-        className
+        className,
+        isAnimating && "[--duration:40s]"
       )}
     >
       {Array(repeat)

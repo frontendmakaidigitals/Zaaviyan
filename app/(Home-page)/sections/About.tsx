@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "@phosphor-icons/react";
 const About = () => {
-  const { scrollYProgress } = useScroll(); // Get scroll progress
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]); // Move image upward as user scrolls
-
+  const imgRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
   return (
     <div className="w-full my-20">
       <div className=" grid grid-cols-1 lg:grid-cols-2 place-items-center gap-10">
@@ -49,11 +51,10 @@ const About = () => {
         </div>
 
         {/* Image with Parallax Effect */}
-        <div className="h-[450px] lg:h-[600px] w-full overflow-hidden">
+        <div ref={imgRef} className="h-[450px] lg:h-[600px] w-full overflow-hidden">
           <motion.img
             className="w-full h-full object-cover"
             src="Media/About us.jpg"
-            style={{ y, scale: 1.4 }}
           />
         </div>
       </div>

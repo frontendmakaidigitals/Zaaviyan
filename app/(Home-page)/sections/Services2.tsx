@@ -8,7 +8,7 @@ const Services = () => {
     {
       name: "Interior Design",
       desc: " Our Interior Design & Development services focus on creating aesthetically pleasing, functional spaces that reflect your personal style and business identity. From concept to completion, we ensure a seamless and personalized design experience.",
-      img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/interior.jpg",
     },
     {
       name: "Joinery",
@@ -28,7 +28,7 @@ const Services = () => {
     {
       name: "Fit-out & Refurbishments",
       desc: "Our fit-out and refurbishment services breathe new life into your space, transforming it into a more functional and aesthetically pleasing environment. We work efficiently to ensure minimal disruption while delivering high-quality, tailored solutions.",
-      img: "https://images.unsplash.com/photo-1603562750325-7627768b62da?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/fitout.jpg",
     },
     {
       name: "Visual Merchandising & Shop Display",
@@ -38,7 +38,7 @@ const Services = () => {
     {
       name: "Architecture Design",
       desc: "Our architecture design services focus on creating innovative, sustainable, and functional spaces that meet your needs and exceed your expectations. We combine aesthetic appeal with practicality to design structures that are both beautiful and livable.",
-      img: "https://images.unsplash.com/photo-1524190764808-ec02814a854e?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/arch.jpg",
     },
     {
       name: "Retail Turnkey Solutions",
@@ -48,17 +48,17 @@ const Services = () => {
     {
       name: "Home Maintenance",
       desc: "Our home maintenance services keep your property in top condition, offering everything from routine upkeep to emergency repairs. We ensure your home remains safe, functional, and well-maintained year-round.",
-      img: "https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/home.jpg",
     },
     {
       name: "Space Renovation",
       desc: " Our space renovation services transform your existing space into something fresh and functional, adapting it to your evolving needs. Whether it's a simple upgrade or a full remodel, we create spaces that are both stylish and practical.",
-      img: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/space.jpg",
     },
     {
       name: "Building Contracting",
       desc: "Zaaviyan offers top-tier building contracting services in the UAE, delivering high-quality construction with precision and innovation. From concept to completion, we ensure excellence in every project, tailored to client needs.",
-      img: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/Services_Images/building.jpg",
     },
   ];
 

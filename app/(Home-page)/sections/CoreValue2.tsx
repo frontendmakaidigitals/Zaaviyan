@@ -87,10 +87,6 @@ const CoreValue = () => {
         <div className="grid grid-cols-3 lg:grid-cols-6 mt-14 gap-3 place-items-center">
           {coreValues.map((elem, idx) => (
             <motion.button
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: idx * 0.15, duration: 1, type: "spring" }}
-              viewport={{ once: true }}
               key={idx}
               onClick={() => setIndex(idx)}
               className={cn(

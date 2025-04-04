@@ -55,12 +55,12 @@ const Footer = () => {
             </div>
           ))}
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <div>
               <h3 className="text-xl text-slate-950 font-[600]">Address</h3>
               <ul className="mt-3">
-                <li>Phone- +971581115376</li>
-                <li>Email- info@zaaviyancontracting.com</li>
+                <li>Phone - +971581115376</li>
+                <li>Email - info@zaaviyancontracting.com</li>
               </ul>
             </div>
           </div>

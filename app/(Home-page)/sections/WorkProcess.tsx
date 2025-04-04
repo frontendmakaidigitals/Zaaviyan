@@ -38,7 +38,7 @@ const WorkProcess = () => {
     },
     {
       processName: "Final Inspection and Handover",
-      img: "https://media.licdn.com/dms/image/C4D12AQEkXdFE-RfY0g/article-cover_image-shrink_720_1280/0/1589820515311",
+      img: "https://images.unsplash.com/photo-1700727448575-6f1680cd7d75?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Once the fit-out is complete, a thorough final inspection is conducted to ensure every detail aligns with your specifications and expectations. Any final adjustments or touch-ups are made at this stage to perfect the space. After this inspection, we hand over the space to you, confident that it’s fully functional, aesthetically pleasing, and ready for immediate use.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
