@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const joineryServices = [
@@ -16,10 +17,10 @@ const Page = () => {
         "Luxury Wardrobes & Closets – Fitted and walk-in wardrobes with smart storage, custom shelving, built-in lighting, and soft-close mechanisms.",
         "Custom Kitchen Cabinets – Precision-crafted cabinetry with finishes ranging from high-gloss modern to classic wooden textures.",
         "Bathroom Vanities & Storage Units – Moisture-resistant vanity units with integrated storage, sleek countertops, and high-end hardware.",
-        "Media & Entertainment Units – Custom-designed TV units, bookshelves, and storage cabinets that blend seamlessly into your home's design."
+        "Media & Entertainment Units – Custom-designed TV units, bookshelves, and storage cabinets that blend seamlessly into your home's design.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=3192&auto=format&fit=crop",
     },
     {
       title: "Custom Wood Paneling & Wall Treatments",
@@ -29,10 +30,10 @@ const Page = () => {
         "Decorative Wall Panels – Premium wood panels with intricate carvings, geometric designs, and 3D effects.",
         "Ceiling Paneling & Beams – Rustic wooden beams or sleek modern panels that add depth and texture.",
         "Wainscoting & Molding – Classic and modern wainscoting options for sophistication and wall protection.",
-        "Acoustic Wood Paneling – Sound-insulating wood panels perfect for offices, studios, and home theaters."
+        "Acoustic Wood Paneling – Sound-insulating wood panels perfect for offices, studios, and home theaters.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1563212107-c0cd3b51dc0e?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1563212107-c0cd3b51dc0e?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Wooden Doors & Partitioning Solutions",
@@ -42,10 +43,10 @@ const Page = () => {
         "Interior & Exterior Doors – Solid wood and glass-paneled doors with unique patterns and engravings.",
         "Sliding & Folding Doors – Space-saving solutions with smooth mechanisms for modern interiors.",
         "Wooden Room Dividers & Partitions – Custom dividers for privacy while maintaining an airy feel.",
-        "Decorative Carved Doors – Handcrafted doors with intricate detailing inspired by Arabic, Moroccan, and contemporary designs."
+        "Decorative Carved Doors – Handcrafted doors with intricate detailing inspired by Arabic, Moroccan, and contemporary designs.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1516551633610-2e498bfc3ee8?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1516551633610-2e498bfc3ee8?q=80&w=2957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Reception Counters & Commercial Joinery",
@@ -55,10 +56,10 @@ const Page = () => {
         "Reception & Lobby Counters – Elegant and functional reception desks tailored to brand aesthetics.",
         "Retail Display Units & Shelving – Custom wooden shelving, racks, and display stands for organized product showcasing.",
         "Office Desks & Workstations – Ergonomic and stylish office furniture designed for productivity.",
-        "Restaurant & Bar Joinery – Custom bar counters, seating booths, wall paneling, and storage units."
+        "Restaurant & Bar Joinery – Custom bar counters, seating booths, wall paneling, and storage units.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1608979827489-2b855e79debe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1608979827489-2b855e79debe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Staircases & Railings",
@@ -67,10 +68,10 @@ const Page = () => {
       solutions: [
         "Traditional & Modern Staircases – Grand staircases, floating designs, and contemporary geometric styles.",
         "Handrails & Balustrades – Premium wood, metal, or glass handrails ensuring safety and aesthetics.",
-        "Under-Stair Storage Solutions – Smartly designed drawers, cabinets, or shelving for maximizing space."
+        "Under-Stair Storage Solutions – Smartly designed drawers, cabinets, or shelving for maximizing space.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1610694858449-0079cf6a5b96?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1610694858449-0079cf6a5b96?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Outdoor & Garden Joinery",
@@ -80,14 +81,19 @@ const Page = () => {
         "Pergolas & Gazebos – Custom wooden structures for gardens, poolside areas, and patios.",
         "Decking & Flooring – Durable wooden decking solutions resistant to weathering.",
         "Outdoor Seating & Benches – Stylish, comfortable wooden furniture for gardens and public areas.",
-        "Fencing & Privacy Screens – Decorative wooden fences that offer both security and aesthetic appeal."
+        "Fencing & Privacy Screens – Decorative wooden fences that offer both security and aesthetic appeal.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1550948390-6eb7fa773072?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      img: "https://images.unsplash.com/photo-1550948390-6eb7fa773072?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
   return (
     <main className="">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img

@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const fitout = [
@@ -17,10 +18,10 @@ const Page = () => {
         "Partitioning & Wall Treatments – Installing partitions, acoustic solutions, and finishes that align with your vision while maintaining privacy and noise control.",
         "Furniture & Fixtures – Customizing office furniture that matches your brand identity and ensures comfort for employees.",
         "Lighting Design – Integrating innovative lighting solutions that create a productive, energy-efficient work environment.",
-        "M&E (Mechanical & Electrical) Systems – Upgrading electrical systems, data cabling, air conditioning, and lighting to meet your operational needs."
+        "M&E (Mechanical & Electrical) Systems – Upgrading electrical systems, data cabling, air conditioning, and lighting to meet your operational needs.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Retail Fit-outs",
@@ -31,10 +32,10 @@ const Page = () => {
         "Visual Merchandising – Strategically placing displays, shelves, and racks to maximize product visibility and enhance the shopping experience.",
         "Custom Design Features – Designing bespoke elements such as signage, displays, and counters that make your store stand out.",
         "Lighting & Ambience – Using advanced lighting techniques to highlight products, create a welcoming environment, and set the right tone for your brand.",
-        "Compliance & Safety – Ensuring all retail fit-outs comply with local regulations and safety standards."
+        "Compliance & Safety – Ensuring all retail fit-outs comply with local regulations and safety standards.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1584472376859-889e77a8ccac?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1584472376859-889e77a8ccac?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Residential Fit-outs",
@@ -45,10 +46,10 @@ const Page = () => {
         "Bespoke Furniture – Creating custom furniture pieces to optimize space and ensure functionality without compromising on style.",
         "Finishing Touches – Providing premium finishes including flooring, wall treatments, and accessories to elevate your home’s design.",
         "Smart Home Solutions – Integrating cutting-edge technology to enhance convenience, energy efficiency, and security.",
-        "Renovations & Extensions – Expanding or renovating existing spaces to increase functionality and improve aesthetics."
+        "Renovations & Extensions – Expanding or renovating existing spaces to increase functionality and improve aesthetics.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/flagged/photo-1556438758-872c68902f60?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/flagged/photo-1556438758-872c68902f60?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Hospitality Fit-outs",
@@ -59,10 +60,10 @@ const Page = () => {
         "Interior Design – Designing functional and stylish layouts for guest rooms, dining areas, lounges, and recreational spaces.",
         "Custom Furniture & Fixtures – Designing and sourcing high-quality furniture, fittings, and finishes that complement your theme and brand.",
         "Lighting & Ambience – Installing tailored lighting schemes that create the desired mood and atmosphere throughout the venue.",
-        "Sustainability – Incorporating sustainable materials and energy-efficient solutions to reduce environmental impact."
+        "Sustainability – Incorporating sustainable materials and energy-efficient solutions to reduce environmental impact.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1444201983204-c43cbd584d93?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Property Renovations & Refurbishments",
@@ -73,10 +74,10 @@ const Page = () => {
         "Structural Work – Undertaking essential structural improvements, including wall alterations, roofing, and foundation enhancements.",
         "Restoration & Preservation – Restoring historical buildings while maintaining their unique characteristics and charm.",
         "Interior Upgrades – Refurbishing bathrooms, kitchens, and living spaces with modern finishes, materials, and fittings.",
-        "Sustainable Solutions – Using eco-friendly materials and practices to minimize environmental impact and increase energy efficiency."
+        "Sustainable Solutions – Using eco-friendly materials and practices to minimize environmental impact and increase energy efficiency.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1599619585752-c3edb42a414c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1599619585752-c3edb42a414c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Space Planning & Design",
@@ -86,10 +87,10 @@ const Page = () => {
         "3D Visualizations & Renderings – Offering detailed visual representations to help you better understand how your space will look and function after the fit-out.",
         "Optimized Layouts – Designing layouts that support your business goals, comfort, and convenience while optimizing the flow of people and goods.",
         "Storage Solutions – Creating smart storage options that keep spaces organized and functional.",
-        "Accessibility & Ergonomics – Ensuring the design accommodates all users, promoting comfort and accessibility for every individual."
+        "Accessibility & Ergonomics – Ensuring the design accommodates all users, promoting comfort and accessibility for every individual.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1625585598750-3535fe40efb3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1625585598750-3535fe40efb3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Mechanical & Electrical Systems (M&E)",
@@ -99,14 +100,20 @@ const Page = () => {
         "Electrical Installations – Upgrading or installing lighting, power systems, and data cabling tailored to your needs.",
         "HVAC Systems – Installing and maintaining heating, ventilation, and air conditioning systems to ensure a comfortable indoor climate.",
         "Plumbing – Handling plumbing installations, upgrades, and maintenance for bathrooms, kitchens, and other facilities.",
-        "Energy Efficiency – Implementing energy-saving solutions such as LED lighting, energy-efficient HVAC systems, and smart building technology."
+        "Energy Efficiency – Implementing energy-saving solutions such as LED lighting, energy-efficient HVAC systems, and smart building technology.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1608574839637-2f7d0290d01d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      img: "https://images.unsplash.com/photo-1608574839637-2f7d0290d01d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
   return (
     <main className="">
+      {" "}
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img

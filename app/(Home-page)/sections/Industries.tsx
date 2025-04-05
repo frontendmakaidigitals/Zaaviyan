@@ -79,17 +79,7 @@ const Industries = () => {
 
         <motion.div
           className="grid mt-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden border border-slate-200"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: { staggerChildren: 0.15 },
-            },
-          }}
+         
         >
           {_Industries.map((elem, idx) => (
             <IndustryCard2

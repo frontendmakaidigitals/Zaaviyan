@@ -1,13 +1,10 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRouter } from "next/navigation";
 const About = () => {
   const imgRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: imgRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
+  const router = useRouter();
   return (
     <div className="w-full my-20">
       <div className=" grid grid-cols-1 lg:grid-cols-2 place-items-center gap-10">
@@ -32,7 +29,7 @@ const About = () => {
             project delivery. At Zaaviyan, excellence isn’t just a goal - it’s
             our standard.
           </p>
-          <button className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+          <button onClick={()=> router.push('/Contact')} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
             <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
               <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
             </div>

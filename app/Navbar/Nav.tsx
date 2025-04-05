@@ -243,7 +243,7 @@ const Nav = () => {
                       <X />
                     </button>
                   </div>
-                  <div className="text-3xl font-Primary font-[600] mt-14 grid  grid-cols-2  gap-3">
+                  <div className="text-3xl font-Primary font-[600] mt-14 grid  grid-cols-1  gap-3">
                     {menus.map((menu, id) =>
                       menu.serviceList ? (
                         <motion.div
@@ -255,10 +255,10 @@ const Nav = () => {
                             duration: 0.6,
                           }}
                           key={id}
-                          className="mb-5 w-full  col-span-2"
+                          className="mb-3 w-full "
                           onClick={() => toggleAccordion(id)} // Toggle accordion on click
                         >
-                          <div className="flex justify-between">
+                          <div className="flex items-center justify-between">
                             {" "}
                             <p className="flex-1">{menu.name}</p>
                             <ChevronDown
@@ -302,11 +302,7 @@ const Nav = () => {
                             duration: 0.6,
                           }}
                           key={id}
-                          className={`flex ${
-                            id === 1 || id === 4
-                              ? "flex justify-end"
-                              : "flex justify-start"
-                          } mb-5 w-full`}
+                          className={`w-full mb-3`}
                         >
                           <Link href={menu.route}>{menu.name}</Link>
                         </motion.div>

@@ -4,7 +4,7 @@ import Text from "./(About-us)/sections/Text";
 import AboutUs from "./(About-us)/sections/AboutUs";
 import Process from "./(About-us)/sections/Process";
 import Benefits from "./(About-us)/sections/Benefits";
-import Banner from "./(About-us)/sections/Banner";
+import Banner from "../App_Chunks/Components/Banner";
 const Page = () => {
   return (
     <>

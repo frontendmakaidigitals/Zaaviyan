@@ -1,19 +1,28 @@
-'use client'
-import React from "react";
-import { useRouter } from "next/navigation";
+"use client";
+import React, { useState } from "react";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const HeroSection = () => {
-  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="h-[99vh] w-full relative">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="absolute w-full z-10 top-1/2   -translate-y-1/2">
         <div className="container">
           <h2 className="text-4xl lg:text-6xl text-slate-100 font-[700] font-Primary">
             Crafting Spaces with <br /> Purpose and Precision
           </h2>
           <p className="text-md text-slate-100 mt-3">
-          Expertly designing and building spaces that blend functionality with precision.
+            Expertly designing and building spaces that blend functionality with
+            precision.
           </p>
-          <button onClick={()=> router.push('/Contact')} className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative mt-5 h-12 px-8 rounded-lg overflow-hidden transition-all duration-500 group"
+          >
             <div className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-b from-[#F59E0B] via-[#D97706] to-[#92400E]">
               <div className="absolute inset-0 bg-[#7C2D12] rounded-lg opacity-90" />
             </div>

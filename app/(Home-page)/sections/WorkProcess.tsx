@@ -6,7 +6,7 @@ const WorkProcess = () => {
   const process = [
     {
       processName: "Initial Consultation",
-      img: "https://images.pexels.com/photos/8297652/pexels-photo-8297652.jpeg",
+      img: "Media/process/consultation.jpg",
       description:
         "We begin by sitting down with you to gain a deep understanding of your goals, preferences, and any specific requirements for the project. This phase involves discussing your vision, whether it’s for a commercial or residential space, and utilizing practical solutions that best suit your needs. Our goal is to ensure we capture every detail of your expectations to provide a clear direction moving forward.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
@@ -14,7 +14,7 @@ const WorkProcess = () => {
     },
     {
       processName: "Design and Planning",
-      img: "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg",
+      img: "Media/process/designing.jpg",
       description:
         "Our design team works closely with you to craft detailed blueprints and layouts that focus on optimizing space usage, functionality, and visual appeal. We take into consideration both your aesthetic preferences and the practical demands of the space, ensuring that the design is both beautiful and functional. Every decision, from material selection to arrangement, is made to create an environment that enhances the user experience and supports your business or personal goals.",
       grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
@@ -22,7 +22,7 @@ const WorkProcess = () => {
     },
     {
       processName: "Project Management",
-      img: "https://images.pexels.com/photos/1870438/pexels-photo-1870438.jpeg",
+      img: "Media/process/management.jpg",
       description:
         "A dedicated project manager is assigned to your project to ensure everything runs smoothly from start to finish. They’ll oversee the timeline, manage the budget, and coordinate with contractors, suppliers, and other stakeholders to ensure deadlines are met and any challenges are swiftly addressed. Our project manager acts as your main point of contact, keeping you informed and ensuring the entire process stays on track.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",
@@ -30,7 +30,7 @@ const WorkProcess = () => {
     },
     {
       processName: "Construction and Fit-Out",
-      img: "https://images.unsplash.com/photo-1545296664-39db56ad95bd?q=80",
+      img: "Media/process/construction.jpg",
       description:
         "Our expert team of craftsmen will execute all construction tasks, from partitioning and structural modifications to flooring installation and custom furniture assembly. We prioritize quality at every step, using the best materials and techniques to ensure durability and an impeccable finish. The attention to detail ensures that the space is not only functional but also designed to the highest standards.",
       grid: "grid-cols-1 lg:grid-cols-[0.5fr_1.5fr] ",
@@ -38,7 +38,7 @@ const WorkProcess = () => {
     },
     {
       processName: "Final Inspection and Handover",
-      img: "https://images.unsplash.com/photo-1700727448575-6f1680cd7d75?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      img: "Media/process/handover.jpg",
       description:
         "Once the fit-out is complete, a thorough final inspection is conducted to ensure every detail aligns with your specifications and expectations. Any final adjustments or touch-ups are made at this stage to perfect the space. After this inspection, we hand over the space to you, confident that it’s fully functional, aesthetically pleasing, and ready for immediate use.",
       grid: "grid-cols-1 lg:grid-cols-[1.5fr_0.5fr]",

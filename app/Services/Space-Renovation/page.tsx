@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const renovationServices = [
@@ -17,10 +18,10 @@ const Page = () => {
         "Custom Solutions – Tailored renovation plans to match your needs and budget.",
         "Quality Assurance – High standards in materials, workmanship, and finishes.",
         "Timely Execution – Adherence to project timelines for efficient completion.",
-        "Space Optimization – Intelligent layouts that enhance functionality and flow."
+        "Space Optimization – Intelligent layouts that enhance functionality and flow.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1618832515490-e181c4794a45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Office Fit-Outs",
@@ -31,10 +32,10 @@ const Page = () => {
         "Employee Well-Being – Ergonomic and inspiring environments for teams.",
         "Brand Integration – Aligning design elements with your corporate identity.",
         "Tech Integration – Seamless incorporation of technology for efficiency.",
-        "Efficient Delivery – Timely completion with minimal disruption."
+        "Efficient Delivery – Timely completion with minimal disruption.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=1027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1578991624414-276ef23a534f?q=80&w=1027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Retail & Commercial Spaces",
@@ -45,10 +46,10 @@ const Page = () => {
         "Customer-Centric Layouts – Optimized spaces for customer interaction.",
         "Premium Finishes – High-quality materials for durability and aesthetics.",
         "Flexible Designs – Adaptable layouts to meet evolving business needs.",
-        "Sustainable Solutions – Eco-friendly materials with modern aesthetics."
+        "Sustainable Solutions – Eco-friendly materials with modern aesthetics.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1584214344297-5f7648d939df?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1584214344297-5f7648d939df?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Luxury Residences",
@@ -59,10 +60,10 @@ const Page = () => {
         "High-End Finishes – Premium materials that enhance elegance and durability.",
         "Space Maximization – Smart layouts for a sense of openness and flow.",
         "Attention to Detail – Meticulous craftsmanship in every aspect.",
-        "Luxury Integration – Smart home features, ambient lighting, and more."
+        "Luxury Integration – Smart home features, ambient lighting, and more.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Project Management",
@@ -73,14 +74,19 @@ const Page = () => {
         "Clear Communication – Regular updates and feedback loops.",
         "Budget Management – Cost-effective solutions without quality compromise.",
         "Vendor Coordination – Efficient scheduling and collaboration with contractors.",
-        "Quality Control – Strict checks to maintain high standards."
+        "Quality Control – Strict checks to maintain high standards.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
   return (
     <main className="">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img
@@ -100,10 +106,8 @@ const Page = () => {
         <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-auto container flex flex-col items-start justify-center">
             <h2 className="text-3xl md:text-2xl lg:text-5xl py-2  px-5 lg:pl-0 lg:pr-5 bg-[#F7F7F7]  font-heroFont">
-              Premium{ ' '}
-              <span className="font-secondaryFont">
-                Space Renovations
-              </span>{" "}
+              Premium{" "}
+              <span className="font-secondaryFont">Space Renovations</span>{" "}
               Services
             </h2>
             <div>

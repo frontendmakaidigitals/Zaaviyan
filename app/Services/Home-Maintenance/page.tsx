@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const merchandiseService = [
@@ -109,6 +110,11 @@ const Page = () => {
   ];
   return (
     <main className="">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img
@@ -128,8 +134,7 @@ const Page = () => {
         <div className="grid h-[600px] mt-32 md:mt-0 lg:h-[730px] relative container  place-items-center grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="h-full left-0 absolute w-full md:max-w-md lg:max-w-xl xl:max-w-auto container flex flex-col items-start justify-center">
             <h2 className="text-3xl md:text-2xl lg:text-5xl py-2  px-5 lg:pl-0 lg:pr-5 bg-[#F7F7F7]  font-heroFont">
-              Expert{" "}
-              <span className="font-secondaryFont">Maintenance</span>,
+              Expert <span className="font-secondaryFont">Maintenance</span>,
               Hassle-Free Living
             </h2>
             <div>
@@ -175,7 +180,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection  data={merchandiseService}/>
+      <GridSection data={merchandiseService} />
       <Choose />
       <Banner />
     </main>

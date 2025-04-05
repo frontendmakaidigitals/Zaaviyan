@@ -45,7 +45,6 @@ const HeroSection = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(animate);
   return (
     <div
       ref={heroContainer}
@@ -108,14 +107,14 @@ const HeroSection = () => {
         <div className="grid lg:order-1 grid-cols-2 shadow-[0_0_60px_#D7CCC8] bg-[#9b9287] overflow-hidden h-[450px] md:h-[700px] lg:h-[99vh]">
           <Marquee isAnimating={animate} vertical>
             {firstRow.map((img, idx) => (
-              <div key={idx} className="h-[350px]">
+              <div key={idx} className="h-[200px] lg:h-[350px]">
                 <img className="w-full h-full object-cover " src={img.img} />
               </div>
             ))}
           </Marquee>
           <Marquee reverse vertical isAnimating={animate}>
             {secondRow.map((img, idx) => (
-              <div key={idx} className="h-[350px]">
+              <div key={idx} className="h-[200px] lg:h-[350px]">
                 <img className="w-full h-full object-cover " src={img.img} />
               </div>
             ))}

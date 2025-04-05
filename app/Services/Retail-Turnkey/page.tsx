@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import "@/app/globals.css";
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const merchandiseService = [
@@ -15,10 +16,10 @@ const Page = () => {
       solutions: [
         "Brand Storytelling – Designing spaces that reflect and enhance your brand image, ensuring a cohesive customer experience.",
         "Creative Visualization – Developing mood boards, sketches, and 3D renderings to bring the concept to reality.",
-        "Customer Experience Focus – Crafting immersive environments that captivate visitors and enhance brand loyalty."
+        "Customer Experience Focus – Crafting immersive environments that captivate visitors and enhance brand loyalty.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Space Planning & Layout Optimization",
@@ -27,10 +28,10 @@ const Page = () => {
       solutions: [
         "Strategic Floor Plans – Structuring layouts to optimize product visibility, accessibility, and movement.",
         "Traffic Flow Optimization – Designing intuitive pathways that guide customers naturally through the space.",
-        "Efficiency & Accessibility – Ensuring ergonomic designs that cater to diverse customer needs and provide ease of navigation."
+        "Efficiency & Accessibility – Ensuring ergonomic designs that cater to diverse customer needs and provide ease of navigation.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1630699144339-420f59b4747b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1630699144339-420f59b4747b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Interior Design & Custom Fit-outs",
@@ -39,10 +40,10 @@ const Page = () => {
       solutions: [
         "Custom Fixtures & Displays – Designing and fabricating tailor-made furniture, shelving, and displays to showcase products effectively.",
         "Lighting & Ambience – Implementing strategic lighting techniques to enhance the atmosphere and highlight key merchandise.",
-        "Theme-Based Interiors – Developing aesthetic designs that align with your brand’s personality, whether minimalistic, luxurious, or avant-garde."
+        "Theme-Based Interiors – Developing aesthetic designs that align with your brand’s personality, whether minimalistic, luxurious, or avant-garde.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Procurement & Material Selection",
@@ -51,10 +52,10 @@ const Page = () => {
       solutions: [
         "High-Quality Materials – Choosing premium finishes, textures, and materials for a sophisticated look.",
         "Cost-Efficient Solutions – Providing budget-friendly options without compromising on elegance and longevity.",
-        "Vendor Coordination – Managing procurement logistics and coordinating with reliable suppliers to guarantee timely delivery."
+        "Vendor Coordination – Managing procurement logistics and coordinating with reliable suppliers to guarantee timely delivery.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1580060372014-711bda378d20?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1580060372014-711bda378d20?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Project Management & Execution",
@@ -63,10 +64,10 @@ const Page = () => {
       solutions: [
         "End-to-End Supervision – Coordinating all phases of the project from design to installation.",
         "Time & Budget Management – Keeping the project on schedule and within budget constraints.",
-        "Quality Assurance – Conducting strict inspections at every stage to maintain high standards of craftsmanship."
+        "Quality Assurance – Conducting strict inspections at every stage to maintain high standards of craftsmanship.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "MEP & Technical Installations",
@@ -75,10 +76,10 @@ const Page = () => {
       solutions: [
         "Electrical & Lighting Systems – Installing energy-efficient lighting and electrical components tailored to your store’s needs.",
         "HVAC & Ventilation – Ensuring a comfortable indoor environment through optimized heating, ventilation, and air conditioning systems.",
-        "Safety & Compliance – Adhering to industry regulations and implementing fire safety, security, and electrical safety measures."
+        "Safety & Compliance – Adhering to industry regulations and implementing fire safety, security, and electrical safety measures.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1596496181848-3091d4878b24?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Branding & Visual Merchandising",
@@ -87,10 +88,10 @@ const Page = () => {
       solutions: [
         "In-Store Branding – Incorporating brand elements such as logos, signage, and themed décor for a cohesive look.",
         "Product Placement Strategies – Strategically positioning merchandise to drive sales and improve shopper experience.",
-        "Digital Integration – Integrating digital signage, interactive displays, and technology-driven elements for an engaging shopping environment."
+        "Digital Integration – Integrating digital signage, interactive displays, and technology-driven elements for an engaging shopping environment.",
       ],
       class: "bg-slate-50",
-      img: "https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       title: "Handover & Post-Completion Support",
@@ -99,14 +100,19 @@ const Page = () => {
       solutions: [
         "Final Inspections & Approvals – Verifying that all installations meet quality and safety standards.",
         "Operational Training – Providing guidance on managing the space efficiently and maintaining its aesthetic appeal.",
-        "Ongoing Support – Offering after-sales service, maintenance, and updates to keep your store in prime condition."
+        "Ongoing Support – Offering after-sales service, maintenance, and updates to keep your store in prime condition.",
       ],
       class: "bg-[rgb(100,95,89)] text-slate-50",
-      img: "https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+      img: "https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
   return (
     <main className="">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img
@@ -173,7 +179,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <GridSection data={merchandiseService}/>
+      <GridSection data={merchandiseService} />
       <Choose />
       <Banner />
     </main>

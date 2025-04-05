@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "@/app/globals.css";
-
+import PopUpForm from "@/app/App_Chunks/Components/PopUpForm";
 import Choose from "./Choose";
-import Banner from "./Banner";
+import Banner from "@/app/App_Chunks/Components/Banner2";
+
 import GridSection from "@/app/App_Chunks/Components/GridSection";
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,6 +69,11 @@ const Page = () => {
   ];
   return (
     <main className="">
+      <PopUpForm
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Contact Us"
+      />
       <div className="relative overflow-hidden">
         <div className=" hidden md:block md:w-[350px] lg:w-[400px] xl:w-[500px] aspect-[3/2] absolute right-0 -z-10 bottom-0 bg-slate-100">
           <motion.img
