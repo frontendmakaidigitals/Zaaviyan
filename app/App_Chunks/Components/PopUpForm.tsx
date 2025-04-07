@@ -71,7 +71,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!validate()) {
       console.log("return", errors);
       return;
@@ -109,7 +109,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
       setLoading(false);
     }
   };
-  console.log(loading)
+  
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -122,7 +122,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
           <motion.div
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}
-            className="bg-white p-6 rounded-lg shadow-lg w-xl relative"
+            className="bg-white p-6 rounded-lg shadow-lg  w-[90%] lg:w-xl relative"
           >
             <div className="flex justify-between items-center  mb-4">
               <h2 className="text-3xl font-semibold">{title}</h2>
@@ -134,13 +134,13 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
               </button>
             </div>
             <form className="mt-6">
-              <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+              <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 mt-5">
                 <div className="block">
                   <div>
                     <label>Full Name</label>
                   </div>
                   <input
-                    className="w-full mt-1 border px-5 py-3 border-slate-800  rounded-xl"
+                    className="w-full mt-1 border px-5 py-2 lg:py-3 border-slate-800  rounded-xl"
                     placeholder="Enter you name..."
                     name={"fullName"}
                     value={formData.fullName}
@@ -155,7 +155,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                     <label>Company name</label>
                   </div>
                   <input
-                    className="w-full mt-1 border px-5 py-3 border-slate-800  rounded-xl"
+                    className="w-full mt-1 border px-5 py-2 lg:py-3 border-slate-800  rounded-xl"
                     placeholder="Enter you company..."
                     name={"companyName"}
                     value={formData.companyName}
@@ -165,14 +165,12 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                     <p className="text-red-600 text-sm">{errors.companyName}</p>
                   )}
                 </div>
-              </div>
-              <div className="w-full grid  grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
                 <div>
                   <div>
                     <label>Phone number</label>
                   </div>
                   <input
-                    className="w-full mt-1 border px-5 py-3 border-slate-800  rounded-xl"
+                    className="w-full mt-1 border px-5 py-2 lg:py-3 border-slate-800  rounded-xl"
                     type="number"
                     placeholder="Enter you phone..."
                     name={"phone"}
@@ -188,7 +186,7 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                     <label>Email address</label>
                   </div>
                   <input
-                    className="w-full mt-1 border px-5 py-3 border-slate-800  rounded-xl"
+                    className="w-full mt-1 border px-5 py-2 lg:py-3 border-slate-800  rounded-xl"
                     type="email"
                     placeholder="Enter you email..."
                     name={"email"}
@@ -199,22 +197,24 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
                     <p className="text-red-600 text-sm">{errors.email}</p>
                   )}
                 </div>
-              </div>
-              <div className="w-full mt-5">
-                <div>
-                  <label>Message</label>
+                <div className="w-full lg:col-span-2">
+                  <div>
+                    <label>Message</label>
+                  </div>
+                  <textarea
+                    placeholder="Enter your message..."
+                    className="resize-none mt-1 px-5 py-3   h-32 lg:h-40 w-full border border-slate-800  rounded-2xl"
+                    value={formData.message}
+                    name={"message"}
+                    onChange={handleChange}
+                  />
+                  {errors.message && (
+                    <p className="text-red-600 text-sm">{errors.message}</p>
+                  )}
                 </div>
-                <textarea
-                  placeholder="Enter your message..."
-                  className="resize-none mt-1 px-5 py-3 h-40 w-full border border-slate-800  rounded-2xl"
-                  value={formData.message}
-                  name={"message"}
-                  onChange={handleChange}
-                />
-                {errors.message && (
-                  <p className="text-red-600 text-sm">{errors.message}</p>
-                )}
               </div>
+               
+
               <div className="flex items-center mt-2 space-x-2">
                 <Checkbox
                   id="terms"
@@ -239,12 +239,21 @@ const PopUpForm = ({ isOpen, onClose, title }) => {
               <button
                 type="submit"
                 className={cn(
-                  `border border-slate-400 mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
+                  `border border-slate-400 mt-5 lg:mt-10 px-4 py-2 rounded-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed`,
                   status && "bg-gray-200", // Default background when status is set
-                  status && "success" in status && status.success && "bg-[#25D366] text-green-950", // Success styling
-                  status && "error" in status && status.error && "bg-red-500 text-white" // Error styling
+                  status &&
+                    "success" in status &&
+                    status.success &&
+                    "bg-[#25D366] text-green-950", // Success styling
+                  status &&
+                    "error" in status &&
+                    status.error &&
+                    "bg-red-500 text-white" // Error styling
                 )}
-                disabled={loading || (status !== null && "success" in status && status.success)} // Disable if loading or submission was successful
+                disabled={
+                  loading ||
+                  (status !== null && "success" in status && status.success)
+                } // Disable if loading or submission was successful
                 onClick={handleSubmit}
               >
                 {loading ? (
