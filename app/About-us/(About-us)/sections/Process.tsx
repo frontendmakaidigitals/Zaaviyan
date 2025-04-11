@@ -3,19 +3,19 @@ import React from "react";
 
 const Process = () => {
   const process = [
-    { name: "Extensive Expertise", icons: "media/About-us/customer-satisfaction.png" },
-    { name: "In-House Facilities ", icons: "media/About-us/house-plan.png" },
+    { name: "Extensive Expertise", icons: "Media/About-us/customer-satisfaction.png" },
+    { name: "In-House Facilities ", icons: "Media/About-us/house-plan.png" },
     {
       name: "End-to-End Services",
-      icons: "media/About-us/strategy.png",
+      icons: "Media/About-us/strategy.png",
     },
     {
       name: "Attention to Detail",
-      icons: "media/About-us/3d-model.png",
+      icons: "Media/About-us/3d-model.png",
     },
     {
       name: "Commitment to Quality",
-      icons: "media/About-us/checked.png",
+      icons: "Media/About-us/checked.png",
     },
   ];
   return (
