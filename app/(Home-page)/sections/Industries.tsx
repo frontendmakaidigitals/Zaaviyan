@@ -39,7 +39,7 @@ const _Industries = [
     name: "F&B",
     desc: "Designs that set the right mood for restaurants and cafés.",
     icon: <BowlFood weight={Icon_type} size={Icon_size} />,
-    img: "Media/Industry_Images/F&B industry.jpg",
+    img: "Media/Industry_Images/FB industry.jpg",
   },
   {
     name: "Healthcare",
