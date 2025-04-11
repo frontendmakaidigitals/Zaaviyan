@@ -8,7 +8,7 @@ const Services = () => {
     {
       name: "Interior Design",
       desc: " Our Interior Design & Development services focus on creating aesthetically pleasing, functional spaces that reflect your personal style and business identity. From concept to completion, we ensure a seamless and personalized design experience.",
-      img: "Media/Services_Images/interior.jpg",
+      img: "Media/Services_Images/Interior.jpg",
     },
     {
       name: "Joinery",
