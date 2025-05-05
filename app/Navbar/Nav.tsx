@@ -314,7 +314,17 @@ const Nav = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className="hidden lg:block min-w-24" />
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          href={"https://wa.me/971581115376"}
+          className="hidden cursor-pointer lg:flex items-center gap-3 bg-white hover:bg-slate-100 px-5 py-2 rounded-full min-w-24"
+        >
+          <div>
+            <img src="/whatsapp.png" alt="WhatsApp" className="w-7" />
+          </div>
+          <p className="text-sm font-medium text-gray-800">Connect</p>
+        </Link>
       </div>
     </motion.div>
   );
