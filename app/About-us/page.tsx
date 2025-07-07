@@ -7,14 +7,14 @@ import Benefits from "./(About-us)/sections/Benefits";
 import Banner from "../App_Chunks/Components/Banner";
 const Page = () => {
   return (
-    <>
+    <main>
       <HeroSection />
       <Text />
       <AboutUs />
       <Process />
       <Benefits />
       <Banner />
-    </>
+    </main>
   );
 };
 
