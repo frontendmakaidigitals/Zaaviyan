@@ -42,12 +42,12 @@ jobs:
       - name: Upload project files via rsync
         run: |
           rsync -avz --delete --exclude '.git' --exclude 'node_modules' \
-            -e "ssh -p 9398 -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
+            -e "ssh -p 9389 -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
             ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/zaviancontracting/
 
       - name: Deploy and run with PM2
         run: |
-          ssh -i ~/.ssh/id_rsa -p 9398 -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
+          ssh -i ~/.ssh/id_rsa -p 9389 -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "
             cd ~/zaviancontracting &&
             
             # Stop and delete existing PM2 process if it exists
